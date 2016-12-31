@@ -14,5 +14,8 @@ namespace Slackish.Features.Conversations
             model.Id = conversation.Id;
             return model;
         }
+
+        public static ConversationApiModel FromConversation(Conversation conversation)
+            => FromConversation<ConversationApiModel>(conversation);
     }
 }

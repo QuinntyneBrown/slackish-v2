@@ -10,8 +10,8 @@ using System.Data.Entity;
 namespace Slackish.Features.Conversations
 {
 
-    public class GetByCurrentProfileQuery: IAsyncRequest<List<Conversation>> {
-        public GetByCurrentProfileQuery(string usernmae)
+    public class GetByCurrentProfileRequest: IAsyncRequest<List<Conversation>> {
+        public GetByCurrentProfileRequest(string usernmae)
         {
             Username = Username;
         }
@@ -19,22 +19,22 @@ namespace Slackish.Features.Conversations
         public string Username { get; set; }
     }
 
-    public class GetByCurrentProfileHandler : IAsyncRequestHandler<GetByCurrentProfileQuery, List<Conversation>>
+    public class GetByCurrentProfileQuery : IAsyncRequestHandler<GetByCurrentProfileRequest, List<Conversation>>
     {
 
-        public GetByCurrentProfileHandler(DataContext dataContext, ICache cache)
+        public GetByCurrentProfileQuery(DataContext dataContext, ICache cache)
         {
             _dataContext = dataContext;
             _cache = cache;
         }
 
-        public async Task<List<Conversation>> Handle(GetByCurrentProfileQuery message)
+        public async Task<List<Conversation>> Handle(GetByCurrentProfileRequest request)
         {
             return await _dataContext.Conversations
                 .Include(x => x.Profiles)
                 .Include(x => x.Messages)
                 .Include("Profiles.User")
-                .Where(x => x.Profiles.Any(p => p.User.Username == message.Username))
+                .Where(x => x.Profiles.Any(p => p.User.Username == request.Username))
                 .ToListAsync();
         }
 

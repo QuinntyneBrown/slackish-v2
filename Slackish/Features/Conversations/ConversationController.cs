@@ -1,10 +1,14 @@
 ﻿using MediatR;
-using Slackish.Features.Conversations;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Web.Http;
+using System.Web.Http.Description;
+using System.Linq;
+using static Slackish.Features.Conversations.ConversationApiModel;
 
-namespace Slackish.Controllers
+namespace Slackish.Features.Conversations
 {
+    [Authorize]
     [RoutePrefix("api/conversation")]
     public class ConversationController: ApiController
     {
@@ -12,11 +16,14 @@ namespace Slackish.Controllers
         {
             _mediator = mediator;
         }
-
-        [Authorize]
+        
+        [HttpGet]
+        [ResponseType(typeof(List<ConversationApiModel>))]
         public async Task<IHttpActionResult> GetByCurrentProfile()
-        {            
-            return Ok(await _mediator.SendAsync(new GetByCurrentProfileQuery(User.Identity.Name)));
+        {
+            var results = await _mediator.SendAsync(new GetByCurrentProfileRequest(User.Identity.Name));
+
+            return Ok(results.Select(x => FromConversation(x)).ToList());
         }
         
         private IMediator _mediator;

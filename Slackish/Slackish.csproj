@@ -206,7 +206,6 @@
     <Compile Include="Data\Models\Profile.cs" />
     <Compile Include="Data\Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Features\Conversations\ConversationQueries.cs" />
     <Compile Include="Features\Messages\MessageQueries.cs" />
     <Compile Include="Features\Profiles\ProfileQueries.cs" />
     <Compile Include="Features\Profiles\TokenResponse.cs" />
