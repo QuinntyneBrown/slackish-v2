@@ -1,7 +1,7 @@
-const template = require("./header.component.html");
-const styles = require("./header.component.scss");
+const template = require("./register.component.html");
+const styles = require("./register.component.scss");
 
-export class HeaderComponent extends HTMLElement {
+export class RegisterComponent extends HTMLElement {
     constructor() {
         super();
     }
@@ -36,4 +36,4 @@ export class HeaderComponent extends HTMLElement {
     }
 }
 
-customElements.define(`ce-header`,HeaderComponent);
+customElements.define(`ce-register`,RegisterComponent);

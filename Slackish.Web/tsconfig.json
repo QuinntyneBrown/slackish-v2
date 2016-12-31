@@ -15,8 +15,7 @@
     "./src/**/*.ts",
     "./spec/**/*.ts",
     "!./node_modules/**/*.ts",
-    "src/custom-typings.d.ts",
-    "typings/index.d.ts"
+    "src/custom-typings.d.ts"
   ],
   "awesomeTypescriptLoaderOptions": {
     "resolveGlobs": true,

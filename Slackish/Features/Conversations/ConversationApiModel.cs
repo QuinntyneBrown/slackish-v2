@@ -1,14 +1,13 @@
 using Slackish.Data.Models;
-using System.Collections.Generic;
 
-namespace Slackish.ApiModels
+namespace Slackish.Features.Conversations
 {
     public class ConversationApiModel
-    {
+    {        
         public int Id { get; set; }
         public string Name { get; set; }
 
-        public static TModel FromMessage<TModel>(Conversation conversation) where
+        public static TModel FromConversation<TModel>(Conversation conversation) where
             TModel : ConversationApiModel, new()
         {
             var model = new TModel();

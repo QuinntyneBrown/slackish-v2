@@ -180,7 +180,8 @@
     <Compile Include="ApiConfiguration.cs" />
     <Compile Include="Features\Conversations\GetByCurrentProfileQuery.cs" />
     <Compile Include="Features\Messages\MessageApiModel.cs" />
-    <Compile Include="App_Start\WebApiUnityActionFilterProvider.cs" />
+    <Compile Include="Features\Shared\IDistributedCache.cs" />
+    <Compile Include="Filters\WebApiUnityActionFilterProvider.cs" />
     <Compile Include="Authentication\JwtOptions.cs" />
     <Compile Include="Authentication\JwtWriterFormat.cs" />
     <Compile Include="Authentication\OAuthOptions.cs" />
