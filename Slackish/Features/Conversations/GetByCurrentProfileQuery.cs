@@ -22,10 +22,10 @@ namespace Slackish.Features.Conversations
     public class GetByCurrentProfileHandler : IAsyncRequestHandler<GetByCurrentProfileQuery, List<Conversation>>
     {
 
-        public GetByCurrentProfileHandler(DataContext dataContext, ICacheProvider cacheProvider)
+        public GetByCurrentProfileHandler(DataContext dataContext, ICache cache)
         {
             _dataContext = dataContext;
-            _cache = cacheProvider.GetCache();
+            _cache = cache;
         }
 
         public async Task<List<Conversation>> Handle(GetByCurrentProfileQuery message)

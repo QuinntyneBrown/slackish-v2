@@ -22,5 +22,7 @@ namespace Slackish.ApiModels
             model.ConversationId = message.ConversationId;
             return model;
         }
+
+        public static MessageApiModel FromMessage(Message message) => FromMessage<MessageApiModel>(message);
     }
 }

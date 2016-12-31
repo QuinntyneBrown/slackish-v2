@@ -14,7 +14,8 @@ namespace Slackish.Migrations
 
         protected override void Seed(Slackish.Data.DataContext context)
         {
-
+            TenantConfiguration.Seed(context);
+            ProfileConfiguration.Seed(context);
         }
     }
 }

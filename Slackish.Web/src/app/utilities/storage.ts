@@ -1,24 +1,23 @@
 ﻿import { STORAGE_KEY } from "./constants";
+import { StorageConfiguration } from "./storage-configuration";
 
 export class Storage {
-    constructor(private _key: string = STORAGE_KEY, private _localStorage: any = localStorage, private _window: Window = window) {
-
+    constructor(_configuration: StorageConfiguration) {
         this.onPageHide = this.onPageHide.bind(this);
-
-        _window.addEventListener("pagehide",this.onPageHide);
+        this._window = _configuration.window;
+        this._localStorage = _configuration.localStorage;
+        this._key = _configuration.key;
+        this._window.addEventListener("pagehide", this.onPageHide);
     }
+
+    private _localStorage;
+    private _window: Window;
+    private _key: string;
 
     private onPageHide() {
         this._localStorage.setItem(this._key, JSON.stringify(this._items));
     }
-
-    private static _instance;
-
-    public static get Instance() {
-        this._instance = this._instance || new this();
-        return this._instance;
-    }
-
+    
     private _items = null;
 
     public get items() {
@@ -36,7 +35,7 @@ export class Storage {
         this._items = value;
     }
 
-    public get = (options: { name: string }) => {
+    public get (options: { name: string }) {
         var storageItem = null;
         for (var i = 0; i < this.items.length; i++) {
             if (options.name === this.items[i].name)
@@ -45,7 +44,7 @@ export class Storage {
         return storageItem;
     }
 
-    public put = (options: { name: string, value: string }) => {
+    public put(options: { name: string, value: string }) {
         var itemExists = false;
 
         this.items.forEach((item: any) => {
@@ -63,7 +62,7 @@ export class Storage {
         }
     }
 
-    public clear = () => {
+    public clear() {
         this._items = [];
     }
 }

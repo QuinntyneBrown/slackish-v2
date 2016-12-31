@@ -1,7 +1,6 @@
 ﻿using MediatR;
 using Slackish.ApiModels;
 using Slackish.Data;
-using Slackish.Data.Models;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Threading.Tasks;
@@ -17,16 +16,16 @@ namespace Slackish.Queries
 
     public class MessagesQueryHandler: IAsyncRequestHandler<MessagesQuery, List<MessageApiModel>>
     {
-        public MessagesQueryHandler(DataContext dataContext, ICacheProvider cacheProvider)
+        public MessagesQueryHandler(DataContext dataContext, ICache cache)
         {
-            _cache = cacheProvider.GetCache();
+            _cache = cache;
             _dataContext = dataContext;
         }
 
         public async Task<List<MessageApiModel>> Handle(MessagesQuery query)
         {
             return await _dataContext.Messages
-                .Select(x => MessageApiModel.FromMessage<MessageApiModel>(x))
+                .Select(x => MessageApiModel.FromMessage(x))
                 .ToListAsync();
         }
 

@@ -213,10 +213,8 @@
     <Compile Include="Features\Messages\CreateMessageRequest.cs" />
     <Compile Include="Features\Profiles\RegistrationRequest.cs" />
     <Compile Include="Features\Shared\Cache.cs" />
-    <Compile Include="Features\Shared\CacheProvider.cs" />
     <Compile Include="Features\Shared\EncryptionService.cs" />
     <Compile Include="Features\Shared\ICache.cs" />
-    <Compile Include="Features\Shared\ICacheProvider.cs" />
     <Compile Include="Features\Profiles\IdentityService.cs" />
     <Compile Include="Features\Shared\IEncryptionService.cs" />
     <Compile Include="Features\Profiles\IIdentityService.cs" />
@@ -230,6 +228,8 @@
     <Compile Include="Features\Profiles\ProfileApiModel.cs" />
     <Compile Include="Features\Conversations\ConversationApiModel.cs" />
     <Compile Include="Data\Models\Tenant.cs" />
+    <Compile Include="Migrations\ProfileConfiguration.cs" />
+    <Compile Include="Migrations\TenantConfiguration.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

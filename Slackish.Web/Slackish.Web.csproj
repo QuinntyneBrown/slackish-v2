@@ -124,9 +124,12 @@
   <ItemGroup>
     <TypeScriptCompile Include="src\app\app-router-outlet.component.ts" />
     <TypeScriptCompile Include="src\app\environment.ts" />
+    <TypeScriptCompile Include="src\app\ioc-container.ts" />
     <TypeScriptCompile Include="src\app\profiles\authorized-route-middleware.ts" />
     <TypeScriptCompile Include="src\app\profiles\current-profile.ts" />
     <TypeScriptCompile Include="src\app\profiles\login-redirect.ts" />
+    <TypeScriptCompile Include="src\app\token-registry.ts" />
+    <TypeScriptCompile Include="src\app\utilities\storage-configuration.ts" />
     <TypeScriptCompile Include="src\custom-typings.d.ts" />
     <TypeScriptCompile Include="src\app\router\index.ts" />
     <TypeScriptCompile Include="src\app\router\link.component.ts" />
