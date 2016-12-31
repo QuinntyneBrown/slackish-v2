@@ -15,7 +15,7 @@ namespace Slackish
             var container = new UnityContainer();
             container.RegisterType<DataContext>(new ContainerControlledLifetimeManager());
             
-            container.RegisterType<IIdentityService, IdentityService>();
+            
             container.RegisterType<ILoggerFactory, LoggerFactory>();            
             container.RegisterType<IEncryptionService, EncryptionService>();
             container.RegisterType<ILogger, Logger>();
@@ -23,8 +23,6 @@ namespace Slackish
             container.RegisterInstance<SingleInstanceFactory>(t => container.Resolve(t));
             container.RegisterInstance<MultiInstanceFactory>(t => container.ResolveAll(t));
             container.RegisterTypes(AllClasses.FromAssemblies(typeof(UnityConfiguration).Assembly), WithMappings.FromAllInterfaces);
-            //container.RegisterType(typeof(INotificationHandler<>), typeof(GenericHandler), GetName(typeof(GenericHandler)));
-            //container.RegisterType(typeof(IAsyncNotificationHandler<>), typeof(GenericAsyncHandler), GetName(typeof(GenericAsyncHandler)));
             container.RegisterInstance(AuthConfiguration.LazyConfig);
             container.RegisterInstance(MemoryCache.Current, new ContainerControlledLifetimeManager());         
             return container;

@@ -3,38 +3,39 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using System;
 using Slackish.Configuration;
-using Slackish.Services;
+using MediatR;
 
 namespace Slackish.Authentication
 {
     public class OAuthProvider : OAuthAuthorizationServerProvider
     {
-        public OAuthProvider(Lazy<IAuthConfiguration> lazyAuthConfiguration, IIdentityService identityService)
+        public OAuthProvider(Lazy<IAuthConfiguration> lazyAuthConfiguration, IMediator mediator)
         {
             _lazyAuthConfiguration = lazyAuthConfiguration;
-            _identityService = identityService;
+            _mediator = mediator;
         }
 
-        public override Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
+        public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
         {
             var identity = new ClaimsIdentity(_authConfiguration.AuthType);
             var username = context.OwinContext.Get<string>($"{_authConfiguration.AuthType}:username");
-            foreach (var claim in this._identityService.GetClaimsForUser(username))
+            var response = await _mediator.SendAsync(new GetClaimsForUserRequest(username));
+
+            foreach (var claim in response.Claims)
             {
                 identity.AddClaim(claim);
             }
             context.Validated(identity);
-            return Task.FromResult(0);
         }
 
-        public override Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context)
+        public override async Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context)
         {
             try
             {
                 var username = context.Parameters["username"];
                 var password = context.Parameters["password"];
-
-                if (_identityService.AuthenticateUser(username, password))
+                var response = await _mediator.SendAsync(new AuthenticateRequest(username, password));
+                if (response.IsAuthenticated)
                 {
                     context.OwinContext.Set($"{_authConfiguration.AuthType}:username", username);
                     context.Validated();
@@ -49,11 +50,10 @@ namespace Slackish.Authentication
             {
                 context.SetError(exception.Message);
                 context.Rejected();
-            }
-            return Task.FromResult(0);
+            }            
         }
 
-        protected IIdentityService _identityService { get; set; }
+        protected IMediator _mediator { get; set; }
         protected IAuthConfiguration _authConfiguration { get { return _lazyAuthConfiguration.Value; } }
         protected Lazy<IAuthConfiguration> _lazyAuthConfiguration;
     }

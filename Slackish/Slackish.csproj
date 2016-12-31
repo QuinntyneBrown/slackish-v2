@@ -178,8 +178,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiConfiguration.cs" />
+    <Compile Include="Authentication\AuthenticateRequest.cs" />
+    <Compile Include="Authentication\AuthenticateResponse.cs" />
+    <Compile Include="Authentication\GetClaimsForUserRequest.cs" />
+    <Compile Include="Authentication\GetClaimsForUserResponse.cs" />
     <Compile Include="Features\Conversations\GetByCurrentProfileQuery.cs" />
     <Compile Include="Features\Messages\MessageApiModel.cs" />
+    <Compile Include="Features\Profiles\GetClaimsForUserQuery.cs" />
+    <Compile Include="Features\Profiles\GetOtherProfilesQuery.cs" />
     <Compile Include="Features\Shared\IDistributedCache.cs" />
     <Compile Include="Filters\WebApiUnityActionFilterProvider.cs" />
     <Compile Include="Authentication\JwtOptions.cs" />
@@ -207,16 +213,11 @@
     <Compile Include="Data\Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Features\Messages\MessageQueries.cs" />
-    <Compile Include="Features\Profiles\ProfileQueries.cs" />
-    <Compile Include="Features\Profiles\TokenResponse.cs" />
     <Compile Include="Features\Messages\CreateMessageRequest.cs" />
-    <Compile Include="Features\Profiles\RegistrationRequest.cs" />
     <Compile Include="Features\Shared\Cache.cs" />
     <Compile Include="Features\Shared\EncryptionService.cs" />
     <Compile Include="Features\Shared\ICache.cs" />
-    <Compile Include="Features\Profiles\IdentityService.cs" />
     <Compile Include="Features\Shared\IEncryptionService.cs" />
-    <Compile Include="Features\Profiles\IIdentityService.cs" />
     <Compile Include="Features\Shared\MemoryCache.cs" />
     <Compile Include="UnityConfiguration.cs" />
     <Compile Include="Utilities\ILogger.cs" />

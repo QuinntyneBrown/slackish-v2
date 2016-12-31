@@ -12,6 +12,7 @@ using Slackish.Configuration;
 using Slackish.Services;
 using Slackish.Authentication;
 using Slackish.Filters;
+using MediatR;
 
 namespace Slackish
 {
@@ -29,14 +30,14 @@ namespace Slackish
 
             config.SuppressHostPrincipal();
 
-            IIdentityService identityService = UnityConfiguration.GetContainer().Resolve<IIdentityService>();
+            IMediator mediator = UnityConfiguration.GetContainer().Resolve<IMediator>();
             Lazy<IAuthConfiguration> lazyAuthConfiguration = UnityConfiguration.GetContainer().Resolve<Lazy<IAuthConfiguration>>();
 
             config
                 .EnableSwagger(c => c.SingleApiVersion("v1", "Slackish"))
                 .EnableSwaggerUi();
 
-            app.UseOAuthAuthorizationServer(new OAuthOptions(lazyAuthConfiguration, identityService));
+            app.UseOAuthAuthorizationServer(new OAuthOptions(lazyAuthConfiguration, mediator));
 
             app.UseJwtBearerAuthentication(new JwtOptions(lazyAuthConfiguration));
 

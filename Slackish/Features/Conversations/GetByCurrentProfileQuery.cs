@@ -1,6 +1,5 @@
 ﻿using MediatR;
 using Slackish.Data;
-using Slackish.Data.Models;
 using Slackish.Services;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -10,7 +9,7 @@ using System.Data.Entity;
 namespace Slackish.Features.Conversations
 {
 
-    public class GetByCurrentProfileRequest: IAsyncRequest<List<Conversation>> {
+    public class GetByCurrentProfileRequest: IAsyncRequest<GetByCurrentProfileResponse> {
         public GetByCurrentProfileRequest(string usernmae)
         {
             Username = Username;
@@ -19,7 +18,17 @@ namespace Slackish.Features.Conversations
         public string Username { get; set; }
     }
 
-    public class GetByCurrentProfileQuery : IAsyncRequestHandler<GetByCurrentProfileRequest, List<Conversation>>
+    public class GetByCurrentProfileResponse
+    {
+        public GetByCurrentProfileResponse(ICollection<ConversationApiModel> conversations)
+        {
+            Conversations = conversations;
+        }
+
+        public ICollection<ConversationApiModel> Conversations { get; set; }
+    }
+
+    public class GetByCurrentProfileQuery : IAsyncRequestHandler<GetByCurrentProfileRequest, GetByCurrentProfileResponse>
     {
 
         public GetByCurrentProfileQuery(DataContext dataContext, ICache cache)
@@ -28,14 +37,18 @@ namespace Slackish.Features.Conversations
             _cache = cache;
         }
 
-        public async Task<List<Conversation>> Handle(GetByCurrentProfileRequest request)
+        public async Task<GetByCurrentProfileResponse> Handle(GetByCurrentProfileRequest request)
         {
-            return await _dataContext.Conversations
+            var results = await _dataContext.Conversations
                 .Include(x => x.Profiles)
                 .Include(x => x.Messages)
                 .Include("Profiles.User")
                 .Where(x => x.Profiles.Any(p => p.User.Username == request.Username))
                 .ToListAsync();
+
+            return new GetByCurrentProfileResponse(results
+                .Select(x=> ConversationApiModel.FromConversation(x))
+                .ToList());
         }
 
         private readonly DataContext _dataContext;

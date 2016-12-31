@@ -9,7 +9,10 @@ export class TokenRegistry {
         return [
             ConversationService,
             MessageService,
-            ProfileService
+            ProfileService,
+            Router,
+            Storage,
+            StorageConfiguration
         ];
     }
 }

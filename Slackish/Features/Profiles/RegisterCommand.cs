@@ -1,15 +1,24 @@
-﻿using Slackish.Features.Profiles;
-using Slackish.Requests;
+﻿using System;
+using System.Threading.Tasks;
+using MediatR;
 
-namespace Slackish.Commands
+namespace Slackish.Features.Profiles
 {
-    public class RegisterCommand
+    public class RegisterRequest: IAsyncRequest<RegisterResponse>
     {
-        public RegisterCommand(RegistrationRequest registrationRequest)
-        {
-            _registrationRequest = registrationRequest;
-        }
 
-        private RegistrationRequest _registrationRequest { get; set; }
+    }
+
+    public class RegisterResponse
+    {
+
+    }
+
+    public class RegisterCommand: IAsyncRequestHandler<RegisterRequest,RegisterResponse>
+    {
+        public Task<RegisterResponse> Handle(RegisterRequest message)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
