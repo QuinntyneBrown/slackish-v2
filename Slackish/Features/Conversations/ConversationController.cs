@@ -19,7 +19,7 @@ namespace Slackish.Features.Conversations
         [ResponseType(typeof(List<ConversationApiModel>))]
         public async Task<IHttpActionResult> GetByCurrentProfile()
         {
-            return Ok(await _mediator.SendAsync(new GetByCurrentProfileRequest(User.Identity.Name)));
+            return Ok(await _mediator.SendAsync(new GetByCurrentProfileQuery.GetByCurrentProfileRequest(User.Identity.Name)));
         }
         
         private IMediator _mediator;

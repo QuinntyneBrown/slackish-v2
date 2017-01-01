@@ -1,13 +1,14 @@
 using System.Web.Http.Filters;
 using Slackish.Utilities;
+using Microsoft.Practices.Unity;
 
 namespace Slackish.Filters
 {
     public class HandleErrorAttribute : ExceptionFilterAttribute
     {
-        public HandleErrorAttribute(ILoggerFactory loggerFactory)
+        public HandleErrorAttribute()
         {
-            _logger = loggerFactory.CreateLogger("Error");
+
         }
 
         public override void OnException(HttpActionExecutedContext context)
@@ -15,7 +16,8 @@ namespace Slackish.Filters
 
         }
 
-        protected readonly ILogger _logger;
+        [Dependency]
+        public ILogger _logger { get; set; }
     }
 }
 

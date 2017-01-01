@@ -7,9 +7,7 @@ using Microsoft.Owin.Security.OAuth;
 using Swashbuckle.Application;
 using Microsoft.Owin.Cors;
 using System;
-using Slackish.Utilities;
 using Slackish.Configuration;
-using Slackish.Services;
 using Slackish.Authentication;
 using Slackish.Filters;
 using MediatR;
@@ -21,17 +19,17 @@ namespace Slackish
         public static void Install(HttpConfiguration config, IAppBuilder app)
         {
             WebApiUnityActionFilterProvider.RegisterFilterProviders(config);
-
+            var container = UnityConfiguration.GetContainer();
             app.MapSignalR();
 
-            config.Filters.Add(new HandleErrorAttribute(UnityConfiguration.GetContainer().Resolve<ILoggerFactory>()));
+            config.Filters.Add(container.Resolve<HandleErrorAttribute>());
 
             app.UseCors(CorsOptions.AllowAll);
 
             config.SuppressHostPrincipal();
 
-            IMediator mediator = UnityConfiguration.GetContainer().Resolve<IMediator>();
-            Lazy<IAuthConfiguration> lazyAuthConfiguration = UnityConfiguration.GetContainer().Resolve<Lazy<IAuthConfiguration>>();
+            IMediator mediator = container.Resolve<IMediator>();
+            Lazy<IAuthConfiguration> lazyAuthConfiguration = container.Resolve<Lazy<IAuthConfiguration>>();
 
             config
                 .EnableSwagger(c => c.SingleApiVersion("v1", "Slackish"))

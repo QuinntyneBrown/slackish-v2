@@ -205,7 +205,6 @@
     <Compile Include="Features\Conversations\ConversationHub.cs" />
     <Compile Include="Features\Messages\MessageHub.cs" />
     <Compile Include="Features\Profiles\ProfileHub.cs" />
-    <Compile Include="Infrastructure\Constants.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Data\Models\Conversation.cs" />
     <Compile Include="Data\Models\Message.cs" />

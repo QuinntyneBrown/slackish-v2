@@ -3,7 +3,6 @@ using Slackish.Data;
 using Slackish.Services;
 using Slackish.Utilities;
 using Microsoft.Practices.Unity;
-using Microsoft.Practices.Unity.InterceptionExtension;
 using MediatR;
 
 namespace Slackish
@@ -14,8 +13,6 @@ namespace Slackish
         {
             var container = new UnityContainer();
             container.RegisterType<DataContext>(new ContainerControlledLifetimeManager());
-            
-            
             container.RegisterType<ILoggerFactory, LoggerFactory>();            
             container.RegisterType<IEncryptionService, EncryptionService>();
             container.RegisterType<ILogger, Logger>();
