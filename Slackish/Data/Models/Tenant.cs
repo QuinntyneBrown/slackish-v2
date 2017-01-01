@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 namespace Slackish.Data.Models
 {
     public class Tenant
