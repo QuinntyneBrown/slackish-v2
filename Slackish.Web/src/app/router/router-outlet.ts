@@ -5,7 +5,7 @@ import { isArray, camelCaseToSnakeCase, Log } from "../utilities";
 import { RouteReloadMiddleware } from "./route-reload-middleware";
 
 export abstract class RouterOutlet {
-    constructor(private _nativeHTMLElement: HTMLElement, public _router: Router = Router.Instance) {
+    constructor(private _nativeHTMLElement: HTMLElement, public _router: Router) {
         this.connectedCallback();
     }
 

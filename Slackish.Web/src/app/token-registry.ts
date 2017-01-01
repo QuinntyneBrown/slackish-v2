@@ -1,7 +1,9 @@
 ﻿import { ConversationService } from "./conversations";
 import { MessageService } from "./messages";
-import { ProfileService } from "./profiles";
+import { ProfileService, LoginRedirect } from "./profiles";
 import { Router } from "./router";
+import { Environment } from "./environment"
+
 import { Storage, StorageConfiguration } from "./utilities";
 
 export class TokenRegistry {
@@ -12,7 +14,9 @@ export class TokenRegistry {
             ProfileService,
             Router,
             Storage,
-            StorageConfiguration
+            StorageConfiguration,
+            Environment,
+            LoginRedirect
         ];
-    }
+    }    
 }

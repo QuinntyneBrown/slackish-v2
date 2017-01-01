@@ -9,14 +9,10 @@ export const routerKeys = {
 export class Router {
     constructor(
         private _routes: Array<Route> = [],
-        private _storage: Storage = Storage.Instance,
+        private _storage: Storage,
         private _environment: { useUrlRouting: boolean } = environment
     ) { }
 
-    public static get Instance(): Router {
-        this._instance = this._instance || new this();
-        return this._instance;
-    }
 
     public get activatedRoute(): ActivatedRoute {
         return Object.assign(this._routes.find(r => r.name === this._routeName), { routeParams: this._routeParams });
