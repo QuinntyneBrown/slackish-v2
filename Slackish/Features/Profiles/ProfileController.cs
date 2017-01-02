@@ -1,16 +1,23 @@
 ﻿using MediatR;
+using System.Threading.Tasks;
 using System.Web.Http;
 
-namespace Slackish.Controllers
+namespace Slackish.Features.Profiles
 {
     [RoutePrefix("api/profile")]
-    public class ProfileController
+    public class ProfileController: ApiController
     {
         public ProfileController(IMediator mediator)
         {
             _mediator = mediator;
         }
 
-        private readonly IMediator _mediator;
+        [HttpGet]
+        [Route("getByOtherProfileId")]
+        public async Task<IHttpActionResult> GetByOtherProfileId(int otherProfileId)
+            => Ok(await _mediator.SendAsync(new GetByOtherProfilesQuery
+                .GetOtherProfilesRequest() { OtherProfileId = otherProfileId }));
+        
+        protected readonly IMediator _mediator;
     }
 }

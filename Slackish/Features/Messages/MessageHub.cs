@@ -1,8 +1,7 @@
 ﻿using Microsoft.AspNet.SignalR;
 using Microsoft.AspNet.SignalR.Hubs;
-using Slackish.ApiModels;
 
-namespace Slackish.Hubs
+namespace Slackish.Featrues.Messages
 {
     [HubName("messageHub")]
     public class MessageHub: Hub

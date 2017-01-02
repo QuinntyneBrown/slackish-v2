@@ -185,7 +185,7 @@
     <Compile Include="Features\Conversations\GetByCurrentProfileQuery.cs" />
     <Compile Include="Features\Messages\MessageApiModel.cs" />
     <Compile Include="Features\Profiles\GetClaimsForUserQuery.cs" />
-    <Compile Include="Features\Profiles\GetOtherProfilesQuery.cs" />
+    <Compile Include="Features\Profiles\GetByOtherProfilesQuery.cs" />
     <Compile Include="Features\Shared\IDistributedCache.cs" />
     <Compile Include="Filters\WebApiUnityActionFilterProvider.cs" />
     <Compile Include="Authentication\JwtOptions.cs" />
@@ -193,7 +193,7 @@
     <Compile Include="Authentication\OAuthOptions.cs" />
     <Compile Include="Authentication\OAuthProvider.cs" />
     <Compile Include="Features\Profiles\AuthenticateCommand.cs" />
-    <Compile Include="Features\Messages\CreateMessageCommand.cs" />
+    <Compile Include="Features\Messages\SendMessageCommand.cs" />
     <Compile Include="Features\Profiles\RegisterCommand.cs" />
     <Compile Include="Configuration\AuthConfiguration.cs" />
     <Compile Include="Configuration\IAuthConfiguration.cs" />
@@ -211,7 +211,6 @@
     <Compile Include="Data\Models\Profile.cs" />
     <Compile Include="Data\Models\User.cs" />
     <Compile Include="Features\Messages\MessageQueries.cs" />
-    <Compile Include="Features\Messages\CreateMessageRequest.cs" />
     <Compile Include="Features\Shared\Cache.cs" />
     <Compile Include="Features\Shared\EncryptionService.cs" />
     <Compile Include="Features\Shared\ICache.cs" />

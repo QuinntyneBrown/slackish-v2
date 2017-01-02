@@ -1,13 +1,24 @@
+import { IocContainer } from "../ioc-container";
+import { ProfileService, Profile } from "../profiles";
+import { MessageService, Message } from "../messages";
+import { Router } from "../router";
+
 const template = require("./conversation.component.html");
 const styles = require("./conversation.component.scss");
 
 export class ConversationComponent extends HTMLElement {
-    constructor() {
+    constructor(
+        private _profileService: ProfileService = IocContainer.resolve(ProfileService),
+        private _messageService: MessageService = IocContainer.resolve(MessageService),
+        private _router: Router = IocContainer.resolve(Router),
+    ) {
         super();
     }
 
     static get observedAttributes () {
-        return [];
+        return [
+            "profile-id"
+        ];
     }
 
     connectedCallback() {
@@ -28,9 +39,12 @@ export class ConversationComponent extends HTMLElement {
 
     }
 
+    private _profileId: any;
+
     attributeChangedCallback (name, oldValue, newValue) {
         switch (name) {
-            default:
+            case "profile-id":
+                this._profileId = newValue;
                 break;
         }
     }

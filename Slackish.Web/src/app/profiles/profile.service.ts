@@ -3,13 +3,6 @@ import { Profile } from "./profile.model";
 
 export class ProfileService {
     
-    private static _instance: ProfileService;
-
-    public static get Instance() {
-        this._instance = this._instance || new this();
-        return this._instance;
-    }
-
     public get() {
         return fetch({ url: "/api/profile/get", authRequired: true });
     }

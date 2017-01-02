@@ -3,13 +3,6 @@ import { Message } from "./message.model";
 
 export class MessageService {
     
-    private static _instance: MessageService;
-
-    public static get Instance() {
-        this._instance = this._instance || new MessageService();
-        return this._instance;
-    }
-
     public get() {
         return fetch({ url: "/api/message/get", authRequired: true });
     }

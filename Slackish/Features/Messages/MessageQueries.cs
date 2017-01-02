@@ -1,5 +1,4 @@
 ﻿using MediatR;
-using Slackish.ApiModels;
 using Slackish.Data;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -7,7 +6,7 @@ using System.Threading.Tasks;
 using System.Linq;
 using Slackish.Services;
 
-namespace Slackish.Queries
+namespace Slackish.Featrues.Messages
 {
     public class MessagesQuery: IAsyncRequest<List<MessageApiModel>>
     {

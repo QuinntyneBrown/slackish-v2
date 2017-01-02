@@ -1,15 +1,7 @@
 import { fetch } from "../utilities";
 import { Conversation } from "./conversation.model";
 
-export class ConversationService {
-    
-    private static _instance: ConversationService;
-
-    public static get Instance() {
-        this._instance = this._instance || new ConversationService();
-        return this._instance;
-    }
-
+export class ConversationService {   
     public get() {
         return fetch({ url: "/api/conversation/get", authRequired: true });
     }

@@ -55,7 +55,6 @@ namespace Slackish.Features.Conversations
 
             private readonly DataContext _dataContext;
             private readonly ICache _cache;
-
         }
 
     }
