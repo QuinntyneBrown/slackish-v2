@@ -1,4 +1,7 @@
 ﻿import { Storage } from "./storage";
+import { Environment } from "../environment";
+import { IocContainer } from "../ioc-container";
+import { Injectable } from "@angular/core";
 
 export const STORE_KEY = "[Store] store key";
 
@@ -7,16 +10,13 @@ export interface Action {
     payload?: any;
 }
 
+@Injectable()
 export class Store {
-    constructor(private _storage:Storage = Storage.Instance) { }
-
-    private static _instance: Store;
-    public static get Instance(): Store {
-        this._instance = this._instance || new this();
-        return this._instance;
+    constructor(private _storage: Storage) {
+        this._state = _storage.get({ name: STORE_KEY }) || {};
     }
-    
-    public dispatch(action: Action){    
+
+    public dispatch(action: Action) {
         for (var i = 0; i < this.reducers.length; i++) {
             this._state = this.reducers[i](this._state, action);
         }
@@ -32,13 +32,12 @@ export class Store {
         return function () { this.unsubscribe(observer) }.bind(this);
     }
 
-    public unsubscribe(observer) {        
+    public unsubscribe(observer) {
         this._observers.splice(this._observers.indexOf(observer), 1);
     }
 
     private _observers = [];
     public middlewares = [];
-    private _state = Store._initialState;
+    private _state;
     public reducers = [];
-    private static readonly _initialState = Storage.Instance.get({ name: STORE_KEY }) || {};
 }

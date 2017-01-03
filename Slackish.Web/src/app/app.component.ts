@@ -13,14 +13,14 @@ export class AppComponent extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `<style>${styles}</style> ${template}`;
         this._bind();
-        this._addEventListeners();
+        this._setEventListeners();
     }
 
     private async _bind() {
 
     }
 
-    private _addEventListeners() {
+    private _setEventListeners() {
 
     }
 
