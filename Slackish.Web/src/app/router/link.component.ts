@@ -1,7 +1,10 @@
 import { Router } from "./router";
+import { IocContainer } from "../ioc-container";
 
 export class LinkComponent extends HTMLElement {
-    constructor(private _router: Router = Router.Instance) {
+    constructor(
+        private _router: Router = IocContainer.resolve(Router)
+    ) {
         super();
     }
 

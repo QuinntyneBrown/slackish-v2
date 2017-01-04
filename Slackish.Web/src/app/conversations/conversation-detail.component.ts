@@ -1,3 +1,5 @@
+import { Conversation } from "./conversation.model";
+
 const template = require("./conversation-detail.component.html");
 const styles = require("./conversation-detail.component.scss");
 
@@ -7,7 +9,9 @@ export class ConversationDetailComponent extends HTMLElement {
     }
 
     static get observedAttributes () {
-        return [];
+        return [
+            "conversation"
+        ];
     }
 
     connectedCallback() {
@@ -30,10 +34,13 @@ export class ConversationDetailComponent extends HTMLElement {
 
     attributeChangedCallback (name, oldValue, newValue) {
         switch (name) {
-            default:
+            case "conversation":
+                this.conversation = JSON.parse(newValue);
                 break;
         }
     }
+
+    public conversation: Conversation;
 }
 
 customElements.define(`ce-conversation-detail`,ConversationDetailComponent);

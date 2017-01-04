@@ -1,6 +1,5 @@
 ﻿import { RouterMiddleware, Router } from "../router";
 import { createElement, Storage, TOKEN_KEY, Log } from "../utilities";
-import { environment } from "../environment";
 import { LoginRedirect } from "./login-redirect";
 import { ProfileService } from "./profile.service";
 import { CurrentProfile } from "./current-profile";

@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using System.Web.Http;
 
-namespace Slackish.Featrues.Messages
+namespace Slackish.Features.Messages
 {
     [RoutePrefix("api/message")]
     public class MessageController: ApiController

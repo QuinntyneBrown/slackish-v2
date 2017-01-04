@@ -1,12 +1,12 @@
 using Slackish.Configuration;
-using Slackish.Services;
+using Slackish.Utilities;
 using System;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
 using System.Web;
 
-namespace Slackish.Services
+namespace Slackish.Utilities
 {
     public class EncryptionService : IEncryptionService
     {

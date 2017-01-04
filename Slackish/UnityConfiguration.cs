@@ -1,6 +1,6 @@
 using Slackish.Configuration;
 using Slackish.Data;
-using Slackish.Services;
+using Slackish.Utilities;
 using Slackish.Utilities;
 using Microsoft.Practices.Unity;
 using MediatR;

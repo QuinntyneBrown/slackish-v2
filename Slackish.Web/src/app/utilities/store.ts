@@ -10,10 +10,16 @@ export interface Action {
     payload?: any;
 }
 
+var $: any;
+
 @Injectable()
 export class Store {
     constructor(private _storage: Storage) {
         this._state = _storage.get({ name: STORE_KEY }) || {};
+
+        const connection = ($ as any).hubConnection();
+        this._messageHub = connection.createHubProxy("messageHub");
+        connection.start();
     }
 
     public dispatch(action: Action) {
@@ -40,4 +46,5 @@ export class Store {
     public middlewares = [];
     private _state;
     public reducers = [];
+    public _messageHub;
 }

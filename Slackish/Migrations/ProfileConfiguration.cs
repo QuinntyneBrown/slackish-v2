@@ -1,6 +1,6 @@
 using System.Data.Entity.Migrations;
 using Slackish.Data;
-using Slackish.Services;
+using Slackish.Utilities;
 
 namespace Slackish.Migrations
 {

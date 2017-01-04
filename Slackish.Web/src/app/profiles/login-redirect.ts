@@ -1,16 +1,10 @@
 ﻿import { Router } from "../router";
+import { IocContainer } from "../ioc-container";
 
 export class LoginRedirect {
 
-    constructor(private _router: Router = Router.Instance) { }
-
-    private static _instance;
-
-    public static get Instance() {
-        this._instance = this._instance || new LoginRedirect();
-        return this._instance;
-    }
-
+    constructor(private _router: Router = IocContainer.resolve(Router)) { }
+    
     public loginUrl: string = "login";
 
     public lastPath: string;

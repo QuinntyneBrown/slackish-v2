@@ -1,22 +1,23 @@
 import { fetch } from "../utilities";
 import { Profile } from "./profile.model";
+import { Injectable } from "@angular/core";
 
+@Injectable()
 export class ProfileService {
     
-    public get() {
-        return fetch({ url: "/api/profile/get", authRequired: true });
+    public getCurrentProfile() {
+        return fetch({ url: "/api/profile/getcurrentprofile", authRequired: true });
     }
 
-    public getById(id) {
-        return fetch({ url: `/api/profile/getbyid?id=${id}`, authRequired: true });
+    public getOtherProfiles() {
+        return fetch({ url: "/api/profile/getotherprofiles", authRequired: true });
     }
 
-    public add(entity) {
-        return fetch({ url: `/api/profile/add`, method: "POST", data: entity, authRequired: true  });
+    public getProfileById(id) {
+        return fetch({ url: `/api/profile/getprofilebyid?id=${id}`, authRequired: true });
     }
 
-    public remove(options: { id : number }) {
-        return fetch({ url: `/api/profile/remove?id=${options.id}`, method: "DELETE", authRequired: true  });
-    }
-    
+    public tryToRegister(options: {registerRequest: any }) {
+        return fetch({ url: `/api/profile/add`, method: "POST", data: options.registerRequest, authRequired: true  });
+    }    
 }

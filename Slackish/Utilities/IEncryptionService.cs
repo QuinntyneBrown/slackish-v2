@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Slackish.Services
+namespace Slackish.Utilities
 {
     public interface IEncryptionService
     {

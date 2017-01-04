@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Slackish.Featrues.Profiles
+namespace Slackish.Features.Profiles
 {
     public class ProfileApiModel
     {

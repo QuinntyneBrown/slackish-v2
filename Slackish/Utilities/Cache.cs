@@ -1,7 +1,7 @@
 using System;
 using System.Threading.Tasks;
 
-namespace Slackish.Services
+namespace Slackish.Utilities
 {
     public abstract class Cache: ICache
     {

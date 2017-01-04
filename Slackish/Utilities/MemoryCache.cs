@@ -1,11 +1,11 @@
 using System;
 using System.Runtime.Caching;
 
-namespace Slackish.Services
+namespace Slackish.Utilities
 {
     public class MemoryCache : Cache
     {
-        private static volatile Slackish.Services.MemoryCache _current = null;
+        private static volatile Slackish.Utilities.MemoryCache _current = null;
         private static System.Runtime.Caching.MemoryCache _cache = System.Runtime.Caching.MemoryCache.Default;
         private static object _sync = new object();
 

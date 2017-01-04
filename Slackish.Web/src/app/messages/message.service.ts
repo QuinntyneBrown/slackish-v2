@@ -1,22 +1,14 @@
 import { fetch } from "../utilities";
 import { Message } from "./message.model";
+import { Injectable } from "@angular/core";
 
-export class MessageService {
-    
-    public get() {
-        return fetch({ url: "/api/message/get", authRequired: true });
+@Injectable()
+export class MessageService {        
+    public getByOtherProfile(options: { otherProfileId }) {
+        return fetch({ url: `/api/message/getbyid?id=${options.otherProfileId}`, authRequired: true });
     }
 
-    public getById(id) {
-        return fetch({ url: `/api/message/getbyid?id=${id}`, authRequired: true });
-    }
-
-    public add(entity) {
-        return fetch({ url: `/api/message/add`, method: "POST", data: entity, authRequired: true  });
-    }
-
-    public remove(options: { id : number }) {
-        return fetch({ url: `/api/message/remove?id=${options.id}`, method: "DELETE", authRequired: true  });
-    }
-    
+    public send(options: { content: string, otherProfileId:any }) {
+        return fetch({ url: `/api/message/add`, method: "POST", data: options, authRequired: true  });
+    }    
 }

@@ -1,6 +1,6 @@
 using Slackish.Data.Models;
 
-namespace Slackish.Featrues.Messages
+namespace Slackish.Features.Messages
 {
     public class MessageApiModel
     {

@@ -1,6 +1,6 @@
 ﻿using MediatR;
 using Slackish.Data;
-using Slackish.Services;
+using Slackish.Utilities;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Linq;

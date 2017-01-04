@@ -186,7 +186,7 @@
     <Compile Include="Features\Messages\MessageApiModel.cs" />
     <Compile Include="Features\Profiles\GetClaimsForUserQuery.cs" />
     <Compile Include="Features\Profiles\GetByOtherProfilesQuery.cs" />
-    <Compile Include="Features\Shared\IDistributedCache.cs" />
+    <Compile Include="Utilities\IDistributedCache.cs" />
     <Compile Include="Filters\WebApiUnityActionFilterProvider.cs" />
     <Compile Include="Authentication\JwtOptions.cs" />
     <Compile Include="Authentication\JwtWriterFormat.cs" />
@@ -211,11 +211,11 @@
     <Compile Include="Data\Models\Profile.cs" />
     <Compile Include="Data\Models\User.cs" />
     <Compile Include="Features\Messages\MessageQueries.cs" />
-    <Compile Include="Features\Shared\Cache.cs" />
-    <Compile Include="Features\Shared\EncryptionService.cs" />
-    <Compile Include="Features\Shared\ICache.cs" />
-    <Compile Include="Features\Shared\IEncryptionService.cs" />
-    <Compile Include="Features\Shared\MemoryCache.cs" />
+    <Compile Include="Utilities\Cache.cs" />
+    <Compile Include="Utilities\EncryptionService.cs" />
+    <Compile Include="Utilities\ICache.cs" />
+    <Compile Include="Utilities\IEncryptionService.cs" />
+    <Compile Include="Utilities\MemoryCache.cs" />
     <Compile Include="UnityConfiguration.cs" />
     <Compile Include="Utilities\ILogger.cs" />
     <Compile Include="Utilities\ILoggerFactory.cs" />

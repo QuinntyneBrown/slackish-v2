@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Threading.Tasks;
 using System.Linq;
-using Slackish.Services;
+using Slackish.Utilities;
 
-namespace Slackish.Featrues.Messages
+namespace Slackish.Features.Messages
 {
     public class MessagesQuery: IAsyncRequest<List<MessageApiModel>>
     {

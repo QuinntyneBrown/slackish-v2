@@ -1,6 +1,8 @@
 import { fetch } from "../utilities";
 import { Conversation } from "./conversation.model";
+import { Injectable } from "@angular/core";
 
+@Injectable()
 export class ConversationService {   
     public get() {
         return fetch({ url: "/api/conversation/get", authRequired: true });
