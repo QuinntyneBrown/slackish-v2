@@ -4,6 +4,8 @@ export * from "./login-redirect";
 export * from "./login.component";
 export * from "./profile-item.component";
 export * from "./profile-list.component";
+export * from "./profile.action-creator";
+export * from "./profile.actions";
 export * from "./profile.model";
 export * from "./profile.service";
 export * from "./register.component";

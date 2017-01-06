@@ -12,7 +12,7 @@ namespace Slackish
         public static IUnityContainer GetContainer()
         {
             var container = new UnityContainer();
-            container.RegisterType<DataContext>(new ContainerControlledLifetimeManager());
+            container.RegisterType<SlackishDbContext>(new ContainerControlledLifetimeManager());
             container.RegisterType<ILoggerFactory, LoggerFactory>();            
             container.RegisterType<IEncryptionService, EncryptionService>();
             container.RegisterType<ILogger, Logger>();

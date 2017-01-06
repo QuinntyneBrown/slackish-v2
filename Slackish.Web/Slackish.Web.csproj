@@ -7,8 +7,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>
-    </ProductVersion>
+    <ProductVersion></ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{937EF460-6D37-4999-BEE9-69A1B8872570}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
@@ -23,8 +22,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
+    <NuGetPackageImportStamp></NuGetPackageImportStamp>
     <TypeScriptToolsVersion>2.1</TypeScriptToolsVersion>
     <TypeScriptEmitDecoratorMetadata>true</TypeScriptEmitDecoratorMetadata>
     <TypeScriptModuleKind>commonjs</TypeScriptModuleKind>
@@ -76,6 +74,12 @@
     <Content Include="index.html" />
     <Content Include="packages.config" />
     <Content Include="package.json" />
+    <Content Include="src\app\conversations\about-conversation.component.html">
+      <DependentUpon>about-conversation.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\conversations\about-conversation.component.scss">
+      <DependentUpon>about-conversation.component.ts</DependentUpon>
+    </Content>
     <Content Include="src\app\conversations\conversation-detail.component.html">
       <DependentUpon>conversation-detail.component.ts</DependentUpon>
     </Content>
@@ -145,13 +149,19 @@
   <ItemGroup>
     <TypeScriptCompile Include="src\app\app-router-outlet.component.ts" />
     <TypeScriptCompile Include="src\app\conversations\conversation.action-creator.ts" />
+    <TypeScriptCompile Include="src\app\conversations\conversation.actions.ts" />
+    <TypeScriptCompile Include="src\app\conversations\conversation.reducers.ts" />
     <TypeScriptCompile Include="src\app\environment.ts" />
     <TypeScriptCompile Include="src\app\ioc-container.ts" />
     <TypeScriptCompile Include="src\app\messages\message.action-creator.ts" />
+    <TypeScriptCompile Include="src\app\messages\message.actions.ts" />
+    <TypeScriptCompile Include="src\app\messages\message.reducers.ts" />
     <TypeScriptCompile Include="src\app\profiles\authorized-route-middleware.ts" />
     <TypeScriptCompile Include="src\app\profiles\current-profile.ts" />
     <TypeScriptCompile Include="src\app\profiles\login-redirect.ts" />
     <TypeScriptCompile Include="src\app\profiles\profile.action-creator.ts" />
+    <TypeScriptCompile Include="src\app\profiles\profile.actions.ts" />
+    <TypeScriptCompile Include="src\app\profiles\profile.reducers.ts" />
     <TypeScriptCompile Include="src\app\token-registry.ts" />
     <TypeScriptCompile Include="src\app\utilities\storage-configuration.ts" />
     <TypeScriptCompile Include="src\custom-typings.d.ts" />
@@ -216,6 +226,7 @@
     <TypeScriptCompile Include="src\app\conversations\conversation-detail.component.ts" />
     <TypeScriptCompile Include="src\app\profiles\profile-list.component.ts" />
     <TypeScriptCompile Include="src\app\profiles\profile-item.component.ts" />
+    <TypeScriptCompile Include="src\app\conversations\about-conversation.component.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
@@ -242,8 +253,7 @@
           <IISUrl>http://localhost:50317/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl>
-          </CustomServerUrl>
+          <CustomServerUrl></CustomServerUrl>
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>

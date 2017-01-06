@@ -15,7 +15,7 @@ namespace Slackish.Features.Messages
 
     public class MessagesQueryHandler: IAsyncRequestHandler<MessagesQuery, List<MessageApiModel>>
     {
-        public MessagesQueryHandler(DataContext dataContext, ICache cache)
+        public MessagesQueryHandler(SlackishDbContext dataContext, ICache cache)
         {
             _cache = cache;
             _dataContext = dataContext;
@@ -28,7 +28,7 @@ namespace Slackish.Features.Messages
                 .ToListAsync();
         }
 
-        private DataContext _dataContext;
+        private SlackishDbContext _dataContext;
         private ICache _cache;
     }
 }

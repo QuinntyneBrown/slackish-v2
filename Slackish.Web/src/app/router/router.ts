@@ -1,6 +1,6 @@
 import { Storage, isNumeric, Log } from "../utilities";
 import { Route } from "./route";
-import { environment } from "../environment";
+import { Environment } from "../environment";
 
 export const routerKeys = {
     currentRoute: "[Router] current route"
@@ -10,7 +10,8 @@ export class Router {
     constructor(
         private _routes: Array<Route> = [],
         private _storage: Storage,
-        private _environment: { useUrlRouting: boolean } = environment
+        private _environment: Environment,
+        private _window: Window = window
     ) { }
 
 
@@ -107,7 +108,7 @@ export class Router {
     }
 
     public _addEventListeners() {
-        window.onpopstate = () => this._onChanged({ route: window.location.pathname });
+        this._window.onpopstate = () => this._onChanged({ route: window.location.pathname });
     }
 
     private get _initialRoute(): string { return this._environment.useUrlRouting ? window.location.pathname : this._storage.get({ name: routerKeys.currentRoute }) || "/"; }

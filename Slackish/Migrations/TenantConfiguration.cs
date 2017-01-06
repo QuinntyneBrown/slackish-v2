@@ -5,7 +5,7 @@ namespace Slackish.Migrations
 {
     public class TenantConfiguration
     {
-        public static void Seed(DataContext context) {
+        public static void Seed(SlackishDbContext context) {
 
             context.SaveChanges();
         }

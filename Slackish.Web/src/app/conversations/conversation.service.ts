@@ -8,6 +8,10 @@ export class ConversationService {
         return fetch({ url: "/api/conversation/get", authRequired: true });
     }
 
+    public getByCurrentProfile() {
+        return fetch({ url: "/api/conversation/getbycurrentprofile", authRequired: true });
+    }
+
     public getById(id) {
         return fetch({ url: `/api/conversation/getbyid?id=${id}`, authRequired: true });
     }

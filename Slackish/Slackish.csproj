@@ -200,7 +200,7 @@
     <Compile Include="Features\Conversations\ConversationController.cs" />
     <Compile Include="Features\Messages\MessageController.cs" />
     <Compile Include="Features\Profiles\ProfileController.cs" />
-    <Compile Include="Data\DataContext.cs" />
+    <Compile Include="Data\SlackishDbContext.cs" />
     <Compile Include="Filters\HandleError.cs" />
     <Compile Include="Features\Conversations\ConversationHub.cs" />
     <Compile Include="Features\Messages\MessageHub.cs" />

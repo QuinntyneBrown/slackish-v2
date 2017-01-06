@@ -1,9 +1,10 @@
-import { RouterOutlet } from "./router";
+import { IocContainer } from "./ioc-container";
+import { RouterOutlet, Router, Route } from "./router";
 import { AuthorizedRouteMiddleware } from "./profiles";
 
 export class AppRouterOutletComponent extends RouterOutlet {
-    constructor(el: HTMLElement) {
-        super(el);
+    constructor(el: HTMLElement, router:Router) {
+        super(el, router);
     }
 
     connectedCallback() { 
@@ -14,15 +15,14 @@ export class AppRouterOutletComponent extends RouterOutlet {
             { path: "/converation/:profileId", name: "conversation", authRequired: false },
             { path: "/converation", name: "conversation", authRequired: false },
             { path: "/error", name: "error" },
-            { path: "*", name: "not-found" }
-                        
-        ] as any);
+            { path: "*", name: "not-found" }                        
+        ] as Array<Route>);
 
-        this.use(new AuthorizedRouteMiddleware());
+        this.use(IocContainer.resolve(AuthorizedRouteMiddleware));
 
         super.connectedCallback();
     }
 
 }
 
-customElements.define(`ce-app-router-oulet`,AppRouterOutletComponent);
+customElements.define(`ce-app-router-oulet`, AppRouterOutletComponent);

@@ -3,9 +3,9 @@ using System.Data.Entity;
 
 namespace Slackish.Data
 {
-    public class DataContext: DbContext
+    public class SlackishDbContext: DbContext
     {
-        public DataContext()
+        public SlackishDbContext()
             : base(nameOrConnectionString: "SlackishDataContext")
         {
             Configuration.ProxyCreationEnabled = false;

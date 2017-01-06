@@ -33,7 +33,7 @@ namespace Slackish.Features.Conversations
         public class GetByCurrentProfileHandler : IAsyncRequestHandler<GetByCurrentProfileRequest, GetByCurrentProfileResponse>
         {
 
-            public GetByCurrentProfileHandler(DataContext dataContext, ICache cache)
+            public GetByCurrentProfileHandler(SlackishDbContext dataContext, ICache cache)
             {
                 _dataContext = dataContext;
                 _cache = cache;
@@ -53,7 +53,7 @@ namespace Slackish.Features.Conversations
                     .ToList());
             }
 
-            private readonly DataContext _dataContext;
+            private readonly SlackishDbContext _dataContext;
             private readonly ICache _cache;
         }
 
