@@ -7,7 +7,8 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion></ProductVersion>
+    <ProductVersion>
+    </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{937EF460-6D37-4999-BEE9-69A1B8872570}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
@@ -22,7 +23,8 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
-    <NuGetPackageImportStamp></NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
     <TypeScriptToolsVersion>2.1</TypeScriptToolsVersion>
     <TypeScriptEmitDecoratorMetadata>true</TypeScriptEmitDecoratorMetadata>
     <TypeScriptModuleKind>commonjs</TypeScriptModuleKind>
@@ -104,18 +106,6 @@
     <Content Include="src\app\profiles\login.component.scss">
       <DependentUpon>login.component.ts</DependentUpon>
     </Content>
-    <Content Include="src\app\profiles\profile-item.component.html">
-      <DependentUpon>profile-item.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\app\profiles\profile-item.component.scss">
-      <DependentUpon>profile-item.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\app\profiles\profile-list.component.html">
-      <DependentUpon>profile-list.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\app\profiles\profile-list.component.scss">
-      <DependentUpon>profile-list.component.ts</DependentUpon>
-    </Content>
     <Content Include="src\app\profiles\register.component.html">
       <DependentUpon>register.component.ts</DependentUpon>
     </Content>
@@ -124,6 +114,12 @@
     </Content>
     <Content Include="tsconfig.json" />
     <Content Include="webpack.config.js" />
+    <Content Include="src\styles\_base.scss" />
+    <Content Include="src\styles\base\entity-item.scss" />
+    <Content Include="src\styles\base\entity-list.scss" />
+    <Content Include="src\styles\base\select.scss" />
+    <Content Include="src\styles\base\view-card.scss" />
+    <Content Include="src\styles\base\_index.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -162,6 +158,7 @@
     <TypeScriptCompile Include="src\app\profiles\profile.action-creator.ts" />
     <TypeScriptCompile Include="src\app\profiles\profile.actions.ts" />
     <TypeScriptCompile Include="src\app\profiles\profile.reducers.ts" />
+    <TypeScriptCompile Include="src\app\set-reducers.ts" />
     <TypeScriptCompile Include="src\app\token-registry.ts" />
     <TypeScriptCompile Include="src\app\utilities\storage-configuration.ts" />
     <TypeScriptCompile Include="src\custom-typings.d.ts" />
@@ -200,7 +197,6 @@
     <TypeScriptCompile Include="src\app\utilities\set-opacity-async.ts" />
     <TypeScriptCompile Include="src\app\utilities\space.ts" />
     <TypeScriptCompile Include="src\app\utilities\storage.ts" />
-    <TypeScriptCompile Include="src\app\utilities\store.specs.ts" />
     <TypeScriptCompile Include="src\app\utilities\store.ts" />
     <TypeScriptCompile Include="src\app\utilities\target-value.ts" />
     <TypeScriptCompile Include="src\app\utilities\template.ts" />
@@ -224,9 +220,9 @@
     <TypeScriptCompile Include="src\app\conversations\conversation.component.ts" />
     <TypeScriptCompile Include="src\app\conversations\conversation-list.component.ts" />
     <TypeScriptCompile Include="src\app\conversations\conversation-detail.component.ts" />
-    <TypeScriptCompile Include="src\app\profiles\profile-list.component.ts" />
-    <TypeScriptCompile Include="src\app\profiles\profile-item.component.ts" />
     <TypeScriptCompile Include="src\app\conversations\about-conversation.component.ts" />
+    <TypeScriptCompile Include="src\app\index.ts" />
+    <TypeScriptCompile Include="src\app\shared\index.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
@@ -253,7 +249,8 @@
           <IISUrl>http://localhost:50317/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl></CustomServerUrl>
+          <CustomServerUrl>
+          </CustomServerUrl>
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>

@@ -12,7 +12,7 @@ export class AuthorizedRouteMiddleware extends RouterMiddleware {
         private _router: Router,
         private _loginRedirect: LoginRedirect,
         private _storage: Storage,
-        private _profileService,
+        private _profileService: ProfileService,
         private _currentProfile: CurrentProfile
     ) {
         super();

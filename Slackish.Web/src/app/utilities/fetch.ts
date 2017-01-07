@@ -1,6 +1,7 @@
 ﻿import { Storage } from "./storage";
 import { STORAGE_KEY, TOKEN_KEY } from "./constants";
 import { Http } from "./http";
+import { IocContainer } from "../ioc-container";
 
 export var fetch = (options: { url: string, method?: string, data?: any, headers?: any, authRequired?: boolean, isObjectData?: boolean }) => {
     return new Promise(resolve => {
@@ -10,7 +11,7 @@ export var fetch = (options: { url: string, method?: string, data?: any, headers
         options.headers = options.headers || { "Content-Type": "application/json;charset=UTF-8" };
 
         if (options.authRequired)
-            options.headers["Authorization"] = `Bearer ${Storage.Instance.get({ name: TOKEN_KEY })}`;
+            options.headers["Authorization"] = `Bearer ${IocContainer.resolve(Storage).get({ name: TOKEN_KEY })}`;
 
 
         for (var prop in options.headers) {

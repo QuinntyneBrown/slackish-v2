@@ -1,9 +1,9 @@
 ﻿declare interface ActivatedRoute {
     name: string;
-    params: any;
-    authRequired: boolean;
+    params?: any;
+    authRequired?: boolean;
     path: string;
-    segments: Array<any>;
+    segments?: Array<any>;
     routeParams: any;
 }
 

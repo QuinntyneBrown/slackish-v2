@@ -18,7 +18,7 @@ export class AppRouterOutletComponent extends RouterOutlet {
             { path: "*", name: "not-found" }                        
         ] as Array<Route>);
 
-        this.use(IocContainer.resolve(AuthorizedRouteMiddleware));
+        //this.use(IocContainer.resolve(AuthorizedRouteMiddleware));
 
         super.connectedCallback();
     }

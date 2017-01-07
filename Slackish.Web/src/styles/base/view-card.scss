@@ -1,0 +1,27 @@
+﻿.view-card {    
+    -webkit-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.15);
+    -moz-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.15);
+    box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.15);
+    display:block;
+    padding:20px 20px 60px 20px;
+    background-color:#FFF;
+    max-width: calc(100% - 40px);    
+
+    select {
+        width:400px;
+        line-height:2em;
+        font-size:1.25em;
+        padding: 10px 14px;
+        display:block;
+        margin-bottom:30px;
+    }
+
+    input {
+        display:block;
+        margin-bottom:20px;
+        font-size:1.25em;
+        line-height:1.5em;
+        width:400px;
+    }
+}
+

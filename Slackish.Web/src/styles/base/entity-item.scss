@@ -1,0 +1,25 @@
+﻿.entity-item {
+    	display:block;
+
+    a {
+        cursor:pointer;
+        color:#777;
+        display:inline-block;
+        text-transform:uppercase;
+    }
+
+    a:hover {
+        color:#000;
+        text-decoration:underline;
+    }
+
+    p {
+        min-width:300px;
+        display:inline-block;
+        color:#000;
+        font-size:1.5em;
+    } 
+
+    color:#777;
+    font-size:.65em;
+}

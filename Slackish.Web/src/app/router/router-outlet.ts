@@ -1,7 +1,7 @@
 ﻿import { RouterMiddleware } from "./router-middleware";
 import { Router } from "./router";
 import { Route } from "./route";
-import { isArray, camelCaseToSnakeCase, Log } from "../utilities";
+import { isArray, camelCaseToSnakeCase } from "../utilities";
 import { RouteReloadMiddleware } from "./route-reload-middleware";
 
 export abstract class RouterOutlet {
@@ -20,7 +20,6 @@ export abstract class RouterOutlet {
 
     private _middleware: Array<RouterMiddleware> = [];
 
-    @Log()
     public _onRouteChanged(options: any) { 
         
         let nextView: HTMLElement = null;

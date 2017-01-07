@@ -1,19 +1,20 @@
 import { Storage, isNumeric, Log } from "../utilities";
 import { Route } from "./route";
 import { Environment } from "../environment";
+import { IocContainer } from "../ioc-container";
+import { Injectable } from "@angular/core";
 
 export const routerKeys = {
     currentRoute: "[Router] current route"
 }
 
+@Injectable()
 export class Router {
     constructor(
-        private _routes: Array<Route> = [],
-        private _storage: Storage,
-        private _environment: Environment,
-        private _window: Window = window
     ) { }
 
+    private _storage: Storage;
+    private _environment: Environment;
 
     public get activatedRoute(): ActivatedRoute {
         return Object.assign(this._routes.find(r => r.name === this._routeName), { routeParams: this._routeParams });
@@ -108,7 +109,7 @@ export class Router {
     }
 
     public _addEventListeners() {
-        this._window.onpopstate = () => this._onChanged({ route: window.location.pathname });
+        window.onpopstate = () => this._onChanged({ route: window.location.pathname });
     }
 
     private get _initialRoute(): string { return this._environment.useUrlRouting ? window.location.pathname : this._storage.get({ name: routerKeys.currentRoute }) || "/"; }
@@ -117,6 +118,5 @@ export class Router {
     private _routePath: string;
     private _routeParams;
     private _callbacks: Array<any> = [];
-    private static _instance;
+    private _routes: Array<Route> = [];
 }
-
