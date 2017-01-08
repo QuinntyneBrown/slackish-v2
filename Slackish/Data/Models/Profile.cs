@@ -6,7 +6,7 @@ namespace Slackish.Data.Models
     public class Profile
     {
         public int Id { get; set; }
-        [ForeignKey("Profile")]
+        [ForeignKey("User")]
         public int? UserId { get; set; }
         public string Name { get; set; }
         public User User { get; set; }
