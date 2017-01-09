@@ -11,6 +11,7 @@ using Slackish.Configuration;
 using Slackish.Authentication;
 using Slackish.Filters;
 using MediatR;
+using static Slackish.Filters.WebApiUnityActionFilterProvider;
 
 namespace Slackish
 {
@@ -18,7 +19,7 @@ namespace Slackish
     {
         public static void Install(HttpConfiguration config, IAppBuilder app)
         {
-            WebApiUnityActionFilterProvider.RegisterFilterProviders(config);
+            RegisterFilterProviders(config);
             var container = UnityConfiguration.GetContainer();
             app.MapSignalR();
 
@@ -28,8 +29,8 @@ namespace Slackish
 
             config.SuppressHostPrincipal();
 
-            IMediator mediator = container.Resolve<IMediator>();
-            Lazy<IAuthConfiguration> lazyAuthConfiguration = container.Resolve<Lazy<IAuthConfiguration>>();
+            var mediator = container.Resolve<IMediator>();
+            var lazyAuthConfiguration = container.Resolve<Lazy<IAuthConfiguration>>();
 
             config
                 .EnableSwagger(c => c.SingleApiVersion("v1", "Slackish"))
