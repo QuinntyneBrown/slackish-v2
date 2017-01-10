@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using System.Threading.Tasks;
 using System.Web.Http;
 
 namespace Slackish.Features.Messages
@@ -13,9 +14,9 @@ namespace Slackish.Features.Messages
 
         [HttpPost]
         [Route("send")]
-        public IHttpActionResult Send()
+        public async Task<IHttpActionResult> Send(SendMessageCommand.SendMessageRequest request)
         {
-            return Ok();
+            return Ok(await _mediator.SendAsync(request));
         }
 
         private IMediator _mediator;
