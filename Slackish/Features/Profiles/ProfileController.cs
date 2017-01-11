@@ -15,7 +15,7 @@ namespace Slackish.Features.Profiles
         [HttpGet]
         [Route("getByOtherProfileId")]
         public async Task<IHttpActionResult> GetByOtherProfileId(int otherProfileId)
-            => Ok(await _mediator.SendAsync(new GetByOtherProfilesQuery
+            => Ok(await _mediator.SendAsync(new GetOtherProfilesQuery
                 .GetOtherProfilesRequest() { OtherProfileId = otherProfileId }));
         
         protected readonly IMediator _mediator;

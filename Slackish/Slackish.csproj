@@ -185,7 +185,7 @@
     <Compile Include="Features\Conversations\GetByCurrentProfileQuery.cs" />
     <Compile Include="Features\Messages\MessageApiModel.cs" />
     <Compile Include="Features\Profiles\GetClaimsForUserQuery.cs" />
-    <Compile Include="Features\Profiles\GetByOtherProfilesQuery.cs" />
+    <Compile Include="Features\Profiles\GetOtherProfiles.cs" />
     <Compile Include="Utilities\IDistributedCache.cs" />
     <Compile Include="Filters\WebApiUnityActionFilterProvider.cs" />
     <Compile Include="Authentication\JwtOptions.cs" />
