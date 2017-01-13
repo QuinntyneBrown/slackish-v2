@@ -2,14 +2,28 @@
 using System.Threading.Tasks;
 using MediatR;
 using Slackish.Authentication;
+using Slackish.Data;
+using Slackish.Utilities;
 
 namespace Slackish.Features.Profiles
 {    
-    public class AuthenticateCommand : IAsyncRequestHandler<AuthenticateRequest, AuthenticateResponse>
+    public class AuthenticateCommand 
     {
-        public Task<AuthenticateResponse> Handle(AuthenticateRequest message)
+        public class AuthenticateCommandHandler : IAsyncRequestHandler<AuthenticateRequest, AuthenticateResponse>
         {
-            throw new NotImplementedException();
+            public AuthenticateCommandHandler(SlackishDbContext slackishDbContext, ICache cache)
+            {
+                _slackishDbContext = slackishDbContext;
+                _cache = cache;
+            }
+
+            public Task<AuthenticateResponse> Handle(AuthenticateRequest message)
+            {
+                throw new NotImplementedException();
+            }
+
+            protected SlackishDbContext _slackishDbContext { get; set; }
+            protected ICache _cache { get; set; }
         }
     }
 }
