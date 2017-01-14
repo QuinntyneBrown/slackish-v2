@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using System.Web.Http;
 
 namespace Slackish.Features.Profiles
-{
+{    
     [RoutePrefix("api/profile")]
     public class ProfileController: ApiController
     {

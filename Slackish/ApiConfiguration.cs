@@ -24,6 +24,7 @@ namespace Slackish
             app.MapSignalR();
 
             config.Filters.Add(container.Resolve<HandleErrorAttribute>());
+            config.Filters.Add(container.Resolve<AuthorizeAttribute>());
 
             app.UseCors(CorsOptions.AllowAll);
 

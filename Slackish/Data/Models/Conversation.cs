@@ -11,5 +11,6 @@ namespace Slackish.Data.Models
         public Tenant Tenant { get; set; }
         public ICollection<Profile> Profiles { get; set; } = new HashSet<Profile>();
         public ICollection<Message> Messages { get; set; } = new HashSet<Message>();
+        public bool IsDeleted { get; set; }
     }
 }

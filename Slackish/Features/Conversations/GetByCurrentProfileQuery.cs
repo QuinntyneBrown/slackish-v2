@@ -41,12 +41,12 @@ namespace Slackish.Features.Conversations
 
             public async Task<GetByCurrentProfileResponse> Handle(GetByCurrentProfileRequest request)
             {
-                var results = await _dataContext.Conversations
+                var results = await _cache.FromCacheOrServiceAsync(() => _dataContext.Conversations
                     .Include(x => x.Profiles)
                     .Include(x => x.Messages)
                     .Include("Profiles.User")
-                    .Where(x => x.Profiles.Any(p => p.User.Username == request.Username))
-                    .ToListAsync();
+                    .Where(x => x.Profiles.Any(p => p.User.Username == request.Username)  && x.IsDeleted == false)                    
+                    .ToListAsync(),"[Conversation] GetByCurrentProfile");
 
                 return new GetByCurrentProfileResponse(results
                     .Select(x => ConversationApiModel.FromConversation(x))

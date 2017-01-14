@@ -14,13 +14,11 @@ namespace Slackish.Features.Conversations
         {
             _mediator = mediator;
         }
-        
+
         [HttpGet]
         [ResponseType(typeof(List<ConversationApiModel>))]
         public async Task<IHttpActionResult> GetByCurrentProfile()
-        {
-            return Ok(await _mediator.SendAsync(new GetByCurrentProfileQuery.GetByCurrentProfileRequest(User.Identity.Name)));
-        }
+            => Ok(await _mediator.SendAsync(new GetByCurrentProfileQuery.GetByCurrentProfileRequest(User.Identity.Name)));
         
         private IMediator _mediator;
     }
