@@ -17,7 +17,8 @@ namespace Slackish.Data
         public DbSet<Conversation> Conversations { get; set; }
         public DbSet<Profile> Profiles { get; set; }
         public DbSet<Tenant> Tenants { get; set; }
-        
+        public DbSet <User> Users { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
 
