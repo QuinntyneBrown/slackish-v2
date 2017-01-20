@@ -8,3 +8,4 @@ export * from "./profile.model";
 export * from "./profile.reducers";
 export * from "./profile.service";
 export * from "./register.component";
+export * from "./user.model";

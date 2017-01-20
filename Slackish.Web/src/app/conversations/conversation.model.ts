@@ -7,3 +7,4 @@ export class Conversation {
     public profiles: Array<Profile> = [];
     public messages: Array<Message> = [];
 }
+ 
