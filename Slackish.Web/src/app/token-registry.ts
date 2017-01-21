@@ -11,8 +11,8 @@ export class TokenRegistry {
         return [
             //AuthorizedRouteMiddleware,
             Environment,
-            Storage,
             StorageConfiguration,
+            Storage,            
             ConversationService,
             CurrentProfile,
             MessageService,
