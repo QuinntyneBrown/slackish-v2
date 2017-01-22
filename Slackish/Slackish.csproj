@@ -198,8 +198,8 @@
     <Compile Include="Features\Profiles\AuthenticateCommand.cs" />
     <Compile Include="Features\Messages\SendMessageCommand.cs" />
     <Compile Include="Features\Profiles\RegisterCommand.cs" />
-    <Compile Include="Configuration\AuthConfiguration.cs" />
-    <Compile Include="Configuration\IAuthConfiguration.cs" />
+    <Compile Include="Authentication\AuthConfiguration.cs" />
+    <Compile Include="Authentication\IAuthConfiguration.cs" />
     <Compile Include="Features\Conversations\ConversationController.cs" />
     <Compile Include="Features\Messages\MessageController.cs" />
     <Compile Include="Features\Profiles\ProfileController.cs" />

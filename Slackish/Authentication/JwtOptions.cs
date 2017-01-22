@@ -1,6 +1,6 @@
 using Microsoft.Owin.Security.Jwt;
 using System;
-using Slackish.Configuration;
+using Slackish.Authentication;
 
 namespace Slackish.Authentication
 {

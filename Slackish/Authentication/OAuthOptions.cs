@@ -1,4 +1,4 @@
-using Slackish.Configuration;
+using Slackish.Authentication;
 using Slackish.Utilities;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.OAuth;

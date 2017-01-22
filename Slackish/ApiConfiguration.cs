@@ -7,7 +7,7 @@ using Microsoft.Owin.Security.OAuth;
 using Swashbuckle.Application;
 using Microsoft.Owin.Cors;
 using System;
-using Slackish.Configuration;
+using Slackish.Authentication;
 using Slackish.Authentication;
 using Slackish.Filters;
 using MediatR;

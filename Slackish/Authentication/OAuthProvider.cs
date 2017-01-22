@@ -2,7 +2,7 @@ using Microsoft.Owin.Security.OAuth;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using System;
-using Slackish.Configuration;
+using Slackish.Authentication;
 using MediatR;
 
 namespace Slackish.Authentication

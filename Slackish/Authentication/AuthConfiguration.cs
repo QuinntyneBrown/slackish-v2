@@ -1,7 +1,7 @@
 using System;
 using System.Configuration;
 
-namespace Slackish.Configuration
+namespace Slackish.Authentication
 {
     public class AuthConfiguration : ConfigurationSection, IAuthConfiguration
     {

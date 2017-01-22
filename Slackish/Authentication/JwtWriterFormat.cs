@@ -2,7 +2,7 @@ using System.IdentityModel.Tokens;
 using Microsoft.Owin.Security;
 using System;
 using Microsoft.Owin.Security.OAuth;
-using Slackish.Configuration;
+using Slackish.Authentication;
 
 namespace Slackish.Authentication
 {

@@ -1,4 +1,4 @@
-using Slackish.Configuration;
+using Slackish.Authentication;
 using Slackish.Data;
 using Slackish.Utilities;
 using Slackish.Utilities;

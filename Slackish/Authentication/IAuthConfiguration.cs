@@ -1,4 +1,4 @@
-namespace Slackish.Configuration
+namespace Slackish.Authentication
 {
     public interface IAuthConfiguration
     {
