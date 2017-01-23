@@ -9,10 +9,16 @@ import "./rxjs-extensions";
 
 import { AppComponent } from './app.component';
 
+import {
+    RoutingModule,
+    routedComponents
+} from "./routing";
 
 const declarables = [
-    AppComponent
+    AppComponent,
+    routedComponents
 ];
+
 
 const providers = [
 
@@ -20,6 +26,7 @@ const providers = [
 
 @NgModule({
     imports: [
+        RoutingModule,
         BrowserModule,
         HttpModule,
         CommonModule,

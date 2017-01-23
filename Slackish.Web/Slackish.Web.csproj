@@ -80,8 +80,34 @@
     <Content Include="src\app\app.component.scss">
       <DependentUpon>app.component.ts</DependentUpon>
     </Content>
+    <Content Include="src\app\landing\landing-page.component.html">
+      <DependentUpon>landing-page.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\landing\landing-page.component.scss">
+      <DependentUpon>landing-page.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\messages\messages-page.component.html">
+      <DependentUpon>messages-page.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\messages\messages-page.component.scss">
+      <DependentUpon>messages-page.component.ts</DependentUpon>
+    </Content>
+    <None Include="src\styles\_variables.scss" />
+    <Content Include="src\app\profiles\login-page.component.html">
+      <DependentUpon>login-page.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\profiles\login-page.component.scss">
+      <DependentUpon>login-page.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\profiles\register-page.component.html">
+      <DependentUpon>register-page.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\profiles\register-page.component.scss">
+      <DependentUpon>register-page.component.ts</DependentUpon>
+    </Content>
     <Content Include="tsconfig.json" />
     <Content Include="webpack.config.js" />
+    <Content Include="src\styles\_breakpoints.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -94,6 +120,8 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="src\app\environment.ts" />
+    <TypeScriptCompile Include="src\app\routing\index.ts" />
+    <TypeScriptCompile Include="src\app\routing\routing.module.ts" />
     <TypeScriptCompile Include="src\app\rxjs-extensions.ts" />
     <TypeScriptCompile Include="src\main.ts" />
     <TypeScriptCompile Include="src\polyfills.ts" />
@@ -106,16 +134,19 @@
     <TypeScriptCompile Include="src\app\profiles\index.ts" />
     <TypeScriptCompile Include="src\app\messages\index.ts" />
     <TypeScriptCompile Include="src\app\shared\index.ts" />
+    <TypeScriptCompile Include="src\app\landing\index.ts" />
+    <TypeScriptCompile Include="src\app\landing\landing-page.component.ts" />
+    <TypeScriptCompile Include="src\app\messages\messages-page.component.ts" />
+    <TypeScriptCompile Include="src\app\profiles\register-page.component.ts" />
+    <TypeScriptCompile Include="src\app\profiles\login-page.component.ts" />
+    <TypeScriptCompile Include="src\app\profiles\profile.service.ts" />
+    <TypeScriptCompile Include="src\app\profiles\profile.model.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
-    <Folder Include="src\app\converstations\" />
-    <Folder Include="src\app\messages\" />
-    <Folder Include="src\app\profiles\" />
-    <Folder Include="src\app\shared\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
