@@ -74,160 +74,48 @@
     <Content Include="index.html" />
     <Content Include="packages.config" />
     <Content Include="package.json" />
-    <Content Include="src\app\conversations\about-conversation.component.html">
-      <DependentUpon>about-conversation.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\app\conversations\about-conversation.component.scss">
-      <DependentUpon>about-conversation.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\app\conversations\conversation-detail.component.html">
-      <DependentUpon>conversation-detail.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\app\conversations\conversation-detail.component.scss">
-      <DependentUpon>conversation-detail.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\app\conversations\conversation-list.component.html">
-      <DependentUpon>conversation-list.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\app\conversations\conversation-list.component.scss">
-      <DependentUpon>conversation-list.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\app\conversations\conversation.component.html">
-      <DependentUpon>conversation.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\app\conversations\conversation.component.scss">
-      <DependentUpon>conversation.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\app\profiles\login.component.html">
-      <DependentUpon>login.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\app\profiles\login.component.scss">
-      <DependentUpon>login.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\app\profiles\register.component.html">
-      <DependentUpon>register.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\app\profiles\register.component.scss">
-      <DependentUpon>register.component.ts</DependentUpon>
-    </Content>
-    <Content Include="tsconfig.json" />
-    <Content Include="webpack.config.js" />
-    <Content Include="src\styles\_base.scss" />
-    <Content Include="src\styles\base\entity-item.scss" />
-    <Content Include="src\styles\base\entity-list.scss" />
-    <Content Include="src\styles\base\select.scss" />
-    <Content Include="src\styles\base\view-card.scss" />
-    <Content Include="src\styles\base\_index.scss" />
-    <None Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
     <Content Include="src\app\app.component.html">
       <DependentUpon>app.component.ts</DependentUpon>
     </Content>
     <Content Include="src\app\app.component.scss">
       <DependentUpon>app.component.ts</DependentUpon>
     </Content>
-    <Content Include="src\app\shared\header.component.html">
-      <DependentUpon>header.component.ts</DependentUpon>
-    </Content>
+    <Content Include="tsconfig.json" />
+    <Content Include="webpack.config.js" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="src\app\shared\header.component.scss">
-      <DependentUpon>header.component.ts</DependentUpon>
-    </Content>
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="src\app\app-router-outlet.component.ts" />
-    <TypeScriptCompile Include="src\app\conversations\conversation.action-creator.ts" />
-    <TypeScriptCompile Include="src\app\conversations\conversation.actions.ts" />
-    <TypeScriptCompile Include="src\app\conversations\conversation.reducers.ts" />
     <TypeScriptCompile Include="src\app\environment.ts" />
-    <TypeScriptCompile Include="src\app\ioc-container.ts" />
-    <TypeScriptCompile Include="src\app\messages\message.action-creator.ts" />
-    <TypeScriptCompile Include="src\app\messages\message.actions.ts" />
-    <TypeScriptCompile Include="src\app\messages\message.reducers.ts" />
-    <TypeScriptCompile Include="src\app\profiles\authorized-route-middleware.ts" />
-    <TypeScriptCompile Include="src\app\profiles\current-profile.ts" />
-    <TypeScriptCompile Include="src\app\profiles\login-redirect.ts" />
-    <TypeScriptCompile Include="src\app\profiles\profile.action-creator.ts" />
-    <TypeScriptCompile Include="src\app\profiles\profile.actions.ts" />
-    <TypeScriptCompile Include="src\app\profiles\profile.reducers.ts" />
-    <TypeScriptCompile Include="src\app\set-reducers.ts" />
-    <TypeScriptCompile Include="src\app\token-registry.ts" />
-    <TypeScriptCompile Include="src\app\utilities\storage-configuration.ts" />
-    <TypeScriptCompile Include="src\custom-typings.d.ts" />
-    <TypeScriptCompile Include="src\app\router\index.ts" />
-    <TypeScriptCompile Include="src\app\router\link.component.ts" />
-    <TypeScriptCompile Include="src\app\router\route-reload-middleware.ts" />
-    <TypeScriptCompile Include="src\app\router\route.ts" />
-    <TypeScriptCompile Include="src\app\router\router-middleware.ts" />
-    <TypeScriptCompile Include="src\app\router\router-outlet.ts" />
-    <TypeScriptCompile Include="src\app\router\router.ts" />
-    <TypeScriptCompile Include="src\app\utilities\add-or-update.ts" />
-    <TypeScriptCompile Include="src\app\utilities\append-to-body-async.ts" />
-    <TypeScriptCompile Include="src\app\utilities\append-to-target-async.ts" />
-    <TypeScriptCompile Include="src\app\utilities\camel-case-to-snake-case.ts" />
-    <TypeScriptCompile Include="src\app\utilities\constants.ts" />
-    <TypeScriptCompile Include="src\app\utilities\create-element.ts" />
-    <TypeScriptCompile Include="src\app\utilities\debounce.ts" />
-    <TypeScriptCompile Include="src\app\utilities\extend-css-async.ts" />
-    <TypeScriptCompile Include="src\app\utilities\fetch.ts" />
-    <TypeScriptCompile Include="src\app\utilities\form-encode.ts" />
-    <TypeScriptCompile Include="src\app\utilities\guid.ts" />
-    <TypeScriptCompile Include="src\app\utilities\http.ts" />
-    <TypeScriptCompile Include="src\app\utilities\index.ts" />
-    <TypeScriptCompile Include="src\app\utilities\insert-after.ts" />
-    <TypeScriptCompile Include="src\app\utilities\is-array.ts" />
-    <TypeScriptCompile Include="src\app\utilities\is-numeric.ts" />
-    <TypeScriptCompile Include="src\app\utilities\load-style.ts" />
-    <TypeScriptCompile Include="src\app\utilities\log.ts" />
-    <TypeScriptCompile Include="src\app\utilities\logger.ts" />
-    <TypeScriptCompile Include="src\app\utilities\pluck-out.ts" />
-    <TypeScriptCompile Include="src\app\utilities\pluck.ts" />
-    <TypeScriptCompile Include="src\app\utilities\position.ts" />
-    <TypeScriptCompile Include="src\app\utilities\rectangle.ts" />
-    <TypeScriptCompile Include="src\app\utilities\remove-element.ts" />
-    <TypeScriptCompile Include="src\app\utilities\ruler.ts" />
-    <TypeScriptCompile Include="src\app\utilities\set-opacity-async.ts" />
-    <TypeScriptCompile Include="src\app\utilities\space.ts" />
-    <TypeScriptCompile Include="src\app\utilities\storage.ts" />
-    <TypeScriptCompile Include="src\app\utilities\store.ts" />
-    <TypeScriptCompile Include="src\app\utilities\target-value.ts" />
-    <TypeScriptCompile Include="src\app\utilities\template.ts" />
-    <TypeScriptCompile Include="src\app\utilities\translate-x.ts" />
-    <TypeScriptCompile Include="src\app\utilities\translate-xy.ts" />
-    <TypeScriptCompile Include="src\app\utilities\wait.ts" />
+    <TypeScriptCompile Include="src\app\rxjs-extensions.ts" />
     <TypeScriptCompile Include="src\main.ts" />
-    <TypeScriptCompile Include="src\app\conversations\index.ts" />
-    <TypeScriptCompile Include="src\app\conversations\conversation.model.ts" />
-    <TypeScriptCompile Include="src\app\messages\index.ts" />
-    <TypeScriptCompile Include="src\app\messages\message.model.ts" />
-    <TypeScriptCompile Include="src\app\profiles\index.ts" />
-    <TypeScriptCompile Include="src\app\profiles\profile.model.ts" />
-    <TypeScriptCompile Include="src\app\shared\header.component.ts" />
+    <TypeScriptCompile Include="src\polyfills.ts" />
+    <TypeScriptCompile Include="src\vendor.ts" />
+    <None Include="typings.json" />
     <TypeScriptCompile Include="src\app\app.component.ts" />
-    <TypeScriptCompile Include="src\app\conversations\conversation.service.ts" />
-    <TypeScriptCompile Include="src\app\messages\message.service.ts" />
-    <TypeScriptCompile Include="src\app\profiles\profile.service.ts" />
-    <TypeScriptCompile Include="src\app\profiles\register.component.ts" />
-    <TypeScriptCompile Include="src\app\profiles\login.component.ts" />
-    <TypeScriptCompile Include="src\app\conversations\conversation.component.ts" />
-    <TypeScriptCompile Include="src\app\conversations\conversation-list.component.ts" />
-    <TypeScriptCompile Include="src\app\conversations\conversation-detail.component.ts" />
-    <TypeScriptCompile Include="src\app\conversations\about-conversation.component.ts" />
+    <TypeScriptCompile Include="src\app\app.module.ts" />
     <TypeScriptCompile Include="src\app\index.ts" />
+    <TypeScriptCompile Include="src\app\converstations\index.ts" />
+    <TypeScriptCompile Include="src\app\profiles\index.ts" />
+    <TypeScriptCompile Include="src\app\messages\index.ts" />
     <TypeScriptCompile Include="src\app\shared\index.ts" />
-    <TypeScriptCompile Include="src\app\profiles\user.model.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
+    <Folder Include="src\app\converstations\" />
+    <Folder Include="src\app\messages\" />
+    <Folder Include="src\app\profiles\" />
+    <Folder Include="src\app\shared\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
