@@ -1,1 +1,0 @@
-﻿export const camelCaseToSnakeCase = (value) => value.replace(/\W+/g, '-').replace(/([a-z\d])([A-Z])/g, '$1-$2');

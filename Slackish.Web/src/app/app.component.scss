@@ -1,5 +1,29 @@
-@import "../styles/base/index";
+@import "../styles/breakpoints";
+@import "../styles/variables";
 
-ce-app {
-	display:block;
+body {
+    font-size: $font-x-small;
+    font-family:Montserrat;
+}
+
+h1 {
+    font-size:2em;
+}
+
+@media only screen and (min-width: $screen-sm-min) { 
+    body {
+        font-size: $font-small;
+    }
+}
+
+@media only screen and (min-width: $screen-md-min) { 
+    body {
+        font-size: $font-medium;
+    }
+}
+
+@media only screen and (min-width: $screen-lg-min) { 
+    body {
+        font-size: $font-large;
+    }
 }

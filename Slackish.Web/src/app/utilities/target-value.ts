@@ -1,1 +1,0 @@
-﻿export const targetValue = ($event: { target: { value: string } }) => $event.target.value;

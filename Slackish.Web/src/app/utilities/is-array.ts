@@ -1,1 +1,0 @@
-﻿export const isArray = (value) => value.constructor === Array;

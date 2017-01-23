@@ -1,23 +1,49 @@
-import { fetch } from "../utilities";
-import { Profile } from "./profile.model";
 import { Injectable } from "@angular/core";
+import { Http } from "@angular/http";
+import { Profile } from "./profile.model";
+import { Observable } from "rxjs";
+
 
 @Injectable()
 export class ProfileService {
-    
-    public getCurrentProfile() {
-        return fetch({ url: "/api/profile/getcurrentprofile", authRequired: true });
+    constructor(private _http: Http) { }
+
+    public add(entity: Profile) {
+        return this._http
+            .post(`${this._baseUrl}/api/profile/add`, entity)
+            .map(data => data.json())
+            .catch(err => {
+                return Observable.of(false);
+            });
     }
 
-    public getOtherProfiles() {
-        return fetch({ url: "/api/profile/getotherprofiles", authRequired: true });
+    public get() {
+        return this._http
+            .get(`${this._baseUrl}/api/profile/get`)
+            .map(data => data.json())
+            .catch(err => {
+                return Observable.of(false);
+            });
     }
 
-    public getProfileById(id) {
-        return fetch({ url: `/api/profile/getprofilebyid?id=${id}`, authRequired: true });
+    public getById(options: { id: number }) {
+        return this._http
+            .get(`${this._baseUrl}/api/profile/getById?id=${options.id}`)
+            .map(data => data.json())
+            .catch(err => {
+                return Observable.of(false);
+            });
     }
 
-    public tryToRegister(options: {registerRequest: any }) {
-        return fetch({ url: `/api/profile/add`, method: "POST", data: options.registerRequest, authRequired: true  });
-    }    
+    public remove(options: { id: number }) {
+        return this._http
+            .delete(`${this._baseUrl}/api/profile/remove?id=${options.id}`)
+            .map(data => data.json())
+            .catch(err => {
+                return Observable.of(false);
+            });
+    }
+
+    public get _baseUrl() { return ""; }
+
 }
