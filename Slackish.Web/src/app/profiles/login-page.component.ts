@@ -1,4 +1,5 @@
 import { Component, ChangeDetectionStrategy, Input } from "@angular/core";
+import { ProfileService } from "./profile.service";
 
 @Component({
     template: require("./login-page.component.html"),
@@ -8,6 +9,7 @@ import { Component, ChangeDetectionStrategy, Input } from "@angular/core";
 })
 export class LoginPageComponent {
     constructor(
+        private _profileService: ProfileService
     ) {
     }
 

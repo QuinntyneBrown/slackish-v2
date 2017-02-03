@@ -7,10 +7,12 @@ import { FormsModule } from '@angular/forms';
 
 import "./rxjs-extensions";
 
+import { SharedModule } from "./shared";
+
 import { AppComponent } from './app.component';
 
 import {
-    RoutingModule,
+    RoutingModule,    
     routedComponents
 } from "./routing";
 
@@ -27,6 +29,7 @@ const providers = [
 @NgModule({
     imports: [
         RoutingModule,
+        SharedModule,
         BrowserModule,
         HttpModule,
         CommonModule,

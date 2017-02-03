@@ -105,6 +105,12 @@
     <Content Include="src\app\profiles\register-page.component.scss">
       <DependentUpon>register-page.component.ts</DependentUpon>
     </Content>
+    <Content Include="src\app\shared\header.component.html">
+      <DependentUpon>header.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\shared\header.component.scss">
+      <DependentUpon>header.component.ts</DependentUpon>
+    </Content>
     <Content Include="tsconfig.json" />
     <Content Include="webpack.config.js" />
     <Content Include="src\styles\_breakpoints.scss" />
@@ -141,6 +147,12 @@
     <TypeScriptCompile Include="src\app\profiles\login-page.component.ts" />
     <TypeScriptCompile Include="src\app\profiles\profile.service.ts" />
     <TypeScriptCompile Include="src\app\profiles\profile.model.ts" />
+    <TypeScriptCompile Include="src\app\shared\header.component.ts" />
+    <TypeScriptCompile Include="src\app\shared\shared.module.ts" />
+    <TypeScriptCompile Include="src\app\converstations\conversation.model.ts" />
+    <TypeScriptCompile Include="src\app\messages\message.model.ts" />
+    <TypeScriptCompile Include="src\app\profiles\user.model.ts" />
+    <TypeScriptCompile Include="src\app\messages\message.service.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

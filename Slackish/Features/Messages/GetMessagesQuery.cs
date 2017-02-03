@@ -8,7 +8,7 @@ using Slackish.Utilities;
 
 namespace Slackish.Features.Messages
 {
-    public class GetMessagesQuery: IAsyncRequest<GetMessagesResponse>
+    public class GetMessagesQuery: IRequest<GetMessagesResponse>
     {
         public GetMessagesQuery() { }        
     }

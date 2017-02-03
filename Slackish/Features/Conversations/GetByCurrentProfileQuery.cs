@@ -10,7 +10,7 @@ namespace Slackish.Features.Conversations
 {
     public class GetByCurrentProfileQuery
     {
-        public class GetByCurrentProfileRequest : IAsyncRequest<GetByCurrentProfileResponse>
+        public class GetByCurrentProfileRequest : IRequest<GetByCurrentProfileResponse>
         {
             public GetByCurrentProfileRequest(string usernmae)
             {
@@ -40,7 +40,7 @@ namespace Slackish.Features.Conversations
             }
 
             public async Task<GetByCurrentProfileResponse> Handle(GetByCurrentProfileRequest request)
-            {
+            {                
                 var results = await _cache.FromCacheOrServiceAsync(() => _dataContext.Conversations
                     .Include(x => x.Profiles)
                     .Include(x => x.Messages)

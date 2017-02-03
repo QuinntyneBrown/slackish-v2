@@ -10,8 +10,6 @@ namespace Slackish.Features.Profiles
         public Task<GetClaimsForUserResponse> Handle(GetClaimsForUserRequest message)
         {
             throw new NotImplementedException();
-        }
-
-
+        }        
     }
 }

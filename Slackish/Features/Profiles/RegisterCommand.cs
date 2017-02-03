@@ -9,7 +9,7 @@ using Slackish.Utilities;
 
 namespace Slackish.Features.Profiles
 {
-    public class RegisterRequest: IAsyncRequest<RegisterResponse>
+    public class RegisterRequest: IRequest<RegisterResponse>
     {
         public string Username { get; set; }
         public string Password { get; set; }

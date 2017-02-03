@@ -15,13 +15,13 @@ namespace Slackish.Features.Profiles
         [HttpGet]
         [Route("getByOtherProfileId")]
         public async Task<IHttpActionResult> GetByOtherProfileId(int otherProfileId)
-            => Ok(await _mediator.SendAsync(new GetOtherProfilesQuery
+            => Ok(await _mediator.Send(new GetOtherProfilesQuery
                 .GetOtherProfilesRequest() { OtherProfileId = otherProfileId }));
 
         [HttpPost]
         [Route("register")]
         public async Task<IHttpActionResult> Register(RegisterRequest request)
-            => Ok(await _mediator.SendAsync(request));
+            => Ok(await _mediator.Send(request));
 
         protected readonly IMediator _mediator;
     }

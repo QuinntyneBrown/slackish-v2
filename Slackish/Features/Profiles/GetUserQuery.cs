@@ -10,7 +10,7 @@ namespace Slackish.Features.Profiles
     public class GetUserQuery
     {
         public class GetUserRequest :
-            IAsyncRequest<GetUserResponse>
+            IRequest<GetUserResponse>
         {
             public string Username { get; set; }
         }

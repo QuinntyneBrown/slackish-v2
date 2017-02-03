@@ -1,4 +1,5 @@
 import { Component, ChangeDetectionStrategy, Input, OnInit, ViewEncapsulation } from "@angular/core";
+import { Router } from "@angular/router";
 
 @Component({
     template: require("./app.component.html"),
@@ -7,4 +8,9 @@ import { Component, ChangeDetectionStrategy, Input, OnInit, ViewEncapsulation } 
     changeDetection: ChangeDetectionStrategy.OnPush,
     encapsulation: ViewEncapsulation.None
 })
-export class AppComponent { }
+export class AppComponent implements OnInit  {
+    constructor(private _router: Router) { }
+
+    ngOnInit() {
+    }
+}

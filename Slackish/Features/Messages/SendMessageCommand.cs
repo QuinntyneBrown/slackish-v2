@@ -10,7 +10,7 @@ namespace Slackish.Features.Messages
     public class SendMessageCommand
     {
 
-        public class SendMessageRequest: IAsyncRequest<SendMessageResponse>
+        public class SendMessageRequest: IRequest<SendMessageResponse>
         {
             public string Content { get; set; }
             public int OtherProfileId { get; set; }

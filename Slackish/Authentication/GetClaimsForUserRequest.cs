@@ -2,7 +2,7 @@
 
 namespace Slackish.Authentication
 {
-    public class GetClaimsForUserRequest: IAsyncRequest<GetClaimsForUserResponse>
+    public class GetClaimsForUserRequest: IRequest<GetClaimsForUserResponse>
     {
         public GetClaimsForUserRequest(string username)
         {

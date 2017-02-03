@@ -4,10 +4,18 @@ import {
     LandingPageComponent
 } from "../landing";
 
+import {
+    LoginPageComponent
+} from "../profiles";
+
 export const routes: Routes = [
     {
         path: '',
-        component: LandingPageComponent
+        component: LandingPageComponent,
+    },
+    {
+        path: 'login',
+        component: LoginPageComponent
     }
 ];
 
@@ -16,5 +24,6 @@ export const RoutingModule = RouterModule.forRoot([
 ]);
 
 export const routedComponents = [
-    LandingPageComponent
+    LandingPageComponent,
+    LoginPageComponent
 ];
