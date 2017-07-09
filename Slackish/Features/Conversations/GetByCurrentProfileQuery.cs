@@ -35,28 +35,26 @@ namespace Slackish.Features.Conversations
 
             public GetByCurrentProfileHandler(SlackishDbContext dataContext, ICache cache)
             {
-                _dataContext = dataContext;
+                _context = dataContext;
                 _cache = cache;
             }
 
             public async Task<GetByCurrentProfileResponse> Handle(GetByCurrentProfileRequest request)
             {
-                var results = await _cache.FromCacheOrServiceAsync(() => _dataContext.Conversations
+                var results = await _cache.FromCacheOrServiceAsync(() => _context.Conversations
                     .Include(x => x.Profiles)
                     .Include(x => x.Messages)
                     .Include("Profiles.User")
                     .Where(x => x.Profiles.Any(p => p.User.Username == request.Username)  && x.IsDeleted == false)                    
-                    .ToListAsync(),"[Conversation] GetByCurrentProfile");
+                    .ToListAsync(),$"[Conversation] GetByCurrentProfile: {request.Username}");
 
                 return new GetByCurrentProfileResponse(results
                     .Select(x => ConversationApiModel.FromConversation(x))
                     .ToList());
             }
 
-            private readonly SlackishDbContext _dataContext;
+            private readonly SlackishDbContext _context;
             private readonly ICache _cache;
         }
-
     }
-
 }

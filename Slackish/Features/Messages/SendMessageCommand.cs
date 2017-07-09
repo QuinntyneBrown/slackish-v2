@@ -27,17 +27,17 @@ namespace Slackish.Features.Messages
         {
             public SendMessageHandler(SlackishDbContext slackishDbContext)
             {
-                _slackishDbContext = slackishDbContext;
+                _context = slackishDbContext;
             }
 
             public Task<SendMessageResponse> Handle(SendMessageRequest message)
             {
                 
-                var currentProfile = _slackishDbContext.Profiles
+                var currentProfile = _context.Profiles
                     .Where(x => x.User.Username == message.Username)
                     .Single();
 
-                var conversation = _slackishDbContext.Conversations
+                var conversation = _context.Conversations
                     .Where(x => x.Profiles.Any(p => p.Id == currentProfile.Id))
                     .Where(x => x.Profiles.Any(p => p.Id == message.OtherProfileId))
                     .FirstOrDefault();
@@ -46,8 +46,8 @@ namespace Slackish.Features.Messages
                 {
                     conversation = new Conversation();
                     conversation.Profiles.Add(currentProfile);
-                    conversation.Profiles.Add(_slackishDbContext.Profiles.Find(message.OtherProfileId));
-                    _slackishDbContext.Conversations.Add(conversation);
+                    conversation.Profiles.Add(_context.Profiles.Find(message.OtherProfileId));
+                    _context.Conversations.Add(conversation);
                 }
 
                 var model = new Message();
@@ -56,12 +56,12 @@ namespace Slackish.Features.Messages
                 model.Body = message.Content;
                 conversation.Messages.Add(model);
 
-                _slackishDbContext.SaveChanges();
+                _context.SaveChanges();
 
                 return Task.FromResult(new SendMessageResponse());
             }
 
-            protected SlackishDbContext _slackishDbContext { get; set; }
+            protected SlackishDbContext _context { get; set; }
         }
     }
 }

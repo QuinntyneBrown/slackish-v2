@@ -23,12 +23,12 @@ namespace Slackish.Features.Messages
         public GetMessagesQueryHandler(SlackishDbContext dataContext, ICache cache)
         {
             _cache = cache;
-            _slackishDbContext = dataContext;
+            _context = dataContext;
         }
 
         public async Task<GetMessagesResponse> Handle(GetMessagesQuery query)
         {
-            var messages = await _slackishDbContext.Messages
+            var messages = await _context.Messages
                 .Include(x=>x.Conversation)
                 .Select(x => MessageApiModel.FromMessage(x))
                 .ToListAsync();
@@ -39,7 +39,7 @@ namespace Slackish.Features.Messages
             };
         }
 
-        private SlackishDbContext _slackishDbContext;
+        private SlackishDbContext _context;
         private ICache _cache;
     }
 }
