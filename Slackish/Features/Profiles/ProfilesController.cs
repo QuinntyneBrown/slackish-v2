@@ -4,10 +4,10 @@ using System.Web.Http;
 
 namespace Slackish.Features.Profiles
 {    
-    [RoutePrefix("api/profile")]
-    public class ProfileController: ApiController
+    [RoutePrefix("api/profiles")]
+    public class ProfilesController: ApiController
     {
-        public ProfileController(IMediator mediator)
+        public ProfilesController(IMediator mediator)
         {
             _mediator = mediator;
         }

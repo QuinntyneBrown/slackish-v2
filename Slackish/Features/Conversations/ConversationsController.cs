@@ -7,10 +7,10 @@ using System.Web.Http.Description;
 namespace Slackish.Features.Conversations
 {
     [Authorize]
-    [RoutePrefix("api/conversation")]
-    public class ConversationController: ApiController
+    [RoutePrefix("api/conversations")]
+    public class ConversationsController: ApiController
     {
-        public ConversationController(IMediator mediator)
+        public ConversationsController(IMediator mediator)
         {
             _mediator = mediator;
         }

@@ -200,9 +200,9 @@
     <Compile Include="Features\Profiles\RegisterCommand.cs" />
     <Compile Include="Authentication\AuthConfiguration.cs" />
     <Compile Include="Authentication\IAuthConfiguration.cs" />
-    <Compile Include="Features\Conversations\ConversationController.cs" />
-    <Compile Include="Features\Messages\MessageController.cs" />
-    <Compile Include="Features\Profiles\ProfileController.cs" />
+    <Compile Include="Features\Conversations\ConversationsController.cs" />
+    <Compile Include="Features\Messages\MessagesController.cs" />
+    <Compile Include="Features\Profiles\ProfilesController.cs" />
     <Compile Include="Data\SlackishDbContext.cs" />
     <Compile Include="Filters\HandleError.cs" />
     <Compile Include="Features\Conversations\ConversationHub.cs" />

@@ -4,10 +4,10 @@ using System.Web.Http;
 
 namespace Slackish.Features.Messages
 {
-    [RoutePrefix("api/message")]
-    public class MessageController: ApiController
+    [RoutePrefix("api/messages")]
+    public class MessagesController: ApiController
     {
-        public MessageController(IMediator mediator)
+        public MessagesController(IMediator mediator)
         {
             _mediator = mediator;
         }
