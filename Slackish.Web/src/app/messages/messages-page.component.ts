@@ -1,10 +1,9 @@
 import { Component, ChangeDetectionStrategy, Input, OnInit } from "@angular/core";
 
 @Component({
-    template: require("./messages-page.component.html"),
-    styles: [require("./messages-page.component.scss")],
-    selector: "messages-page",
-    changeDetection: ChangeDetectionStrategy.OnPush
+    templateUrl: "./messages-page.component.html",
+    styleUrls: ["./messages-page.component.css"],
+    selector: "messages-page"
 })
 export class MessagesPageComponent implements OnInit { 
     ngOnInit() {

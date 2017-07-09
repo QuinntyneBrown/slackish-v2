@@ -7,7 +7,8 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion></ProductVersion>
+    <ProductVersion>
+    </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{937EF460-6D37-4999-BEE9-69A1B8872570}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
@@ -22,7 +23,8 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
-    <NuGetPackageImportStamp></NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
     <TypeScriptToolsVersion>2.4</TypeScriptToolsVersion>
     <TypeScriptEmitDecoratorMetadata>true</TypeScriptEmitDecoratorMetadata>
     <TypeScriptModuleKind>commonjs</TypeScriptModuleKind>
@@ -74,40 +76,28 @@
     <Content Include="index.html" />
     <Content Include="packages.config" />
     <Content Include="package.json" />
-    <Content Include="src\app\app.component.html">
-      <DependentUpon>app.component.ts</DependentUpon>
+    <Content Include="src\app\app.component.css">
+      <DependentUpon>app.component.html</DependentUpon>
     </Content>
-    <Content Include="src\app\app.component.scss">
-      <DependentUpon>app.component.ts</DependentUpon>
+    <Content Include="src\app\app.component.html" />
+    <Content Include="src\app\landing\landing-page.component.css">
+      <DependentUpon>landing-page.component.html</DependentUpon>
     </Content>
-    <Content Include="src\app\landing\landing-page.component.html">
-      <DependentUpon>landing-page.component.ts</DependentUpon>
+    <Content Include="src\app\landing\landing-page.component.html" />
+    <Content Include="src\app\messages\messages-page.component.css">
+      <DependentUpon>messages-page.component.html</DependentUpon>
     </Content>
-    <Content Include="src\app\landing\landing-page.component.scss">
-      <DependentUpon>landing-page.component.ts</DependentUpon>
+    <Content Include="src\app\messages\messages-page.component.html" />
+    <Content Include="src\app\profiles\login-page.component.css">
+      <DependentUpon>login-page.component.html</DependentUpon>
     </Content>
-    <Content Include="src\app\messages\messages-page.component.html">
-      <DependentUpon>messages-page.component.ts</DependentUpon>
+    <Content Include="src\app\profiles\login-page.component.html" />
+    <Content Include="src\app\profiles\register-page.component.css">
+      <DependentUpon>register-page.component.html</DependentUpon>
     </Content>
-    <Content Include="src\app\messages\messages-page.component.scss">
-      <DependentUpon>messages-page.component.ts</DependentUpon>
-    </Content>
-    <None Include="src\styles\_variables.scss" />
-    <Content Include="src\app\profiles\login-page.component.html">
-      <DependentUpon>login-page.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\app\profiles\login-page.component.scss">
-      <DependentUpon>login-page.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\app\profiles\register-page.component.html">
-      <DependentUpon>register-page.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\app\profiles\register-page.component.scss">
-      <DependentUpon>register-page.component.ts</DependentUpon>
-    </Content>
+    <Content Include="src\app\profiles\register-page.component.html" />
     <Content Include="tsconfig.json" />
     <Content Include="webpack.config.js" />
-    <Content Include="src\styles\_breakpoints.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -119,16 +109,30 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="src\app\app.component.ts">
+      <DependentUpon>app.component.html</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="src\app\converstations\conversations-hub.service.ts" />
     <TypeScriptCompile Include="src\app\environment.ts" />
+    <TypeScriptCompile Include="src\app\landing\landing-page.component.ts">
+      <DependentUpon>landing-page.component.html</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="src\app\messages\messages-hub.service.ts" />
+    <TypeScriptCompile Include="src\app\messages\messages-page.component.ts">
+      <DependentUpon>messages-page.component.html</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\profiles\login-page.component.ts">
+      <DependentUpon>login-page.component.html</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="src\app\profiles\profiles-hub.service.ts" />
+    <TypeScriptCompile Include="src\app\profiles\register-page.component.ts">
+      <DependentUpon>register-page.component.html</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="src\app\routing\index.ts" />
     <TypeScriptCompile Include="src\app\routing\routing.module.ts" />
     <TypeScriptCompile Include="src\app\rxjs-extensions.ts" />
     <TypeScriptCompile Include="src\main.ts" />
     <TypeScriptCompile Include="src\polyfills.ts" />
-    <TypeScriptCompile Include="src\app\app.component.ts" />
     <TypeScriptCompile Include="src\app\app.module.ts" />
     <TypeScriptCompile Include="src\app\index.ts" />
     <TypeScriptCompile Include="src\app\converstations\index.ts" />
@@ -136,10 +140,6 @@
     <TypeScriptCompile Include="src\app\messages\index.ts" />
     <TypeScriptCompile Include="src\app\shared\index.ts" />
     <TypeScriptCompile Include="src\app\landing\index.ts" />
-    <TypeScriptCompile Include="src\app\landing\landing-page.component.ts" />
-    <TypeScriptCompile Include="src\app\messages\messages-page.component.ts" />
-    <TypeScriptCompile Include="src\app\profiles\register-page.component.ts" />
-    <TypeScriptCompile Include="src\app\profiles\login-page.component.ts" />
     <TypeScriptCompile Include="src\app\profiles\profile.service.ts" />
     <TypeScriptCompile Include="src\app\profiles\profile.model.ts" />
   </ItemGroup>
@@ -168,7 +168,8 @@
           <IISUrl>http://localhost:50317/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl></CustomServerUrl>
+          <CustomServerUrl>
+          </CustomServerUrl>
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>

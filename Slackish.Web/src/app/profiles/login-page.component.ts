@@ -1,8 +1,8 @@
 import { Component, ChangeDetectionStrategy, Input } from "@angular/core";
 
 @Component({
-    template: require("./login-page.component.html"),
-    styles: [require("./login-page.component.scss")],
+    templateUrl: "./login-page.component.html",
+    styleUrls: ["./login-page.component.css"],
     selector: "login-page",
     changeDetection: ChangeDetectionStrategy.OnPush
 })
