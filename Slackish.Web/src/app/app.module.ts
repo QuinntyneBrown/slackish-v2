@@ -5,8 +5,6 @@ import { RouterModule  } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 
-import "./rxjs-extensions";
-
 import { AppComponent } from './app.component';
 
 import {

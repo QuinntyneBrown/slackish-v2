@@ -92,18 +92,16 @@
       <DependentUpon>login-page.component.html</DependentUpon>
     </Content>
     <Content Include="src\app\profiles\login-page.component.html" />
+    <Content Include="src\app\profiles\login.component.css">
+      <DependentUpon>login.component.html</DependentUpon>
+    </Content>
     <Content Include="src\app\profiles\register-page.component.css">
       <DependentUpon>register-page.component.html</DependentUpon>
     </Content>
     <Content Include="src\app\profiles\register-page.component.html" />
     <Content Include="tsconfig.json" />
     <Content Include="webpack.config.js" />
-    <None Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
+    <Content Include="src\app\profiles\login.component.html" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Web.config" />
@@ -124,13 +122,15 @@
     <TypeScriptCompile Include="src\app\profiles\login-page.component.ts">
       <DependentUpon>login-page.component.html</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\profiles\login.component.ts">
+      <DependentUpon>login.component.html</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="src\app\profiles\profiles-hub.service.ts" />
     <TypeScriptCompile Include="src\app\profiles\register-page.component.ts">
       <DependentUpon>register-page.component.html</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="src\app\routing\index.ts" />
     <TypeScriptCompile Include="src\app\routing\routing.module.ts" />
-    <TypeScriptCompile Include="src\app\rxjs-extensions.ts" />
     <TypeScriptCompile Include="src\main.ts" />
     <TypeScriptCompile Include="src\polyfills.ts" />
     <TypeScriptCompile Include="src\app\app.module.ts" />

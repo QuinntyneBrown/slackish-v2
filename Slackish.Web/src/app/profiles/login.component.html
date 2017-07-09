@@ -1,0 +1,13 @@
+<div class="login">
+
+    <h1>Login</h1>
+
+    <form novalidate [formGroup]="form">
+        <input type="text" placeholder="Username" id="username" formControlName="username" />
+
+        <input type="password" placeholder="Password" formControlName="password" />
+
+        <button type="submit" (click)="tryToLogin.emit({ value: form.value })">Login</button>
+    </form>
+    
+</div>
