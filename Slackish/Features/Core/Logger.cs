@@ -1,8 +1,7 @@
 
-using Microsoft.Practices.Unity;
 using System;
 
-namespace Slackish.Utilities
+namespace Slackish.Features.Core
 {
     public class Logger: ILogger
     {
@@ -10,7 +9,6 @@ namespace Slackish.Utilities
         private readonly string _name;
         private ILogger[] _loggers;
 
-        [InjectionConstructor]
         public Logger()
         {
 

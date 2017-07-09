@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Threading.Tasks;
 using System.Linq;
-using Slackish.Utilities;
+using Slackish.Features.Core;
 
 namespace Slackish.Features.Messages
 {

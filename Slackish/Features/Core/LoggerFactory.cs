@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Slackish.Utilities
+namespace Slackish.Features.Core
 {
     public class LoggerFactory: ILoggerFactory
     {

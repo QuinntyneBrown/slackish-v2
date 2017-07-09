@@ -1,11 +1,9 @@
-using Slackish.Authentication;
-using Slackish.Utilities;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.OAuth;
 using System;
 using MediatR;
 
-namespace Slackish.Authentication
+namespace Slackish.Security
 {
     public class OAuthOptions : OAuthAuthorizationServerOptions
     {

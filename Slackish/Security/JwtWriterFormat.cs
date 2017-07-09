@@ -2,9 +2,8 @@ using System.IdentityModel.Tokens;
 using Microsoft.Owin.Security;
 using System;
 using Microsoft.Owin.Security.OAuth;
-using Slackish.Authentication;
 
-namespace Slackish.Authentication
+namespace Slackish.Security
 {
     public class JwtWriterFormat : ISecureDataFormat<AuthenticationTicket>
     {

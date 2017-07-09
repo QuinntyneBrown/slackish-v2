@@ -1,7 +1,7 @@
 using System;
 using System.Threading.Tasks;
 
-namespace Slackish.Utilities
+namespace Slackish.Features.Core
 {
     public interface ICache
     {

@@ -1,8 +1,8 @@
 using Microsoft.Owin.Security.Jwt;
 using System;
-using Slackish.Authentication;
+using Slackish.Security;
 
-namespace Slackish.Authentication
+namespace Slackish.Security
 {
     public class JwtOptions : JwtBearerAuthenticationOptions
     {

@@ -1,5 +1,5 @@
 using System.Web.Http.Filters;
-using Slackish.Utilities;
+using Slackish.Features.Core;
 using Microsoft.Practices.Unity;
 
 namespace Slackish.Filters

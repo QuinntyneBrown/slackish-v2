@@ -1,7 +1,7 @@
-using Slackish.Authentication;
+using Slackish.Security;
 using Slackish.Data;
-using Slackish.Utilities;
-using Slackish.Utilities;
+using Slackish.Features.Core;
+using Slackish.Features.Core;
 using Microsoft.Practices.Unity;
 using MediatR;
 

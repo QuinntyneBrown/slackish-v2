@@ -1,8 +1,8 @@
 ﻿using System.Threading.Tasks;
 using MediatR;
 using Slackish.Data;
-using Slackish.Utilities;
 using System.Data.Entity;
+using Slackish.Features.Core;
 
 namespace Slackish.Features.Profiles
 {

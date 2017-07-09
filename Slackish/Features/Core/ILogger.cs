@@ -1,4 +1,4 @@
-namespace Slackish.Utilities
+namespace Slackish.Features.Core
 {
     public interface ILogger
     {

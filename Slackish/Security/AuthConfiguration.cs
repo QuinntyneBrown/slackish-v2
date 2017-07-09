@@ -1,8 +1,18 @@
 using System;
 using System.Configuration;
 
-namespace Slackish.Authentication
+namespace Slackish.Security
 {
+    public interface IAuthConfiguration
+    {
+        string AuthType { get; set; }
+        string TokenPath { get; set; }
+        int ExpirationMinutes { get; set; }
+        string JwtKey { get; set; }
+        string JwtAudience { get; set; }
+        string JwtIssuer { get; set; }
+    }
+
     public class AuthConfiguration : ConfigurationSection, IAuthConfiguration
     {
         [ConfigurationProperty("tokenPath", IsRequired = true)]

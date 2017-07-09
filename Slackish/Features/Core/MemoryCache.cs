@@ -1,11 +1,11 @@
 using System;
 using System.Runtime.Caching;
 
-namespace Slackish.Utilities
+namespace Slackish.Features.Core
 {
     public class MemoryCache : Cache
     {
-        private static volatile Slackish.Utilities.MemoryCache _current = null;
+        private static volatile Features.Core.MemoryCache _current = null;
         private static System.Runtime.Caching.MemoryCache _cache = System.Runtime.Caching.MemoryCache.Default;
         private static object _sync = new object();
 
@@ -58,8 +58,8 @@ namespace Slackish.Utilities
 
         public override void ClearAll()
         {
-            _cache.Dispose();
-            _cache = System.Runtime.Caching.MemoryCache.Default;
+            foreach (var item in _cache) 
+                _cache.Remove(item.Key);            
         }
 
         public override bool Exists(string key) => _cache.Contains(key);

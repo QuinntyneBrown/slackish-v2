@@ -178,28 +178,32 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiConfiguration.cs" />
-    <Compile Include="Authentication\AuthenticateRequest.cs" />
-    <Compile Include="Authentication\AuthenticateResponse.cs" />
-    <Compile Include="Authentication\GetClaimsForUserRequest.cs" />
-    <Compile Include="Authentication\GetClaimsForUserResponse.cs" />
     <Compile Include="Features\Conversations\GetByCurrentProfileQuery.cs" />
+    <Compile Include="Features\Core\Cache.cs" />
+    <Compile Include="Features\Core\CacheProvider.cs" />
+    <Compile Include="Features\Core\HandleError.cs" />
+    <Compile Include="Features\Core\HttpRequestMessageExtensions.cs" />
+    <Compile Include="Features\Core\ICache.cs" />
+    <Compile Include="Features\Core\ICacheProvider.cs" />
+    <Compile Include="Features\Core\ILogger.cs" />
+    <Compile Include="Features\Core\ILoggerFactory.cs" />
+    <Compile Include="Features\Core\ILoggerProvider.cs" />
+    <Compile Include="Features\Core\Logger.cs" />
+    <Compile Include="Features\Core\LoggerFactory.cs" />
+    <Compile Include="Features\Core\MemoryCache.cs" />
+    <Compile Include="Features\Core\OperationResponseApiModel.cs" />
+    <Compile Include="Features\Core\RateLimit.cs" />
+    <Compile Include="Features\Core\StringExtensions.cs" />
+    <Compile Include="Features\Core\TenantMiddleware.cs" />
+    <Compile Include="Features\Core\WebApiUnityActionFilterProvider.cs" />
     <Compile Include="Features\Messages\MessageApiModel.cs" />
-    <Compile Include="Features\Profiles\GetClaimsForUserQuery.cs" />
     <Compile Include="Features\Profiles\GetCurrentProfileQuery.cs" />
     <Compile Include="Features\Profiles\GetOtherProfiles.cs" />
     <Compile Include="Features\Profiles\GetUserQuery.cs" />
     <Compile Include="Features\Profiles\UserApiModel.cs" />
-    <Compile Include="Utilities\IDistributedCache.cs" />
     <Compile Include="Filters\WebApiUnityActionFilterProvider.cs" />
-    <Compile Include="Authentication\JwtOptions.cs" />
-    <Compile Include="Authentication\JwtWriterFormat.cs" />
-    <Compile Include="Authentication\OAuthOptions.cs" />
-    <Compile Include="Authentication\OAuthProvider.cs" />
-    <Compile Include="Features\Profiles\AuthenticateCommand.cs" />
     <Compile Include="Features\Messages\SendMessageCommand.cs" />
     <Compile Include="Features\Profiles\RegisterCommand.cs" />
-    <Compile Include="Authentication\AuthConfiguration.cs" />
-    <Compile Include="Authentication\IAuthConfiguration.cs" />
     <Compile Include="Features\Conversations\ConversationsController.cs" />
     <Compile Include="Features\Messages\MessagesController.cs" />
     <Compile Include="Features\Profiles\ProfilesController.cs" />
@@ -214,17 +218,17 @@
     <Compile Include="Data\Models\Profile.cs" />
     <Compile Include="Data\Models\User.cs" />
     <Compile Include="Features\Messages\GetMessagesQuery.cs" />
-    <Compile Include="Utilities\Cache.cs" />
-    <Compile Include="Utilities\EncryptionService.cs" />
-    <Compile Include="Utilities\ICache.cs" />
-    <Compile Include="Utilities\IEncryptionService.cs" />
-    <Compile Include="Utilities\MemoryCache.cs" />
+    <Compile Include="Security\AuthConfiguration.cs" />
+    <Compile Include="Security\AuthenticateCommand.cs" />
+    <Compile Include="Security\EncryptionService.cs" />
+    <Compile Include="Security\GetClaimsForUserQuery.cs" />
+    <Compile Include="Security\JwtOptions.cs" />
+    <Compile Include="Security\JwtWriterFormat.cs" />
+    <Compile Include="Security\OAuthOptions.cs" />
+    <Compile Include="Security\OAuthProvider.cs" />
+    <Compile Include="Security\Roles.cs" />
+    <Compile Include="Security\UserManager.cs" />
     <Compile Include="UnityConfiguration.cs" />
-    <Compile Include="Utilities\ILogger.cs" />
-    <Compile Include="Utilities\ILoggerFactory.cs" />
-    <Compile Include="Utilities\ILoggerProvider.cs" />
-    <Compile Include="Utilities\Logger.cs" />
-    <Compile Include="Utilities\LoggerFactory.cs" />
     <Compile Include="Features\Profiles\ProfileApiModel.cs" />
     <Compile Include="Features\Conversations\ConversationApiModel.cs" />
     <Compile Include="Data\Models\Tenant.cs" />
@@ -236,7 +240,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Features\Core\" />
     <Folder Include="Properties\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

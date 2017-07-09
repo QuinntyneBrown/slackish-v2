@@ -3,7 +3,7 @@ using MediatR;
 using Slackish.Data;
 using System.Linq;
 using System.Data.Entity;
-using Slackish.Utilities;
+using Slackish.Features.Core;
 
 namespace Slackish.Features.Profiles
 {

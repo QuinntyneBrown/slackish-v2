@@ -2,10 +2,9 @@ using Microsoft.Owin.Security.OAuth;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using System;
-using Slackish.Authentication;
 using MediatR;
 
-namespace Slackish.Authentication
+namespace Slackish.Security
 {
     public class OAuthProvider : OAuthAuthorizationServerProvider
     {
@@ -19,7 +18,7 @@ namespace Slackish.Authentication
         {
             var identity = new ClaimsIdentity(_authConfiguration.AuthType);
             var username = context.OwinContext.Get<string>($"{_authConfiguration.AuthType}:username");
-            var response = await _mediator.SendAsync(new GetClaimsForUserRequest(username));
+            var response = await _mediator.Send(new GetClaimsForUserQuery.GetClaimsForUserRequest() { Username = username });
 
             foreach (var claim in response.Claims)
             {
@@ -34,7 +33,7 @@ namespace Slackish.Authentication
             {
                 var username = context.Parameters["username"];
                 var password = context.Parameters["password"];
-                var response = await _mediator.SendAsync(new AuthenticateRequest(username, password));
+                var response = await _mediator.Send(new AuthenticateCommand.AuthenticateRequest() { Username = username, Password = password });
                 if (response.IsAuthenticated)
                 {
                     context.OwinContext.Set($"{_authConfiguration.AuthType}:username", username);

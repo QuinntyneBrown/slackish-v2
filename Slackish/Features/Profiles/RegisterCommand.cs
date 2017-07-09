@@ -5,7 +5,8 @@ using Slackish.Data;
 using System.Linq;
 using System.Data.Entity;
 using Slackish.Data.Models;
-using Slackish.Utilities;
+using Slackish.Features.Core;
+using Slackish.Security;
 
 namespace Slackish.Features.Profiles
 {
