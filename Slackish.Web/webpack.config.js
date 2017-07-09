@@ -5,7 +5,7 @@ var CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
 module.exports = {
     devtool: 'source-map',
     entry: {
-        'vendor': ['./src/polyfills', './src/vendor'],
+        'vendor': ['./src/polyfills'],
         'app': './src/main'
     },
     output: {
