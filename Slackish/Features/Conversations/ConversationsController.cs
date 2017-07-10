@@ -18,7 +18,7 @@ namespace Slackish.Features.Conversations
         [HttpGet]
         [ResponseType(typeof(List<ConversationApiModel>))]
         public async Task<IHttpActionResult> GetByCurrentProfile()
-            => Ok(await _mediator.SendAsync(new GetByCurrentProfileQuery.GetByCurrentProfileRequest(User.Identity.Name)));
+            => Ok(await _mediator.Send(new GetByCurrentProfileQuery.GetByCurrentProfileRequest(User.Identity.Name)));
         
         private IMediator _mediator;
     }

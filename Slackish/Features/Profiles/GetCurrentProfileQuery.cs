@@ -8,7 +8,7 @@ namespace Slackish.Features.Profiles
 {
     public class GetCurrentProfileQuery
     {
-        public class GetCurrentProfileRequest: IAsyncRequest<GetCurrentProfileResponse>
+        public class GetCurrentProfileRequest : IRequest<GetCurrentProfileResponse>
         {
             public string Username { get; set; }
         }

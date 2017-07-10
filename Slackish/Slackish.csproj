@@ -43,8 +43,8 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="MediatR, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MediatR.2.1.0\lib\net45\MediatR.dll</HintPath>
+    <Reference Include="MediatR, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MediatR.3.0.1\lib\net45\MediatR.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -178,6 +178,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiConfiguration.cs" />
+    <Compile Include="Data\Helpers\SoftDeleteAttribute.cs" />
+    <Compile Include="Data\Helpers\SoftDeleteInterceptor.cs" />
+    <Compile Include="Data\Helpers\SoftDeleteQueryVisitor.cs" />
     <Compile Include="Features\Conversations\GetByCurrentProfileQuery.cs" />
     <Compile Include="Features\Core\Cache.cs" />
     <Compile Include="Features\Core\CacheProvider.cs" />
@@ -197,18 +200,17 @@
     <Compile Include="Features\Core\TenantMiddleware.cs" />
     <Compile Include="Features\Core\WebApiUnityActionFilterProvider.cs" />
     <Compile Include="Features\Messages\MessageApiModel.cs" />
+    <Compile Include="Features\Profiles\GetClaimsForUserQuery.cs" />
     <Compile Include="Features\Profiles\GetCurrentProfileQuery.cs" />
     <Compile Include="Features\Profiles\GetOtherProfiles.cs" />
     <Compile Include="Features\Profiles\GetUserQuery.cs" />
     <Compile Include="Features\Profiles\UserApiModel.cs" />
-    <Compile Include="Filters\WebApiUnityActionFilterProvider.cs" />
     <Compile Include="Features\Messages\SendMessageCommand.cs" />
     <Compile Include="Features\Profiles\RegisterCommand.cs" />
     <Compile Include="Features\Conversations\ConversationsController.cs" />
     <Compile Include="Features\Messages\MessagesController.cs" />
     <Compile Include="Features\Profiles\ProfilesController.cs" />
     <Compile Include="Data\SlackishDbContext.cs" />
-    <Compile Include="Filters\HandleError.cs" />
     <Compile Include="Features\Conversations\ConversationHub.cs" />
     <Compile Include="Features\Messages\MessageHub.cs" />
     <Compile Include="Features\Profiles\ProfileHub.cs" />

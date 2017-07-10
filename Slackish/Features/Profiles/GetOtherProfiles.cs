@@ -10,8 +10,7 @@ namespace Slackish.Features.Profiles
 {
     public class GetOtherProfilesQuery
     {
-        public class GetOtherProfilesRequest : 
-            IAsyncRequest<GetOtherProfilesResponse>
+        public class GetOtherProfilesRequest : IRequest<GetOtherProfilesResponse>
         {
             public string Username { get; set; }
             public int OtherProfileId { get; set; }

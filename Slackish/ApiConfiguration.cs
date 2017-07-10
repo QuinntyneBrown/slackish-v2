@@ -8,9 +8,9 @@ using Swashbuckle.Application;
 using Microsoft.Owin.Cors;
 using System;
 using Slackish.Security;
-using Slackish.Filters;
+using Slackish.Features.Core;
 using MediatR;
-using static Slackish.Filters.WebApiUnityActionFilterProvider;
+using static Slackish.Features.Core.WebApiUnityActionFilterProvider;
 
 namespace Slackish
 {

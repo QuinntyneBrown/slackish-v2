@@ -10,7 +10,7 @@ namespace Slackish.Features.Conversations
 {
     public class GetByCurrentProfileQuery
     {
-        public class GetByCurrentProfileRequest : IAsyncRequest<GetByCurrentProfileResponse>
+        public class GetByCurrentProfileRequest : IRequest<GetByCurrentProfileResponse>
         {
             public GetByCurrentProfileRequest(string usernmae)
             {

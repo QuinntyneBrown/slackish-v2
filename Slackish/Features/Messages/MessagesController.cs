@@ -15,7 +15,7 @@ namespace Slackish.Features.Messages
         [HttpPost]
         [Route("send")]
         public async Task<IHttpActionResult> Send(SendMessageCommand.SendMessageRequest request)
-            => Ok(await _mediator.SendAsync(request));
+            => Ok(await _mediator.Send(request));
         
         private IMediator _mediator;
     }
