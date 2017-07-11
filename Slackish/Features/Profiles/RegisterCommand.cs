@@ -5,7 +5,6 @@ using Slackish.Data;
 using System.Linq;
 using System.Data.Entity;
 using Slackish.Data.Models;
-using Slackish.Features.Core;
 using Slackish.Security;
 
 namespace Slackish.Features.Profiles
@@ -17,19 +16,16 @@ namespace Slackish.Features.Profiles
         public string ConfirmPassword { get; set; }
     }
 
-    public class RegisterResponse
-    {
-
-    }
+    public class RegisterResponse { }
 
     public class RegisterCommand: IAsyncRequestHandler<RegisterRequest,RegisterResponse>
     {
-        public async Task<RegisterResponse> Handle(RegisterRequest message)
+        public async Task<RegisterResponse> Handle(RegisterRequest request)
         {
-            var profile = await _slackishDbContext
+            var profile = await _context
                 .Profiles
-                .Include(x=>x.User)
-                .Where(x => x.User.Username == message.Username)
+                .Include(x => x.User)
+                .Where(x => x.User.Username == request.Username)
                 .SingleOrDefaultAsync();
 
             if (profile != null)
@@ -37,23 +33,21 @@ namespace Slackish.Features.Profiles
 
             var user = new User()
             {
-                Username = message.Username,
-                Password = _encryptionService.TransformPassword(message.Password)
+                Username = request.Username,
+                Password = _encryptionService.TransformPassword(request.Password)
             };  
 
-            _slackishDbContext.Profiles.Add(new Profile()
+            _context.Profiles.Add(new Profile()
             {
                 User = user
             });
 
-            await _slackishDbContext.SaveChangesAsync();
+            await _context.SaveChangesAsync();
 
             return new RegisterResponse();
-
         }
 
-        private SlackishDbContext _slackishDbContext { get; set; }
-        private IEncryptionService _encryptionService { get; set; }
-                
+        private SlackishContext _context { get; set; }
+        private IEncryptionService _encryptionService { get; set; }        
     }
 }

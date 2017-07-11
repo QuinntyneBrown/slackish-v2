@@ -21,7 +21,7 @@ namespace Slackish.Security
 
         public class AuthenticateHandler : IAsyncRequestHandler<AuthenticateRequest, AuthenticateResponse>
         {
-            public AuthenticateHandler(SlackishDbContext context, IEncryptionService encryptionService)
+            public AuthenticateHandler(SlackishContext context, IEncryptionService encryptionService)
             {
                 _encryptionService = encryptionService;
                 _context = context;
@@ -46,7 +46,7 @@ namespace Slackish.Security
             }
 
 
-            protected readonly SlackishDbContext _context;
+            protected readonly SlackishContext _context;
             private IEncryptionService _encryptionService { get; set; }
         }
 

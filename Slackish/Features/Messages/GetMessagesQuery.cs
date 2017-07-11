@@ -5,12 +5,14 @@ using System.Data.Entity;
 using System.Threading.Tasks;
 using System.Linq;
 using Slackish.Features.Core;
+using System;
 
 namespace Slackish.Features.Messages
 {
     public class GetMessagesQuery: IRequest<GetMessagesResponse>
     {
-        public GetMessagesQuery() { }        
+        public GetMessagesQuery() { }
+        public Guid TenantUniqueId { get; set; }
     }
 
     public class GetMessagesResponse 
@@ -20,7 +22,7 @@ namespace Slackish.Features.Messages
 
     public class GetMessagesQueryHandler: IAsyncRequestHandler<GetMessagesQuery, GetMessagesResponse>
     {
-        public GetMessagesQueryHandler(SlackishDbContext dataContext, ICache cache)
+        public GetMessagesQueryHandler(SlackishContext dataContext, ICache cache)
         {
             _cache = cache;
             _context = dataContext;
@@ -39,7 +41,7 @@ namespace Slackish.Features.Messages
             };
         }
 
-        private SlackishDbContext _context;
+        private SlackishContext _context;
         private ICache _cache;
     }
 }

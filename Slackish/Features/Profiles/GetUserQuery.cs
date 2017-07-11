@@ -21,9 +21,9 @@ namespace Slackish.Features.Profiles
 
         public class GetUserHandler : IAsyncRequestHandler<GetUserRequest, GetUserResponse>
         {
-            public GetUserHandler(SlackishDbContext slackishDbContext, ICache cache)
+            public GetUserHandler(SlackishContext context, ICache cache)
             {
-                _slackishDbContext = slackishDbContext;
+                _context = context;
                 _cache = cache;
             }
 
@@ -31,13 +31,13 @@ namespace Slackish.Features.Profiles
                 => new GetUserResponse()
                 {
                     User = UserApiModel.FromUser(await _cache
-                        .FromCacheOrServiceAsync(() => _slackishDbContext
+                        .FromCacheOrServiceAsync(() => _context
                         .Users
                         .Where(x => x.Username == message.Username)
                         .SingleAsync(), $"[GetUserQuery] {message.Username}"))
                 };
             
-            protected SlackishDbContext _slackishDbContext { get; set; }
+            protected SlackishContext _context { get; set; }
             protected ICache _cache { get; set; }
         }
     }

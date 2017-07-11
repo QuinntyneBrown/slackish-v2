@@ -5,6 +5,7 @@ using Slackish.Data;
 using System.Linq;
 using System.Collections.Generic;
 using System.Data.Entity;
+using Slackish.Features.Core;
 
 namespace Slackish.Features.Profiles
 {
@@ -14,6 +15,8 @@ namespace Slackish.Features.Profiles
         {
             public string Username { get; set; }
             public int OtherProfileId { get; set; }
+            public Guid TenantUniqueId { get; set; }
+
         }
 
         public class GetOtherProfilesResponse
@@ -23,30 +26,28 @@ namespace Slackish.Features.Profiles
 
         public class GetOtherProfilesHandler : IAsyncRequestHandler<GetOtherProfilesRequest, GetOtherProfilesResponse>
         {
-            public GetOtherProfilesHandler(SlackishDbContext slackishDbContext)
+            public GetOtherProfilesHandler(SlackishContext context)
             {
-                _slackishDbContext = slackishDbContext;
+                _context = context;
             }
 
-            public async Task<GetOtherProfilesResponse> Handle(GetOtherProfilesRequest message)
-            {
-                var response = new GetOtherProfilesResponse();
-
-                var profiles = await _slackishDbContext
+            public async Task<GetOtherProfilesResponse> Handle(GetOtherProfilesRequest request)
+            {                
+                var profiles = await _cache.FromCacheOrServiceAsync(() => _context
                     .Profiles
-                    .Where(x => x.User.Username != message.Username)
-                    .ToListAsync();
+                    .Where(x => x.User.Username != request.Username)
+                    .ToListAsync(), $"[Profiles] GetOtherProfilesQuery: {request.Username}");
 
-                response.Profiles = profiles
+                return new GetOtherProfilesResponse()
+                {
+                    Profiles = profiles
                     .Select(x => ProfileApiModel.FromProfile(x))
-                    .ToList();
-
-                return  response;
+                    .ToList()
+                };
             }
 
-            protected SlackishDbContext _slackishDbContext { get; set; }
+            protected SlackishContext _context { get; set; }
+            protected readonly ICache _cache;
         }
-
     }
-
 }

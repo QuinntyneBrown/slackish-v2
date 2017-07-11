@@ -1,15 +1,16 @@
-using Owin;
-using System.Web.Http;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
+using MediatR;
+using Microsoft.Owin.Cors;
 using Microsoft.Practices.Unity;
 using Microsoft.Owin.Security.OAuth;
-using Swashbuckle.Application;
-using Microsoft.Owin.Cors;
-using System;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
+using Owin;
 using Slackish.Security;
 using Slackish.Features.Core;
-using MediatR;
+using Swashbuckle.Application;
+using System;
+using System.Web.Http;
+
 using static Slackish.Features.Core.WebApiUnityActionFilterProvider;
 
 namespace Slackish
@@ -21,6 +22,7 @@ namespace Slackish
             RegisterFilterProviders(config);
             var container = UnityConfiguration.GetContainer();
             app.MapSignalR();
+            app.Use(typeof(TenantMiddleware));
 
             config.Filters.Add(container.Resolve<HandleErrorAttribute>());
             config.Filters.Add(container.Resolve<AuthorizeAttribute>());

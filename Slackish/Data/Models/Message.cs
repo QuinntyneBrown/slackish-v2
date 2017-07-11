@@ -1,7 +1,9 @@
+using Slackish.Data.Helpers;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Slackish.Data.Models
 {
+    [SoftDelete("IsDeleted")]
     public class Message
     {
         public int Id { get; set; }

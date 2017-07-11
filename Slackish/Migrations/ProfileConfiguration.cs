@@ -4,7 +4,7 @@ namespace Slackish.Migrations
 {
     public class ProfileConfiguration
     {
-        public static void Seed(SlackishDbContext context) {
+        public static void Seed(SlackishContext context) {
 
             context.SaveChanges();
         }

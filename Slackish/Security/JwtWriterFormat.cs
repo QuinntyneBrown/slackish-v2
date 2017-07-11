@@ -14,7 +14,7 @@ namespace Slackish.Security
         public JwtWriterFormat(Lazy<IAuthConfiguration> lazyAuthConfiguration, OAuthAuthorizationServerOptions options)
         {
             _options = options;
-            _lazyAuthConfiguration = lazyAuthConfiguration; 
+            _lazyAuthConfiguration = lazyAuthConfiguration;
         }
 
         public string SignatureAlgorithm

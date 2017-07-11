@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Linq;
 using System.Data.Entity;
 using Slackish.Features.Core;
+using System;
 
 namespace Slackish.Features.Conversations
 {
@@ -16,7 +17,7 @@ namespace Slackish.Features.Conversations
             {
                 Username = Username;
             }
-
+            public Guid TenantUniqueId { get; set; }
             public string Username { get; set; }
         }
 
@@ -33,7 +34,7 @@ namespace Slackish.Features.Conversations
         public class GetByCurrentProfileHandler : IAsyncRequestHandler<GetByCurrentProfileRequest, GetByCurrentProfileResponse>
         {
 
-            public GetByCurrentProfileHandler(SlackishDbContext dataContext, ICache cache)
+            public GetByCurrentProfileHandler(SlackishContext dataContext, ICache cache)
             {
                 _context = dataContext;
                 _cache = cache;
@@ -45,7 +46,7 @@ namespace Slackish.Features.Conversations
                     .Include(x => x.Profiles)
                     .Include(x => x.Messages)
                     .Include("Profiles.User")
-                    .Where(x => x.Profiles.Any(p => p.User.Username == request.Username)  && x.IsDeleted == false)                    
+                    .Where(x => x.Profiles.Any(p => p.User.Username == request.Username))                    
                     .ToListAsync(),$"[Conversation] GetByCurrentProfile: {request.Username}");
 
                 return new GetByCurrentProfileResponse(results
@@ -53,7 +54,7 @@ namespace Slackish.Features.Conversations
                     .ToList());
             }
 
-            private readonly SlackishDbContext _context;
+            private readonly SlackishContext _context;
             private readonly ICache _cache;
         }
     }

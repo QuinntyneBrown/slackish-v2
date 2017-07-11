@@ -56,7 +56,7 @@ namespace Slackish.Features.Core
         }
 
         [Dependency]
-        public SlackishDbContext _context { get; set; }
+        public SlackishContext _context { get; set; }
 
         private int _maxRequestsHour;
     }

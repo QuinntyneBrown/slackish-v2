@@ -131,6 +131,7 @@
     </TypeScriptCompile>
     <TypeScriptCompile Include="src\app\routing\index.ts" />
     <TypeScriptCompile Include="src\app\routing\routing.module.ts" />
+    <TypeScriptCompile Include="src\app\shared\http.service.ts" />
     <TypeScriptCompile Include="src\main.ts" />
     <TypeScriptCompile Include="src\polyfills.ts" />
     <TypeScriptCompile Include="src\app\app.module.ts" />

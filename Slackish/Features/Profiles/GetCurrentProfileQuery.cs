@@ -20,17 +20,17 @@ namespace Slackish.Features.Profiles
 
         public class GetCurrentProfileHandler : IAsyncRequestHandler<GetCurrentProfileRequest, GetCurrentProfileResponse>
         {
-            public GetCurrentProfileHandler(SlackishDbContext slackishDbContext, ICache cache)
+            public GetCurrentProfileHandler(SlackishContext context, ICache cache)
             {
-                _slackishDbContext = slackishDbContext;
+                _context = context;
                 _cache = cache;
             }
 
-            public async Task<GetCurrentProfileResponse> Handle(GetCurrentProfileRequest message)
+            public async Task<GetCurrentProfileResponse> Handle(GetCurrentProfileRequest request)
             {
-                var profile = await _cache.FromCacheOrServiceAsync(() => _slackishDbContext
+                var profile = await _cache.FromCacheOrServiceAsync(() => _context
                     .Profiles
-                    .SingleAsync(x => x.User.Username == message.Username),"[Profile] CurrentProfile");
+                    .SingleAsync(x => x.User.Username == request.Username),$"[Profile] CurrentProfile: {request.Username}");
 
                 return new GetCurrentProfileResponse()
                 {
@@ -39,7 +39,7 @@ namespace Slackish.Features.Profiles
                 
             }
 
-            private SlackishDbContext _slackishDbContext { get; set; }
+            private SlackishContext _context { get; set; }
             private ICache _cache { get; set; }
         }
     }

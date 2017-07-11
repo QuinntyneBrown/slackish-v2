@@ -25,7 +25,7 @@ namespace Slackish.Features.Messages
         public class SendMessageHandler
             : IAsyncRequestHandler<SendMessageRequest, SendMessageResponse>
         {
-            public SendMessageHandler(SlackishDbContext slackishDbContext)
+            public SendMessageHandler(SlackishContext slackishDbContext)
             {
                 _context = slackishDbContext;
             }
@@ -61,7 +61,7 @@ namespace Slackish.Features.Messages
                 return Task.FromResult(new SendMessageResponse());
             }
 
-            protected SlackishDbContext _context { get; set; }
+            protected SlackishContext _context { get; set; }
         }
     }
 }
