@@ -1,9 +1,8 @@
-﻿using System;
-using System.Threading.Tasks;
-using MediatR;
+﻿using MediatR;
 using Slackish.Data;
-using System.Linq;
 using Slackish.Data.Models;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Slackish.Features.Messages
 {
@@ -17,10 +16,7 @@ namespace Slackish.Features.Messages
             public string Username { get; set; }
         }
 
-        public class SendMessageResponse
-        {
-
-        }
+        public class SendMessageResponse { }
 
         public class SendMessageHandler
             : IAsyncRequestHandler<SendMessageRequest, SendMessageResponse>
@@ -31,8 +27,7 @@ namespace Slackish.Features.Messages
             }
 
             public Task<SendMessageResponse> Handle(SendMessageRequest message)
-            {
-                
+            {                
                 var currentProfile = _context.Profiles
                     .Where(x => x.User.Username == message.Username)
                     .Single();

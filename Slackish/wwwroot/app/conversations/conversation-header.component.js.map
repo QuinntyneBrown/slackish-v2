@@ -1,0 +1,1 @@
+{"version":3,"file":"conversation-header.component.js","sourceRoot":"","sources":["conversation-header.component.ts"],"names":[],"mappings":";;;;;;;;AAAA,sCAA4E;AAO5E,IAAa,2BAA2B;IAAxC;IAA2C,CAAC;IAAD,kCAAC;AAAD,CAAC,AAA5C,IAA4C;AAA/B,2BAA2B;IALvC,gBAAS,CAAC;QACP,WAAW,EAAE,sCAAsC;QACnD,SAAS,EAAE,CAAC,qCAAqC,CAAC;QAClD,QAAQ,EAAE,wBAAwB;KACrC,CAAC;GACW,2BAA2B,CAAI;AAA/B,kEAA2B"}

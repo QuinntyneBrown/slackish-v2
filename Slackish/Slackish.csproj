@@ -1,31 +1,44 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BA3A0650-A18B-4731-8EAA-F73868320EF7}</ProjectGuid>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7C27EA54-CA98-4F25-990C-43A519C9C204}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Slackish</RootNamespace>
     <AssemblyName>Slackish</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>bin\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>bin\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -33,155 +46,203 @@
   <ItemGroup>
     <Reference Include="container, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\container.1.1.1\lib\net40\container.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="MediatR, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MediatR.3.0.1\lib\net45\MediatR.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.2.0\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.AspNet.SignalR.SystemWeb, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.2.2.0\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
-      <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Owin.Cors, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.Cors.3.0.1\lib\net45\Microsoft.Owin.Cors.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Owin.Security, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Owin.Security.Jwt, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.Security.Jwt.3.0.1\lib\net45\Microsoft.Owin.Security.Jwt.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Practices.Unity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
       <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Practices.Unity.Configuration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
       <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.Practices.Unity.Interception, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
-      <HintPath>..\packages\Unity.Interception.4.0.1\lib\Net45\Microsoft.Practices.Unity.Interception.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.Practices.Unity.Interception.Configuration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
-      <HintPath>..\packages\Unity.Interception.4.0.1\lib\Net45\Microsoft.Practices.Unity.Interception.Configuration.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
       <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="Swashbuckle.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cd1bb07a5ac7c7bc, processorArchitecture=MSIL">
       <HintPath>..\packages\Swashbuckle.Core.5.3.2\lib\net40\Swashbuckle.Core.dll</HintPath>
-      <Private>True</Private>
     </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.configuration" />
     <Reference Include="System.Configuration.Install" />
-    <Reference Include="System.Core" />
     <Reference Include="System.IdentityModel" />
     <Reference Include="System.IdentityModel.Tokens.Jwt, Version=4.0.20622.1351, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.4.0.2.206221351\lib\net45\System.IdentityModel.Tokens.Jwt.dll</HintPath>
-      <Private>True</Private>
     </Reference>
-    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
-      <Private>True</Private>
     </Reference>
-    <Reference Include="System.Net.Http.WebRequest" />
     <Reference Include="System.Runtime.Caching" />
-    <Reference Include="System.Web" />
     <Reference Include="System.Web.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.3\lib\net45\System.Web.Cors.dll</HintPath>
-      <Private>True</Private>
     </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.Http.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.2.3\lib\net45\System.Web.Http.Cors.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.Http.Owin, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.5.2.3\lib\net45\System.Web.Http.Owin.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
     <Reference Include="Unity.WebApi, Version=5.2.3.0, Culture=neutral, PublicKeyToken=43da31bc42a85347, processorArchitecture=MSIL">
       <HintPath>..\packages\Unity.WebAPI.5.2.3\lib\net45\Unity.WebApi.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="WebApi.OutputCache.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Strathweb.CacheOutput.WebApi2.0.9.0\lib\net45\WebApi.OutputCache.Core.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="WebApi.OutputCache.V2, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Strathweb.CacheOutput.WebApi2.0.9.0\lib\net45\WebApi.OutputCache.V2.dll</HintPath>
-      <Private>True</Private>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="index.html" />
+    <Content Include="wwwroot\app\app.component.css">
+      <DependentUpon>app.component.html</DependentUpon>
+    </Content>
+    <Content Include="wwwroot\app\app.component.html" />
+    <Content Include="wwwroot\app\conversations\conversation-about.component.css">
+      <DependentUpon>conversation-about.component.html</DependentUpon>
+    </Content>
+    <Content Include="wwwroot\app\conversations\conversation-about.component.html" />
+    <Content Include="wwwroot\app\conversations\conversation-detail.component.css">
+      <DependentUpon>conversation-detail.component.html</DependentUpon>
+    </Content>
+    <Content Include="wwwroot\app\conversations\conversation-detail.component.html" />
+    <Content Include="wwwroot\app\conversations\conversation-header.component.css">
+      <DependentUpon>conversation-header.component.html</DependentUpon>
+    </Content>
+    <Content Include="wwwroot\app\conversations\conversation-header.component.html" />
+    <Content Include="wwwroot\app\conversations\conversation-list.component.css">
+      <DependentUpon>conversation-list.component.html</DependentUpon>
+    </Content>
+    <Content Include="wwwroot\app\conversations\conversation-list.component.html" />
+    <Content Include="wwwroot\app\conversations\conversation-messages.component.css">
+      <DependentUpon>conversation-messages.component.html</DependentUpon>
+    </Content>
+    <Content Include="wwwroot\app\conversations\conversation-messages.component.html" />
+    <Content Include="wwwroot\app\conversations\conversation.component.css">
+      <DependentUpon>conversation.component.html</DependentUpon>
+    </Content>
+    <Content Include="wwwroot\app\conversations\conversation.component.html" />
+    <Content Include="wwwroot\app\landing\landing-page.component.css">
+      <DependentUpon>landing-page.component.html</DependentUpon>
+    </Content>
+    <Content Include="wwwroot\app\landing\landing-page.component.html" />
+    <Content Include="wwwroot\app\messages\message-form.component.css">
+      <DependentUpon>message-form.component.html</DependentUpon>
+    </Content>
+    <Content Include="wwwroot\app\messages\message-form.component.html" />
+    <Content Include="wwwroot\app\messages\messages-page.component.css">
+      <DependentUpon>messages-page.component.html</DependentUpon>
+    </Content>
+    <Content Include="wwwroot\app\messages\messages-page.component.html" />
+    <Content Include="wwwroot\app\profiles\login-page.component.css">
+      <DependentUpon>login-page.component.html</DependentUpon>
+    </Content>
+    <Content Include="wwwroot\app\profiles\login-page.component.html" />
+    <Content Include="wwwroot\app\profiles\login.component.css">
+      <DependentUpon>login.component.html</DependentUpon>
+    </Content>
+    <Content Include="wwwroot\app\profiles\login.component.html" />
+    <Content Include="wwwroot\app\profiles\profile-list.component.css">
+      <DependentUpon>profile-list.component.html</DependentUpon>
+    </Content>
+    <Content Include="wwwroot\app\profiles\profile-list.component.html" />
+    <Content Include="wwwroot\app\profiles\register-page.component.css">
+      <DependentUpon>register-page.component.html</DependentUpon>
+    </Content>
+    <Content Include="wwwroot\app\profiles\register-page.component.html" />
+    <Content Include="Web.config" />
+    <Content Include="webpack.config.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiConfiguration.cs" />
     <Compile Include="Data\Helpers\SoftDeleteAttribute.cs" />
     <Compile Include="Data\Helpers\SoftDeleteInterceptor.cs" />
     <Compile Include="Data\Helpers\SoftDeleteQueryVisitor.cs" />
+    <Compile Include="Data\Models\Conversation.cs" />
     <Compile Include="Data\Models\ILoggable.cs" />
+    <Compile Include="Data\Models\Message.cs" />
+    <Compile Include="Data\Models\Profile.cs" />
+    <Compile Include="Data\Models\Tenant.cs" />
+    <Compile Include="Data\Models\User.cs" />
+    <Compile Include="Data\SlackishContext.cs" />
+    <Compile Include="Features\Conversations\ConversationApiModel.cs" />
+    <Compile Include="Features\Conversations\ConversationHub.cs" />
+    <Compile Include="Features\Conversations\ConversationsController.cs" />
     <Compile Include="Features\Conversations\GetByCurrentProfileQuery.cs" />
     <Compile Include="Features\Core\BaseHub.cs" />
     <Compile Include="Features\Core\Cache.cs" />
@@ -201,30 +262,26 @@
     <Compile Include="Features\Core\StringExtensions.cs" />
     <Compile Include="Features\Core\TenantMiddleware.cs" />
     <Compile Include="Features\Core\WebApiUnityActionFilterProvider.cs" />
+    <Compile Include="Features\Messages\GetMessagesQuery.cs" />
     <Compile Include="Features\Messages\MessageApiModel.cs" />
-    <Compile Include="Security\GetClaimsForUserQuery.cs" />
+    <Compile Include="Features\Messages\MessageHub.cs" />
+    <Compile Include="Features\Messages\MessagesController.cs" />
+    <Compile Include="Features\Messages\SendMessageCommand.cs" />
     <Compile Include="Features\Profiles\GetCurrentProfileQuery.cs" />
     <Compile Include="Features\Profiles\GetOtherProfiles.cs" />
     <Compile Include="Features\Profiles\GetUserQuery.cs" />
-    <Compile Include="Features\Profiles\UserApiModel.cs" />
-    <Compile Include="Features\Messages\SendMessageCommand.cs" />
-    <Compile Include="Features\Profiles\RegisterCommand.cs" />
-    <Compile Include="Features\Conversations\ConversationsController.cs" />
-    <Compile Include="Features\Messages\MessagesController.cs" />
-    <Compile Include="Features\Profiles\ProfilesController.cs" />
-    <Compile Include="Data\SlackishContext.cs" />
-    <Compile Include="Features\Conversations\ConversationHub.cs" />
-    <Compile Include="Features\Messages\MessageHub.cs" />
+    <Compile Include="Features\Profiles\ProfileApiModel.cs" />
     <Compile Include="Features\Profiles\ProfileHub.cs" />
+    <Compile Include="Features\Profiles\ProfilesController.cs" />
+    <Compile Include="Features\Profiles\RegisterCommand.cs" />
+    <Compile Include="Features\Profiles\UserApiModel.cs" />
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Data\Models\Conversation.cs" />
-    <Compile Include="Data\Models\Message.cs" />
-    <Compile Include="Data\Models\Profile.cs" />
-    <Compile Include="Data\Models\User.cs" />
-    <Compile Include="Features\Messages\GetMessagesQuery.cs" />
+    <Compile Include="Migrations\ProfileConfiguration.cs" />
+    <Compile Include="Migrations\TenantConfiguration.cs" />
     <Compile Include="Security\AuthConfiguration.cs" />
     <Compile Include="Security\AuthenticateCommand.cs" />
     <Compile Include="Security\EncryptionService.cs" />
+    <Compile Include="Security\GetClaimsForUserQuery.cs" />
     <Compile Include="Security\JwtOptions.cs" />
     <Compile Include="Security\JwtWriterFormat.cs" />
     <Compile Include="Security\OAuthOptions.cs" />
@@ -233,21 +290,124 @@
     <Compile Include="Security\Roles.cs" />
     <Compile Include="Security\UserManager.cs" />
     <Compile Include="UnityConfiguration.cs" />
-    <Compile Include="Features\Profiles\ProfileApiModel.cs" />
-    <Compile Include="Features\Conversations\ConversationApiModel.cs" />
-    <Compile Include="Data\Models\Tenant.cs" />
-    <Compile Include="Migrations\ProfileConfiguration.cs" />
-    <Compile Include="Migrations\TenantConfiguration.cs" />
     <Compile Include="UnityHubActivator.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
+    <Content Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Properties\" />
+    <TypeScriptCompile Include="wwwroot\app\app.component.ts">
+      <DependentUpon>app.component.html</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="wwwroot\app\app.module.ts" />
+    <TypeScriptCompile Include="wwwroot\app\conversations\conversation-about.component.ts">
+      <DependentUpon>conversation-about.component.html</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="wwwroot\app\conversations\conversation-detail.component.ts">
+      <DependentUpon>conversation-detail.component.html</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="wwwroot\app\conversations\conversation-header.component.ts">
+      <DependentUpon>conversation-header.component.html</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="wwwroot\app\conversations\conversation-list.component.ts">
+      <DependentUpon>conversation-list.component.html</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="wwwroot\app\conversations\conversation-messages.component.ts">
+      <DependentUpon>conversation-messages.component.html</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="wwwroot\app\conversations\conversation.component.ts">
+      <DependentUpon>conversation.component.html</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="wwwroot\app\conversations\conversations-hub.service.ts" />
+    <TypeScriptCompile Include="wwwroot\app\conversations\conversations.module.ts" />
+    <TypeScriptCompile Include="wwwroot\app\conversations\index.ts" />
+    <TypeScriptCompile Include="wwwroot\app\environment.ts" />
+    <TypeScriptCompile Include="wwwroot\app\index.ts" />
+    <TypeScriptCompile Include="wwwroot\app\landing\index.ts" />
+    <TypeScriptCompile Include="wwwroot\app\landing\landing-page.component.ts">
+      <DependentUpon>landing-page.component.html</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="wwwroot\app\landing\landing.module.ts" />
+    <TypeScriptCompile Include="wwwroot\app\messages\index.ts" />
+    <TypeScriptCompile Include="wwwroot\app\messages\message-form.component.ts">
+      <DependentUpon>message-form.component.html</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="wwwroot\app\messages\messages-hub.service.ts" />
+    <TypeScriptCompile Include="wwwroot\app\messages\messages-page.component.ts">
+      <DependentUpon>messages-page.component.html</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="wwwroot\app\messages\messages.module.ts" />
+    <TypeScriptCompile Include="wwwroot\app\profiles\index.ts" />
+    <TypeScriptCompile Include="wwwroot\app\profiles\login-page.component.ts">
+      <DependentUpon>login-page.component.html</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="wwwroot\app\profiles\login.component.ts">
+      <DependentUpon>login.component.html</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="wwwroot\app\profiles\profile-list.component.ts">
+      <DependentUpon>profile-list.component.html</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="wwwroot\app\profiles\profile.model.ts" />
+    <TypeScriptCompile Include="wwwroot\app\profiles\profile.service.ts" />
+    <TypeScriptCompile Include="wwwroot\app\profiles\profiles-hub.service.ts" />
+    <TypeScriptCompile Include="wwwroot\app\profiles\profiles.module.ts" />
+    <TypeScriptCompile Include="wwwroot\app\profiles\register-page.component.ts">
+      <DependentUpon>register-page.component.html</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="wwwroot\app\routing\index.ts" />
+    <TypeScriptCompile Include="wwwroot\app\routing\routing.module.ts" />
+    <TypeScriptCompile Include="wwwroot\app\shared\http.service.ts" />
+    <TypeScriptCompile Include="wwwroot\app\shared\index.ts" />
+    <TypeScriptCompile Include="wwwroot\app\shared\shared.module.ts" />
+    <TypeScriptCompile Include="wwwroot\app\shared\signalr-connection.service.ts" />
+    <TypeScriptCompile Include="wwwroot\main.ts" />
+    <TypeScriptCompile Include="wwwroot\polyfills.ts" />
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Content Include="package.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="tsconfig.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".gitignore" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>3815</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:3815/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

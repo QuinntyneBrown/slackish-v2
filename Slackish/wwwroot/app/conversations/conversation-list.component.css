@@ -1,0 +1,8 @@
+:host{
+    display: block;
+    content: contain;
+}
+
+cs-conversation-list-item {
+    margin: 10px 0px 10px 0px;
+}

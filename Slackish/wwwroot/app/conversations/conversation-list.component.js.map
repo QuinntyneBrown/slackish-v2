@@ -1,0 +1,1 @@
+{"version":3,"file":"conversation-list.component.js","sourceRoot":"","sources":["conversation-list.component.ts"],"names":[],"mappings":";;;;;;;;AAAA,sCAA0F;AAO1F,IAAa,yBAAyB;IAAtC;IAEA,CAAC;IAAD,gCAAC;AAAD,CAAC,AAFD,IAEC;AAFY,yBAAyB;IALrC,gBAAS,CAAC;QACP,WAAW,EAAE,oCAAoC;QACjD,SAAS,EAAE,CAAC,mCAAmC,CAAC;QAChD,QAAQ,EAAE,sBAAsB;KACnC,CAAC;GACW,yBAAyB,CAErC;AAFY,8DAAyB"}

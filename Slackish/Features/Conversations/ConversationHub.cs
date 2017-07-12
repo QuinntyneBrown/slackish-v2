@@ -1,7 +1,5 @@
 ﻿using System.Threading.Tasks;
-using Microsoft.AspNet.SignalR;
 using Microsoft.AspNet.SignalR.Hubs;
-using Slackish.Data;
 using Slackish.Security;
 using Slackish.Features.Core;
 using Microsoft.Owin.Security;
@@ -31,8 +29,6 @@ namespace Slackish.Features.Conversations
         public void Send(string username, string message)
         {
             Clients.All.broadcastMessage(new { username = username, message = message });
-        }
-
-        private readonly SlackishContext _contenxt;
+        }        
     }
 }
