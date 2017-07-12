@@ -238,6 +238,7 @@
     <Compile Include="Data\Models\Tenant.cs" />
     <Compile Include="Migrations\ProfileConfiguration.cs" />
     <Compile Include="Migrations\TenantConfiguration.cs" />
+    <Compile Include="UnityHubActivator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

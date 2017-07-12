@@ -4,6 +4,7 @@ using Microsoft.AspNet.SignalR.Hubs;
 using Slackish.Data;
 using Slackish.Security;
 using Slackish.Features.Core;
+using Microsoft.Owin.Security;
 
 namespace Slackish.Features.Conversations
 {
@@ -11,6 +12,10 @@ namespace Slackish.Features.Conversations
     [HubName("conversationHub")]
     public class ConversationHub: BaseHub
     {
+        public ConversationHub(ISecureDataFormat<AuthenticationTicket> jwtWriterFormat)
+            :base(jwtWriterFormat)
+        { }
+
         public override Task OnConnected()
         {
             AssignToTenantGroup();

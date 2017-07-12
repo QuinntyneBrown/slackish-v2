@@ -1,17 +1,17 @@
 ﻿using MediatR;
 using Slackish.Data;
+using Slackish.Features.Core;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Threading.Tasks;
 using System.Linq;
-using Slackish.Features.Core;
 using System;
 
 namespace Slackish.Features.Messages
 {
-    public class GetMessagesQuery: IRequest<GetMessagesResponse>
+    public class GetMessagesRequest: IRequest<GetMessagesResponse>
     {
-        public GetMessagesQuery() { }
+        public GetMessagesRequest() { }
         public Guid TenantUniqueId { get; set; }
     }
 
@@ -20,15 +20,15 @@ namespace Slackish.Features.Messages
         public List<MessageApiModel> Messages { get; set; }
     }
 
-    public class GetMessagesQueryHandler: IAsyncRequestHandler<GetMessagesQuery, GetMessagesResponse>
+    public class GetMessagesHandler: IAsyncRequestHandler<GetMessagesRequest, GetMessagesResponse>
     {
-        public GetMessagesQueryHandler(SlackishContext dataContext, ICache cache)
+        public GetMessagesHandler(SlackishContext dataContext, ICache cache)
         {
             _cache = cache;
             _context = dataContext;
         }
 
-        public async Task<GetMessagesResponse> Handle(GetMessagesQuery query)
+        public async Task<GetMessagesResponse> Handle(GetMessagesRequest query)
         {
             var messages = await _context.Messages
                 .Include(x=>x.Conversation)

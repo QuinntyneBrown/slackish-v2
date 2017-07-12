@@ -12,6 +12,8 @@ using System;
 using System.Web.Http;
 
 using static Slackish.Features.Core.WebApiUnityActionFilterProvider;
+using Microsoft.AspNet.SignalR.Hubs;
+using Microsoft.Owin.Security;
 
 namespace Slackish
 {
@@ -21,6 +23,10 @@ namespace Slackish
         {
             RegisterFilterProviders(config);
             var container = UnityConfiguration.GetContainer();
+
+            var unityHubActivator = new UnityHubActivator(container);
+            Microsoft.AspNet.SignalR.GlobalHost.DependencyResolver.Register(typeof(IHubActivator), () => unityHubActivator);
+            
             app.MapSignalR();
             app.Use(typeof(TenantMiddleware));
 
