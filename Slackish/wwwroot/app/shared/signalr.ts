@@ -2,6 +2,8 @@
 import {Observable} from "rxjs/Observable";
 import {constants} from "./constants";
 import {Storage } from "./storage.service";
+import "rxjs/add/observable/fromPromise";
+import "rxjs/add/operator/map";
 
 declare var $: any;
 

@@ -1,4 +1,5 @@
-﻿<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" />
@@ -318,7 +319,6 @@
     <TypeScriptCompile Include="wwwroot\app\conversations\conversation.component.ts">
       <DependentUpon>conversation.component.html</DependentUpon>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="wwwroot\app\conversations\conversations-hub.service.ts" />
     <TypeScriptCompile Include="wwwroot\app\conversations\conversations.module.ts" />
     <TypeScriptCompile Include="wwwroot\app\conversations\index.ts" />
     <TypeScriptCompile Include="wwwroot\app\environment.ts" />
@@ -359,7 +359,7 @@
     <TypeScriptCompile Include="wwwroot\app\shared\http.service.ts" />
     <TypeScriptCompile Include="wwwroot\app\shared\index.ts" />
     <TypeScriptCompile Include="wwwroot\app\shared\shared.module.ts" />
-    <TypeScriptCompile Include="wwwroot\app\shared\signalr-connection.service.ts" />
+    <TypeScriptCompile Include="wwwroot\app\shared\signalr.ts" />
     <TypeScriptCompile Include="wwwroot\main.ts" />
     <TypeScriptCompile Include="wwwroot\polyfills.ts" />
   </ItemGroup>

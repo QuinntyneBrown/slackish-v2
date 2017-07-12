@@ -24,13 +24,10 @@ bld/
 [Aa]ot/
 [Dd]ist/
 
-src/**/*.js
-src/**/*.js.map
-src/**/*.css
-src/**/*.css.map
 
 dist
 tests
+aot
 
 # Visual Studio 2015 cache/options directory
 .vs/

@@ -9,10 +9,9 @@ import { ConversationListComponent } from './conversation-list.component';
 import { ConversationMessagesComponent } from './conversation-messages.component';
 import { ConversationComponent } from './conversation.component';
 
-import { ConversationsHubService } from "./conversations-hub.service";
 
 const declarables = [ConversationComponent];
-const providers = [ConversationsHubService];
+const providers = [];
 
 @NgModule({
     imports: [CommonModule, ProfilesModule],
