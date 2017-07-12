@@ -24,6 +24,8 @@ bld/
 [Aa]ot/
 [Dd]ist/
 
+wwwroot/**/*.js
+wwwroot/**/*.js.map
 
 dist
 tests
