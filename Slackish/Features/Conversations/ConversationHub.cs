@@ -2,11 +2,14 @@
 using Microsoft.AspNet.SignalR;
 using Microsoft.AspNet.SignalR.Hubs;
 using Slackish.Data;
+using Slackish.Security;
+using Slackish.Features.Core;
 
 namespace Slackish.Features.Conversations
 {
+    [QueryStringBearerAuthorize]
     [HubName("conversationHub")]
-    public class ConversationHub: Hub
+    public class ConversationHub: BaseHub
     {
         public override Task OnConnected()
         {

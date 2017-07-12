@@ -1,13 +1,14 @@
-﻿using Microsoft.AspNet.SignalR;
-using Microsoft.AspNet.SignalR.Hubs;
-using System;
+﻿using Microsoft.AspNet.SignalR.Hubs;
+using Slackish.Features.Core;
+using Slackish.Security;
 
 namespace Slackish.Features.Profiles
 {
+    [QueryStringBearerAuthorize]
     [HubName("profileHub")]
-    public class ProfileHub: Hub
+    public class ProfileHub: BaseHub
     {
-        public void Send(string username, string message, Guid? tenantUniqueId)
+        public void Send(string username, string message)
         {
             Clients.All.broadcastMessage(new { username = username, message = message });
         }

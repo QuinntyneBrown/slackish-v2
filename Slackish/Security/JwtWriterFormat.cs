@@ -2,6 +2,8 @@ using System.IdentityModel.Tokens;
 using Microsoft.Owin.Security;
 using System;
 using Microsoft.Owin.Security.OAuth;
+using System.ServiceModel.Security.Tokens;
+using System.Security.Claims;
 
 namespace Slackish.Security
 {
@@ -47,7 +49,27 @@ namespace Slackish.Security
 
         public AuthenticationTicket Unprotect(string protectedText)
         {
-            throw new NotImplementedException();
+            var jwtSecurityTokenHandler = new JwtSecurityTokenHandler();
+
+            var validationParameters = new TokenValidationParameters
+            {
+                ValidAudience = _authConfiguration.JwtAudience,
+                ValidIssuer = _authConfiguration.JwtIssuer,
+                IssuerSigningToken = new BinarySecretSecurityToken(Convert.FromBase64String(_authConfiguration.JwtKey)),
+                ValidateAudience = true,
+                ValidateIssuer = true,
+                ValidateIssuerSigningKey = true
+            };
+
+            if (!jwtSecurityTokenHandler.CanReadToken(protectedText))
+            {
+                return null;
+            }
+            SecurityToken securityToken;
+
+            var claimsPrincipal = jwtSecurityTokenHandler.ValidateToken(protectedText, validationParameters, out securityToken);
+
+            return new AuthenticationTicket(new ClaimsIdentity(claimsPrincipal.Identity), new AuthenticationProperties());
         }
     }
 }
