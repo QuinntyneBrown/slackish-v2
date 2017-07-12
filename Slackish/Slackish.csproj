@@ -183,6 +183,7 @@
     <Compile Include="Data\Helpers\SoftDeleteQueryVisitor.cs" />
     <Compile Include="Data\Models\ILoggable.cs" />
     <Compile Include="Features\Conversations\GetByCurrentProfileQuery.cs" />
+    <Compile Include="Features\Core\BaseHub.cs" />
     <Compile Include="Features\Core\Cache.cs" />
     <Compile Include="Features\Core\CacheProvider.cs" />
     <Compile Include="Features\Core\HandleError.cs" />
