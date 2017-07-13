@@ -10,7 +10,7 @@ namespace Slackish.Features.Messages
     public class SendMessageCommand
     {
 
-        public class SendMessageRequest : IRequest<SendMessageResponse>
+        public class Request : IRequest<SendMessageResponse>
         {
             public string Content { get; set; }
             public int OtherProfileId { get; set; }
@@ -21,14 +21,14 @@ namespace Slackish.Features.Messages
         public class SendMessageResponse { }
 
         public class SendMessageHandler
-            : IAsyncRequestHandler<SendMessageRequest, SendMessageResponse>
+            : IAsyncRequestHandler<Request, SendMessageResponse>
         {
             public SendMessageHandler(SlackishContext context)
             {
                 _context = context;
             }
 
-            public Task<SendMessageResponse> Handle(SendMessageRequest message)
+            public Task<SendMessageResponse> Handle(Request message)
             {                
                 var currentProfile = _context.Profiles
                     .Where(x => x.User.Username == message.Username)

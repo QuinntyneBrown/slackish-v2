@@ -2,8 +2,6 @@ using MediatR;
 using Microsoft.AspNet.SignalR;
 using System;
 
-using static Slackish.Features.Messages.SendMessageCommand;
-
 namespace Slackish.Features.Messages
 {
     public class SendMessageAndReplyCommand
@@ -17,9 +15,9 @@ namespace Slackish.Features.Messages
             public Guid TenantUniqueId { get; set; }
         }
 
-        public class SendMessageAndReplyHandler : IRequestHandler<Request>
+        public class Handler : IRequestHandler<Request>
         {
-            public SendMessageAndReplyHandler(IMediator mediator)
+            public Handler(IMediator mediator)
             {
                 _meditator = mediator;
             }
@@ -28,9 +26,11 @@ namespace Slackish.Features.Messages
             {
                 var context = GlobalHost.ConnectionManager.GetHubContext<MessageHub>();
 
+                context.Clients.All.messages(request);
+
                 try
                 {
-                    _meditator.Send(new SendMessageRequest() {
+                    _meditator.Send(new SendMessageCommand.Request() {
                         Content = request.Content,
                         OtherProfileId = request.OtherProfileId,
                         Username = request.Username,
@@ -40,9 +40,7 @@ namespace Slackish.Features.Messages
                 catch
                 {
                     context.Clients.All.failedMessages(request);                    
-                }
-
-                context.Clients.All.messages(request);                
+                }             
             }
 
             private readonly IMediator _meditator;
