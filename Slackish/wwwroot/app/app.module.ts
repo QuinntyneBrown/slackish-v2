@@ -5,7 +5,10 @@ import {RouterModule} from '@angular/router';
 import {HttpModule} from '@angular/http';
 import {FormsModule} from '@angular/forms';
 
-import { ConversationsModule } from "../app/conversations";
+import {ConversationsModule} from "../app/conversations";
+import {MessagesModule} from "../app/messages";
+import {ProfilesModule} from "../app/profiles";
+import {SharedModule} from "../app/shared";
 
 import { AppComponent } from './app.component';
 
@@ -32,7 +35,10 @@ const providers = [
         FormsModule,
         RouterModule,
 
-        ConversationsModule
+        ConversationsModule,
+        MessagesModule,
+        ProfilesModule,
+        SharedModule
     ],
     providers: providers,
     declarations: [declarables],
