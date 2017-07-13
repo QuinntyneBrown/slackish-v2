@@ -1,13 +1,10 @@
 ﻿import { Routes, RouterModule } from '@angular/router';
-
-import {
-    LandingPageComponent
-} from "../landing";
+import { ConversationComponent } from "../conversations";
 
 export const routes: Routes = [
     {
         path: '',
-        component: LandingPageComponent
+        component: ConversationComponent
     }
 ];
 
@@ -16,5 +13,5 @@ export const RoutingModule = RouterModule.forRoot([
 ]);
 
 export const routedComponents = [
-    LandingPageComponent
+    ConversationComponent
 ];

@@ -1,9 +1,11 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { BrowserModule  } from '@angular/platform-browser';
-import { RouterModule  } from '@angular/router';
-import { HttpModule } from '@angular/http';
-import { FormsModule } from '@angular/forms';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {BrowserModule} from '@angular/platform-browser';
+import {RouterModule} from '@angular/router';
+import {HttpModule} from '@angular/http';
+import {FormsModule} from '@angular/forms';
+
+import { ConversationsModule } from "../app/conversations";
 
 import { AppComponent } from './app.component';
 
@@ -17,7 +19,6 @@ const declarables = [
     routedComponents
 ];
 
-
 const providers = [
 
 ];
@@ -29,7 +30,9 @@ const providers = [
         HttpModule,
         CommonModule,
         FormsModule,
-        RouterModule
+        RouterModule,
+
+        ConversationsModule
     ],
     providers: providers,
     declarations: [declarables],

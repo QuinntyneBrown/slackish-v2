@@ -2,8 +2,8 @@ import { Component, Output, Input, EventEmitter, Renderer, AfterViewInit, ViewCh
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 
 @Component({
-    template: require("./login.component.html"),
-    styles: [require("./login.component.scss")],
+    templateUrl: "./login.component.html",
+    styleUrls: ["./login.component.css"],
     selector: "ce-login"
 })
 export class LoginComponent implements AfterViewInit { 

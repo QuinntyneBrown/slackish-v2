@@ -8,9 +8,19 @@ import { ConversationHeaderComponent } from './conversation-header.component';
 import { ConversationListComponent } from './conversation-list.component';
 import { ConversationMessagesComponent } from './conversation-messages.component';
 import { ConversationComponent } from './conversation.component';
+import { ConversationDetailHeaderComponent } from "./conversation-detail-header.component";
+import { ConversationListHeaderComponent } from "./conversation-list-header.component";
 
+const declarables = [
+    ConversationAboutComponent,
+    ConversationDetailComponent,
+    ConversationHeaderComponent,
+    ConversationListComponent,
+    ConversationMessagesComponent,
+    ConversationDetailHeaderComponent,
+    ConversationListHeaderComponent
+];
 
-const declarables = [ConversationComponent];
 const providers = [];
 
 @NgModule({

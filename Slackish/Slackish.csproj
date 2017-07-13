@@ -170,6 +170,9 @@
       <DependentUpon>conversation-about.component.html</DependentUpon>
     </Content>
     <Content Include="wwwroot\app\conversations\conversation-about.component.html" />
+    <Content Include="wwwroot\app\conversations\conversation-detail-header.component.css">
+      <DependentUpon>conversation-detail-header.component.html</DependentUpon>
+    </Content>
     <Content Include="wwwroot\app\conversations\conversation-detail.component.css">
       <DependentUpon>conversation-detail.component.html</DependentUpon>
     </Content>
@@ -178,6 +181,9 @@
       <DependentUpon>conversation-header.component.html</DependentUpon>
     </Content>
     <Content Include="wwwroot\app\conversations\conversation-header.component.html" />
+    <Content Include="wwwroot\app\conversations\conversation-list-header.component.css">
+      <DependentUpon>conversation-list-header.component.html</DependentUpon>
+    </Content>
     <Content Include="wwwroot\app\conversations\conversation-list.component.css">
       <DependentUpon>conversation-list.component.html</DependentUpon>
     </Content>
@@ -220,6 +226,8 @@
     <Content Include="wwwroot\app\profiles\register-page.component.html" />
     <Content Include="Web.config" />
     <Content Include="webpack.config.js" />
+    <Content Include="wwwroot\app\conversations\conversation-detail-header.component.html" />
+    <Content Include="wwwroot\app\conversations\conversation-list-header.component.html" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
@@ -305,11 +313,17 @@
     <TypeScriptCompile Include="wwwroot\app\conversations\conversation-about.component.ts">
       <DependentUpon>conversation-about.component.html</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="wwwroot\app\conversations\conversation-detail-header.component.ts">
+      <DependentUpon>conversation-detail-header.component.html</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="wwwroot\app\conversations\conversation-detail.component.ts">
       <DependentUpon>conversation-detail.component.html</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="wwwroot\app\conversations\conversation-header.component.ts">
       <DependentUpon>conversation-header.component.html</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="wwwroot\app\conversations\conversation-list-header.component.ts">
+      <DependentUpon>conversation-list-header.component.html</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="wwwroot\app\conversations\conversation-list.component.ts">
       <DependentUpon>conversation-list.component.html</DependentUpon>
@@ -357,8 +371,12 @@
     </TypeScriptCompile>
     <TypeScriptCompile Include="wwwroot\app\routing\index.ts" />
     <TypeScriptCompile Include="wwwroot\app\routing\routing.module.ts" />
+    <TypeScriptCompile Include="wwwroot\app\shared\auth-guard.service.ts" />
+    <TypeScriptCompile Include="wwwroot\app\shared\authentication.service.ts" />
+    <TypeScriptCompile Include="wwwroot\app\shared\constants.ts" />
     <TypeScriptCompile Include="wwwroot\app\shared\http.service.ts" />
     <TypeScriptCompile Include="wwwroot\app\shared\index.ts" />
+    <TypeScriptCompile Include="wwwroot\app\shared\login-redirect.service.ts" />
     <TypeScriptCompile Include="wwwroot\app\shared\shared.module.ts" />
     <TypeScriptCompile Include="wwwroot\app\shared\signalr.ts" />
     <TypeScriptCompile Include="wwwroot\main.ts" />
