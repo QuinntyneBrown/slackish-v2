@@ -24,6 +24,6 @@ namespace Slackish.Features.Profiles
         public async Task<IHttpActionResult> Register(RegisterRequest request)
             => Ok(await _mediator.Send(request));
 
-        protected readonly IMediator _mediator;
+        private readonly IMediator _mediator;
     }
 }

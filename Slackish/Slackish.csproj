@@ -290,6 +290,7 @@
     <Compile Include="Security\QueryStringBearerAuthorizeAttribute.cs" />
     <Compile Include="Security\Roles.cs" />
     <Compile Include="Security\UserManager.cs" />
+    <Compile Include="Startup.cs" />
     <Compile Include="UnityConfiguration.cs" />
     <Compile Include="UnityHubActivator.cs" />
   </ItemGroup>

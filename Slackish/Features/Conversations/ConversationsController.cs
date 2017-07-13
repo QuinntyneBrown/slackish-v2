@@ -21,13 +21,12 @@ namespace Slackish.Features.Conversations
         [HttpGet]
         [ResponseType(typeof(List<ConversationApiModel>))]
         public async Task<IHttpActionResult> GetByCurrentProfile()
-        {
+        {            
             var request = new GetByCurrentProfileRequest(User.Identity.Name);
             request.TenantUniqueId = Request.GetTenantUniqueId();
             return Ok(await _mediator.Send(request));
         }
         
-
-        protected readonly IMediator _mediator;
+        private readonly IMediator _mediator;
     }
 }

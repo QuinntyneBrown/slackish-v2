@@ -1,5 +1,5 @@
-using Slackish.Data.Helpers;
 using Slackish.Data.Models;
+using Slackish.Data.Helpers;
 using System;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
@@ -11,7 +11,7 @@ namespace Slackish.Data
     public class SlackishContext: DbContext
     {
         public SlackishContext()
-            : base(nameOrConnectionString: "SlackishDataContext")
+            : base(nameOrConnectionString: "SlackishContext")
         {
             Configuration.ProxyCreationEnabled = false;
             Configuration.LazyLoadingEnabled = false;
