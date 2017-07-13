@@ -4,10 +4,9 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 import { MessagesPageComponent } from './messages-page.component';
 import { MessageFormComponent } from "./message-form.component";
-import { MessagesHubService } from "./messages-hub.service";
 
 const declarables = [MessagesPageComponent,MessageFormComponent];
-const providers = [MessagesHubService];
+const providers = [];
 
 @NgModule({
     imports: [CommonModule, FormsModule, ReactiveFormsModule],

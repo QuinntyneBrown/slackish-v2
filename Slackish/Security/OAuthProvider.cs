@@ -18,7 +18,7 @@ namespace Slackish.Security
         {
             var identity = new ClaimsIdentity(_authConfiguration.AuthType);
             var username = context.OwinContext.Get<string>($"{_authConfiguration.AuthType}:username");
-            var response = await _mediator.Send(new GetClaimsForUserQuery.GetClaimsForUserRequest() { Username = username });
+            var response = await _mediator.Send(new GetClaimsForUserQuery.Request() { Username = username });
 
             foreach (var claim in response.Claims)
             {

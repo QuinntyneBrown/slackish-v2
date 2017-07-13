@@ -1,11 +1,12 @@
 ﻿using MediatR;
+using Slackish.Features.Core;
 using System.Threading.Tasks;
 using System.Web.Http;
 
 namespace Slackish.Features.Profiles
 {    
     [RoutePrefix("api/profiles")]
-    public class ProfilesController: ApiController
+    public class ProfilesController: BaseApiController
     {
         public ProfilesController(IMediator mediator)
         {

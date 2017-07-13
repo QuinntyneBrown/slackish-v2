@@ -9,36 +9,37 @@ namespace Slackish.Security
 {
     public class GetClaimsForUserQuery
     {
-        public class GetClaimsForUserRequest : IRequest<GetClaimsForUserResponse>
+        public class Request : IRequest<Response>
         {
             public string Username { get; set; }
         }
 
-        public class GetClaimsForUserResponse
+        public class Response
         {
             public ICollection<Claim> Claims { get; set; }
         }
 
-        public class GetClaimsForUserHandler : IAsyncRequestHandler<GetClaimsForUserRequest, GetClaimsForUserResponse>
+        public class Handler : IAsyncRequestHandler<Request, Response>
         {
-            public GetClaimsForUserHandler(SlackishContext context)
+            public Handler(SlackishContext context)
             {
                 _context = context;
             }
 
-            public async Task<GetClaimsForUserResponse> Handle(GetClaimsForUserRequest message)
+            public async Task<Response> Handle(Request message)
             {
 
                 var claims = new List<System.Security.Claims.Claim>();
 
-                var user = await _context.Users                    
+                var user = await _context.Users    
+                    .Include(x=>x.Tenant)
                     .SingleAsync(x => x.Username == message.Username);
 
                 claims.Add(new Claim("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name", message.Username));
 
-                claims.Add(new Claim("tenant-id", $"{user.TenantId}"));
+                claims.Add(new Claim("tenant", $"{user.Tenant.UniqueId}"));
 
-                return new GetClaimsForUserResponse()
+                return new Response()
                 {
                     Claims = claims
                 };

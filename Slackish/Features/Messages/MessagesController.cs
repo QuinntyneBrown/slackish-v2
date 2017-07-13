@@ -1,11 +1,12 @@
 ﻿using MediatR;
+using Slackish.Features.Core;
 using System.Web.Http;
 
 namespace Slackish.Features.Messages
 {
     [Authorize]
     [RoutePrefix("api/messages")]
-    public class MessagesController: ApiController
+    public class MessagesController: BaseApiController
     {
         public MessagesController(IMediator mediator)
         {

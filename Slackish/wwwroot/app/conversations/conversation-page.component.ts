@@ -18,7 +18,7 @@ export class ConversationPageComponent implements OnInit {
 
     async ngOnInit() {
         this.otherProfiles = await this._profilesService.getOtherProfiles();
-        this.conversations = await this._conversationsService.get();
+        this.conversations = await this._conversationsService.getByCurrentProfile();
     }
 
     public otherProfiles: Array<Profile> = [];

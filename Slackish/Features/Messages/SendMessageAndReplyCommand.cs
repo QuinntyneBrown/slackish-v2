@@ -26,7 +26,7 @@ namespace Slackish.Features.Messages
             {
                 var context = GlobalHost.ConnectionManager.GetHubContext<MessageHub>();
 
-                context.Clients.All.messages(request);
+                context.Clients.Group($"{request.TenantUniqueId}").messages(request);
 
                 try
                 {
@@ -39,7 +39,7 @@ namespace Slackish.Features.Messages
                 }
                 catch
                 {
-                    context.Clients.All.failedMessages(request);                    
+                    context.Clients.Group($"{request.TenantUniqueId}").failedMessages(request);                    
                 }             
             }
 

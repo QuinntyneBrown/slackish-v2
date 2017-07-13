@@ -255,6 +255,7 @@
     <Compile Include="Features\Conversations\ConversationHub.cs" />
     <Compile Include="Features\Conversations\ConversationsController.cs" />
     <Compile Include="Features\Conversations\GetByCurrentProfileQuery.cs" />
+    <Compile Include="Features\Core\BaseApiController.cs" />
     <Compile Include="Features\Core\BaseHub.cs" />
     <Compile Include="Features\Core\Cache.cs" />
     <Compile Include="Features\Core\CacheProvider.cs" />
@@ -348,7 +349,6 @@
     <TypeScriptCompile Include="wwwroot\app\messages\message-form.component.ts">
       <DependentUpon>message-form.component.html</DependentUpon>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="wwwroot\app\messages\messages-hub.service.ts" />
     <TypeScriptCompile Include="wwwroot\app\messages\messages-page.component.ts">
       <DependentUpon>messages-page.component.html</DependentUpon>
     </TypeScriptCompile>

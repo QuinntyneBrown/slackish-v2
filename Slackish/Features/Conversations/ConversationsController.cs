@@ -9,7 +9,7 @@ namespace Slackish.Features.Conversations
 {
     [Authorize]
     [RoutePrefix("api/conversations")]
-    public class ConversationsController: ApiController
+    public class ConversationsController: BaseApiController
     {
         public ConversationsController(IMediator mediator)
         {
