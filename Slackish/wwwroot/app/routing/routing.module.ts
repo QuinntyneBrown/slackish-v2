@@ -10,7 +10,7 @@ export const routes: Routes = [
         canActivate: [AuthGuardService]
     },
     {
-        path: '/login',
+        path: 'login',
         component: LoginPageComponent
     }
 ];
@@ -20,5 +20,6 @@ export const RoutingModule = RouterModule.forRoot([
 ]);
 
 export const routedComponents = [
-    ConversationComponent
+    ConversationComponent,
+    LoginPageComponent
 ];
