@@ -11,9 +11,9 @@ namespace Slackish.Features.Conversations
 {
     public class GetByCurrentProfileQuery
     {
-        public class GetByCurrentProfileRequest : IRequest<GetByCurrentProfileResponse>
+        public class Request : IRequest<Response>
         {
-            public GetByCurrentProfileRequest(string usernmae)
+            public Request(string usernmae)
             {
                 Username = Username;
             }
@@ -21,9 +21,9 @@ namespace Slackish.Features.Conversations
             public string Username { get; set; }
         }
 
-        public class GetByCurrentProfileResponse
+        public class Response
         {
-            public GetByCurrentProfileResponse(ICollection<ConversationApiModel> conversations)
+            public Response(ICollection<ConversationApiModel> conversations)
             {
                 Conversations = conversations;
             }
@@ -31,16 +31,16 @@ namespace Slackish.Features.Conversations
             public ICollection<ConversationApiModel> Conversations { get; set; }
         }
 
-        public class GetByCurrentProfileHandler : IAsyncRequestHandler<GetByCurrentProfileRequest, GetByCurrentProfileResponse>
+        public class Handler : IAsyncRequestHandler<Request, Response>
         {
 
-            public GetByCurrentProfileHandler(SlackishContext dataContext, ICache cache)
+            public Handler(SlackishContext dataContext, ICache cache)
             {
                 _context = dataContext;
                 _cache = cache;
             }
 
-            public async Task<GetByCurrentProfileResponse> Handle(GetByCurrentProfileRequest request)
+            public async Task<Response> Handle(Request request)
             {
                 var results = await _cache.FromCacheOrServiceAsync(() => _context.Conversations
                     .Include(x => x.Profiles)
@@ -49,7 +49,7 @@ namespace Slackish.Features.Conversations
                     .Where(x => x.Profiles.Any(p => p.User.Username == request.Username))                    
                     .ToListAsync(),$"[Conversation] GetByCurrentProfile: {request.Username}");
 
-                return new GetByCurrentProfileResponse(results
+                return new Response(results
                     .Select(x => ConversationApiModel.FromConversation(x))
                     .ToList());
             }

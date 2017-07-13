@@ -1,9 +1,25 @@
-import { Component, Output, Input, EventEmitter, Renderer, AfterViewInit, ViewChild, ElementRef } from "@angular/core";
+import {
+    Component,
+    ChangeDetectionStrategy,
+    Input,
+    OnInit,
+    EventEmitter,
+    Output,
+    AfterViewInit,
+    AfterContentInit,
+    Renderer,
+    ElementRef,
+    ViewEncapsulation
+} from "@angular/core";
+
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 
 @Component({
     templateUrl: "./login.component.html",
-    styleUrls: ["./login.component.css"],
+    styleUrls: [
+        "../shared/styles/forms.css",
+        "./login.component.css"
+    ],
     selector: "ce-login"
 })
 export class LoginComponent implements AfterViewInit { 

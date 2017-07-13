@@ -1,9 +1,5 @@
 ﻿using MediatR;
-using System.Security.Claims;
-using System.Threading.Tasks;
 using System.Web.Http;
-
-using static Slackish.Features.Messages.SendMessageCommand;
 
 namespace Slackish.Features.Messages
 {
@@ -18,11 +14,10 @@ namespace Slackish.Features.Messages
 
         [HttpPost]
         [Route("send")]
-        public async Task<IHttpActionResult> Send(SendMessageRequest request)
-        {
-            var identity = User.Identity as ClaimsIdentity;
-
-            return Ok(await _mediator.Send(request));
+        public IHttpActionResult Send(SendMessageAndReplyCommand.Request request)
+        {            
+            _mediator.Send(request);
+            return Ok();
         }
         
         private readonly IMediator _mediator;

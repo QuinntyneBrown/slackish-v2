@@ -2,6 +2,7 @@ using MediatR;
 using Microsoft.Owin.Cors;
 using Microsoft.Practices.Unity;
 using Microsoft.Owin.Security.OAuth;
+using Microsoft.AspNet.SignalR.Hubs;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using Owin;
@@ -12,8 +13,7 @@ using System;
 using System.Web.Http;
 
 using static Slackish.Features.Core.WebApiUnityActionFilterProvider;
-using Microsoft.AspNet.SignalR.Hubs;
-using Microsoft.Owin.Security;
+
 
 namespace Slackish
 {

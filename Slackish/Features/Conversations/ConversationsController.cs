@@ -5,8 +5,6 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
 
-using static Slackish.Features.Conversations.GetByCurrentProfileQuery;
-
 namespace Slackish.Features.Conversations
 {
     [Authorize]
@@ -22,7 +20,7 @@ namespace Slackish.Features.Conversations
         [ResponseType(typeof(List<ConversationApiModel>))]
         public async Task<IHttpActionResult> GetByCurrentProfile()
         {            
-            var request = new GetByCurrentProfileRequest(User.Identity.Name);
+            var request = new GetByCurrentProfileQuery.Request(User.Identity.Name);
             request.TenantUniqueId = Request.GetTenantUniqueId();
             return Ok(await _mediator.Send(request));
         }

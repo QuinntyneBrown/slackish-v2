@@ -11,8 +11,11 @@ namespace Slackish.Data.Models
         public int Id { get; set; }
         [ForeignKey("User")]
         public int? UserId { get; set; }
+        [ForeignKey("Tenant")]
+        public int? TenantId { get; set; }
         public string Name { get; set; }
         public User User { get; set; }
+        public Tenant Tenant { get; set; }
         public ICollection<Conversation> Conversations { get; set; } = new HashSet<Conversation>();
         public DateTime CreatedOn { get; set; }
         public DateTime LastModifiedOn { get; set; }

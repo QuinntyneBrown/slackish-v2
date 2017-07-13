@@ -87,7 +87,7 @@ namespace Slackish.Security
             }
             catch(Exception e)
             {
-
+                Console.Write(e.Message);
             }
 
             return false;

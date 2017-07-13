@@ -11,12 +11,7 @@ namespace Slackish.Features.Profiles
     {
         public ProfileHub(ISecureDataFormat<AuthenticationTicket> jwtWriterFormat)
             :base(jwtWriterFormat)
-        {
+        { }
 
-        }
-        public void Send(string username, string message)
-        {
-            Clients.All.broadcastMessage(new { username = username, message = message });
-        }
     }
 }

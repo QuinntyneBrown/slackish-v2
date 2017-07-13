@@ -2,8 +2,6 @@
 using System.Threading.Tasks;
 using System.Web.Http;
 
-using static Slackish.Features.Profiles.GetOtherProfilesQuery;
-
 namespace Slackish.Features.Profiles
 {    
     [RoutePrefix("api/profiles")]
@@ -17,12 +15,14 @@ namespace Slackish.Features.Profiles
         [HttpGet]
         [Route("getByOtherProfileId")]
         public async Task<IHttpActionResult> GetByOtherProfileId(int otherProfileId)
-            => Ok(await _mediator.Send(new GetOtherProfilesRequest() { OtherProfileId = otherProfileId }));
+            => Ok(await _mediator.Send(new GetOtherProfilesQuery.Request() { OtherProfileId = otherProfileId }));
 
         [HttpPost]
         [Route("register")]
-        public async Task<IHttpActionResult> Register(RegisterRequest request)
-            => Ok(await _mediator.Send(request));
+        public async Task<IHttpActionResult> Register(RegisterCommand.Request request) {
+            await _mediator.Send(request);
+            return Ok();
+        }
 
         private readonly IMediator _mediator;
     }

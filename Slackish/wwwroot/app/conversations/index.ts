@@ -6,5 +6,5 @@ export * from "./conversation-list-header.component";
 export * from "./conversation-list.component";
 export * from "./conversation-messages.component";
 export * from "./conversation-streams.service";
-export * from "./conversation.component";
+export * from "./conversation-page.component";
 export * from "./conversations.module";

@@ -1,5 +1,6 @@
 using Slackish.Data.Helpers;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Slackish.Data.Models
@@ -18,6 +19,7 @@ namespace Slackish.Data.Models
         public string Firstname { get; set; }
         public string Lastname { get; set; }
         public string Fullname { get { return $"{Firstname} {Lastname}"; } }
+        public ICollection<Profile> Profiles { get; set; } = new HashSet<Profile>();
         public DateTime CreatedOn { get; set; }
         public DateTime LastModifiedOn { get; set; }
         public string CreatedBy { get; set; }

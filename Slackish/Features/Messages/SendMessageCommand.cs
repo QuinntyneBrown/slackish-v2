@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Slackish.Data;
 using Slackish.Data.Models;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -14,6 +15,7 @@ namespace Slackish.Features.Messages
             public string Content { get; set; }
             public int OtherProfileId { get; set; }
             public string Username { get; set; }
+            public Guid TenantUniqueId { get; set; }
         }
 
         public class SendMessageResponse { }
@@ -21,9 +23,9 @@ namespace Slackish.Features.Messages
         public class SendMessageHandler
             : IAsyncRequestHandler<SendMessageRequest, SendMessageResponse>
         {
-            public SendMessageHandler(SlackishContext slackishDbContext)
+            public SendMessageHandler(SlackishContext context)
             {
-                _context = slackishDbContext;
+                _context = context;
             }
 
             public Task<SendMessageResponse> Handle(SendMessageRequest message)

@@ -2,6 +2,11 @@
     display:block;
 }
 
-input[type=text] {
-    width:100%;
+input[type=text],
+input[type=password]{
+    width:calc(100% - 22px);
+    line-height:2em;
+    padding:0px 10px 0px 10px; 
+    border: solid 1px #333;
+    margin:10px 0px 10px 0px;
 }

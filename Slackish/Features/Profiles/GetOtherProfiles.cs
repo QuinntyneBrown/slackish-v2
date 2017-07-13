@@ -11,12 +11,11 @@ namespace Slackish.Features.Profiles
 {
     public class GetOtherProfilesQuery
     {
-        public class GetOtherProfilesRequest : IRequest<GetOtherProfilesResponse>
+        public class Request : IRequest<GetOtherProfilesResponse>
         {
             public string Username { get; set; }
             public int OtherProfileId { get; set; }
             public Guid TenantUniqueId { get; set; }
-
         }
 
         public class GetOtherProfilesResponse
@@ -24,14 +23,14 @@ namespace Slackish.Features.Profiles
             public ICollection<ProfileApiModel> Profiles { get; set; } = new HashSet<ProfileApiModel>();
         }
 
-        public class GetOtherProfilesHandler : IAsyncRequestHandler<GetOtherProfilesRequest, GetOtherProfilesResponse>
+        public class GetOtherProfilesHandler : IAsyncRequestHandler<Request, GetOtherProfilesResponse>
         {
             public GetOtherProfilesHandler(SlackishContext context)
             {
                 _context = context;
             }
 
-            public async Task<GetOtherProfilesResponse> Handle(GetOtherProfilesRequest request)
+            public async Task<GetOtherProfilesResponse> Handle(Request request)
             {                
                 var profiles = await _cache.FromCacheOrServiceAsync(() => _context
                     .Profiles

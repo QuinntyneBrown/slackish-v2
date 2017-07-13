@@ -1,8 +1,8 @@
+using MediatR;
 using Microsoft.Owin.Security.OAuth;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using System;
-using MediatR;
 
 namespace Slackish.Security
 {
@@ -33,7 +33,7 @@ namespace Slackish.Security
             {
                 var username = context.Parameters["username"];
                 var password = context.Parameters["password"];
-                var response = await _mediator.Send(new AuthenticateCommand.AuthenticateRequest() { Username = username, Password = password });
+                var response = await _mediator.Send(new IsValidUserQuery.Request() { Username = username, Password = password });
                 if (response.IsAuthenticated)
                 {
                     context.OwinContext.Set($"{_authConfiguration.AuthType}:username", username);
@@ -52,8 +52,8 @@ namespace Slackish.Security
             }            
         }
 
-        protected IMediator _mediator { get; set; }
-        protected IAuthConfiguration _authConfiguration { get { return _lazyAuthConfiguration.Value; } }
-        protected Lazy<IAuthConfiguration> _lazyAuthConfiguration;
+        private readonly IMediator _mediator;
+        private readonly IAuthConfiguration _authConfiguration;
+        private readonly Lazy<IAuthConfiguration> _lazyAuthConfiguration;
     }
 }

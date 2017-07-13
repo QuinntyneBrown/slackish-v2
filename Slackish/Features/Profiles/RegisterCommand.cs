@@ -1,53 +1,60 @@
-﻿using System;
-using System.Threading.Tasks;
 using MediatR;
 using Slackish.Data;
-using System.Linq;
-using System.Data.Entity;
 using Slackish.Data.Models;
 using Slackish.Security;
+using System;
+using System.Linq;
+using System.Data.Entity;
 
 namespace Slackish.Features.Profiles
 {
-    public class RegisterRequest : IRequest<RegisterResponse>
+    public class RegisterCommand
     {
-        public string Username { get; set; }
-        public string Password { get; set; }
-        public string ConfirmPassword { get; set; }
-    }
-
-    public class RegisterResponse { }
-
-    public class RegisterCommand: IAsyncRequestHandler<RegisterRequest,RegisterResponse>
-    {
-        public async Task<RegisterResponse> Handle(RegisterRequest request)
+        public class Request : IRequest
         {
-            var profile = await _context
-                .Profiles
-                .Include(x => x.User)
-                .Where(x => x.User.Username == request.Username)
-                .SingleOrDefaultAsync();
-
-            if (profile != null)
-                throw new InvalidOperationException();
-
-            var user = new User()
+            public Guid TenantUniqueId { get; set; }
+            public string Username { get; set; }
+            public string Password { get; set; }
+            public string ConfirmPassword { get; set; }
+        }
+        
+        public class Handler : IRequestHandler<Request>
+        {
+            public Handler(SlackishContext context, IEncryptionService encryptionService)
             {
-                Username = request.Username,
-                Password = _encryptionService.TransformPassword(request.Password)
-            };  
+                _context = context;
+                _encryptionService = encryptionService;
+            }
 
-            _context.Profiles.Add(new Profile()
+            public void Handle(Request request)
             {
-                User = user
-            });
+                var profile = _context
+                    .Profiles
+                    .Include(x => x.User)
+                    .Where(x => x.User.Username == request.Username)
+                    .SingleOrDefault();
 
-            await _context.SaveChangesAsync();
+                if (profile != null)
+                    throw new InvalidOperationException();
 
-            return new RegisterResponse();
+                var user = new User()
+                {
+                    Username = request.Username,
+                    Password = _encryptionService.TransformPassword(request.Password)
+                };
+
+                _context.Profiles.Add(new Profile()
+                {
+                    User = user
+                });
+
+                _context.SaveChanges();
+            }
+
+            private readonly SlackishContext _context;
+            private readonly IEncryptionService _encryptionService;
         }
 
-        private SlackishContext _context { get; set; }
-        private IEncryptionService _encryptionService { get; set; }        
     }
+
 }

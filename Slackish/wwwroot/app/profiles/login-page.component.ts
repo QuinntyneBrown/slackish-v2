@@ -11,7 +11,12 @@ export class LoginPageComponent {
         private _authenticationService: AuthenticationService,
         private _loginRedirectService: LoginRedirectService) { }
 
-    public tryToLogin() {
-
+    public tryToLogin($event: { value: { username: string, password: string } }) {
+        this._authenticationService.tryToLogin({
+            username: $event.value.username,
+            password: $event.value.password
+        }).subscribe(result => {
+            this._loginRedirectService.redirectPreLogin();
+        });
     }
 }

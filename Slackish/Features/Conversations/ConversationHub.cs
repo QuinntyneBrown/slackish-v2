@@ -12,23 +12,6 @@ namespace Slackish.Features.Conversations
     {
         public ConversationHub(ISecureDataFormat<AuthenticationTicket> jwtWriterFormat)
             :base(jwtWriterFormat)
-        { }
-
-        public override Task OnConnected()
-        {
-            AssignToTenantGroup();
-            return base.OnConnected();
-        }
-
-        public void AssignToTenantGroup() {
-            if (Context.User.Identity.IsAuthenticated)
-            {
-
-            }
-        }
-        public void Send(string username, string message)
-        {
-            Clients.All.broadcastMessage(new { username = username, message = message });
-        }        
+        { }       
     }
 }

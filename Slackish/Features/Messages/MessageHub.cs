@@ -12,8 +12,5 @@ namespace Slackish.Features.Messages
         public MessageHub(ISecureDataFormat<AuthenticationTicket> jwtWriterFormat)
             :base(jwtWriterFormat)
         { }
-
-        public void Send(MessageApiModel model) 
-            => Clients.Others.broadcastMessage(model);
     }
 }
