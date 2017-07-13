@@ -1,0 +1,7 @@
+﻿input {
+    display:block;
+}
+
+input[type=text] {
+    width:100%;
+}

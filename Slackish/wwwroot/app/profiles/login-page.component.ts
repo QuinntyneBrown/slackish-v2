@@ -1,4 +1,5 @@
-import { Component, ChangeDetectionStrategy, Input } from "@angular/core";
+import {Component} from "@angular/core";
+import {AuthenticationService, LoginRedirectService} from "../shared";
 
 @Component({
     templateUrl: "./login-page.component.html",
@@ -7,8 +8,8 @@ import { Component, ChangeDetectionStrategy, Input } from "@angular/core";
 })
 export class LoginPageComponent {
     constructor(
-    ) {
-    }
+        private _authenticationService: AuthenticationService,
+        private _loginRedirectService: LoginRedirectService) { }
 
     public tryToLogin() {
 

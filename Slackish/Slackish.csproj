@@ -228,6 +228,8 @@
     <Content Include="webpack.config.js" />
     <Content Include="wwwroot\app\conversations\conversation-detail-header.component.html" />
     <Content Include="wwwroot\app\conversations\conversation-list-header.component.html" />
+    <Content Include="wwwroot\app\shared\styles\forms.css" />
+    <Content Include="wwwroot\app\shared\styles\page.css" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
