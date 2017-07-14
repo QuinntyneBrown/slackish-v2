@@ -1,6 +1,7 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from "@angular/common";
 import {ProfilesModule} from "../profiles";
+import {SharedModule} from "../shared"
 
 import {ConversationAboutComponent} from './conversation-about.component';
 import {ConversationDetailComponent} from './conversation-detail.component';
@@ -26,10 +27,15 @@ const providers = [
     ConversationsService
 ];
 
+const entryComponents = [
+    
+];
+
 @NgModule({
-    imports: [CommonModule, ProfilesModule],
+    imports: [CommonModule, ProfilesModule, SharedModule],
     exports: [declarables],
     declarations: [declarables],
-    providers: providers
+    providers: providers,
+    entryComponents: entryComponents
 })
 export class ConversationsModule {}

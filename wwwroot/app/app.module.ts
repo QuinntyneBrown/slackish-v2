@@ -15,7 +15,7 @@ import { AppComponent } from './app.component';
 import {
     RoutingModule,
     routedComponents
-} from "./routing";
+} from "./app.routing";
 
 const declarables = [
     AppComponent,

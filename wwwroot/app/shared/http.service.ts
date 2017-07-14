@@ -63,7 +63,6 @@ export class SecuredHttpService {
     public get(url: string): Promise<any> {
         return this._http.get(url, { headers: this.getOAuthHeaders() })
             .map(data => data.json())
-            .map(json => json.result.data)
             .catch(err => {
                 return Observable.of(false);
             })
@@ -73,7 +72,6 @@ export class SecuredHttpService {
     public post(url: string, body: any): Promise<any> {
         return this._http.post(url, body, { headers: this.getOAuthHeaders() })
             .map(data => data.json())
-            .map(json => json.result.data)
             .catch(err => {
                 return Observable.of(false);
             })
@@ -83,7 +81,6 @@ export class SecuredHttpService {
     public delete(url: string): Promise<any> {
         return this._http.delete(url, { headers: this.getOAuthHeaders() })
             .map(data => data.json())
-            .map(json => json.result.data)
             .catch(err => {
                 return Observable.of(false);
             })

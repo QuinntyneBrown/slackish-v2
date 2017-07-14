@@ -5,7 +5,11 @@ import {SecuredHttpService} from "../shared/http.service";
 export class ProfilesService {
     constructor(private _http: SecuredHttpService) { }
     
-    public getOtherProfiles() {
+    public getOtherProfiles():Promise<any> {
         return this._http.get("/api/profiles/getOtherProfiles");
-    }    
+    }   
+
+    public getCurrentProfile(): Promise<any> {        
+        return this._http.get("/api/profiles/getCurrentProfile");            
+    }
 }

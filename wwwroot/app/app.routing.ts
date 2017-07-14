@@ -1,7 +1,7 @@
 ﻿import {Routes, RouterModule} from '@angular/router';
-import {ConversationPageComponent} from "../conversations";
-import {AuthGuardService} from "../shared";
-import {LoginPageComponent} from "../profiles";
+import {ConversationPageComponent} from "./conversations";
+import {AuthGuardService} from "./shared";
+import {LoginPageComponent} from "./profiles";
 
 export const routes: Routes = [
     {

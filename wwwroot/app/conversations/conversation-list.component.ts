@@ -6,5 +6,6 @@ import { Component, Input, Output, EventEmitter, ViewEncapsulation } from "@angu
     selector: "ce-conversation-list"
 })
 export class ConversationListComponent {
-
+    @Input()
+    public username: string;
 }

@@ -13,7 +13,7 @@ using System;
 using System.Web.Http;
 
 using static Slackish.Features.Core.WebApiUnityActionFilterProvider;
-
+using Microsoft.AspNet.SignalR;
 
 namespace Slackish
 {
@@ -26,12 +26,13 @@ namespace Slackish
 
             var unityHubActivator = new UnityHubActivator(container);
             Microsoft.AspNet.SignalR.GlobalHost.DependencyResolver.Register(typeof(IHubActivator), () => unityHubActivator);
-            
+            Microsoft.AspNet.SignalR.GlobalHost.DependencyResolver.Register(typeof(IUserIdProvider), () => new UserIdProvider());
+
             app.MapSignalR();
             app.Use(typeof(TenantMiddleware));
 
             config.Filters.Add(container.Resolve<HandleErrorAttribute>());
-            config.Filters.Add(container.Resolve<AuthorizeAttribute>());
+            config.Filters.Add(container.Resolve<System.Web.Http.AuthorizeAttribute>());
 
             app.UseCors(CorsOptions.AllowAll);
 

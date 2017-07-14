@@ -13,10 +13,6 @@ namespace Slackish.Features.Conversations
     {
         public class Request : IRequest<Response>
         {
-            public Request(string usernmae)
-            {
-                Username = Username;
-            }
             public Guid TenantUniqueId { get; set; }
             public string Username { get; set; }
         }
@@ -46,7 +42,8 @@ namespace Slackish.Features.Conversations
                     .Include(x => x.Profiles)
                     .Include(x => x.Messages)
                     .Include("Profiles.User")
-                    .Where(x => x.Profiles.Any(p => p.User.Username == request.Username))                    
+                    .Include("Profiles.User.Tenant")
+                    .Where(x => x.Profiles.Any(p => p.User.Username == request.Username && p.User.Tenant.UniqueId == request.TenantUniqueId))                    
                     .ToListAsync(),$"[Conversation] GetByCurrentProfile: {request.Username}");
 
                 return new Response(results

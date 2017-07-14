@@ -8,6 +8,7 @@ using System.Linq;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
+using Microsoft.AspNet.SignalR.Hubs;
 
 namespace Slackish
 {
@@ -15,17 +16,22 @@ namespace Slackish
     {
         public static IUnityContainer GetContainer()
         {
-            var container = new UnityContainer();
-            container.AddMediator<UnityConfiguration>();
-            container.RegisterType<HttpClient>(
-                new ContainerControlledLifetimeManager(),
-                new InjectionFactory(x => new HttpClient()));
-            container.RegisterInstance(AuthConfiguration.LazyConfig);
-            container.RegisterType<SlackishContext>(new ContainerControlledLifetimeManager());
-            container.RegisterInstance(AuthConfiguration.LazyConfig);
-            container.RegisterInstance(MemoryCache.Current, new ContainerControlledLifetimeManager());
-            return container;
+            if (_container == null)
+            { 
+                _container = new UnityContainer();
+                _container.AddMediator<UnityConfiguration>();
+                _container.RegisterType<HttpClient>(
+                    new ContainerControlledLifetimeManager(),
+                    new InjectionFactory(x => new HttpClient()));
+                _container.RegisterInstance(AuthConfiguration.LazyConfig);
+                _container.RegisterType<SlackishContext>(new ContainerControlledLifetimeManager());
+                _container.RegisterInstance(AuthConfiguration.LazyConfig);
+                _container.RegisterInstance(MemoryCache.Current, new ContainerControlledLifetimeManager());
+            }
+            return _container;
         }
+
+        private static IUnityContainer _container;
     }
 
     public static class UnityContainerExtension
@@ -79,5 +85,20 @@ namespace Slackish
 
         public static string GetName(this IUnityContainer container, Type type)
             => container.IsNotificationHandler(type) ? string.Format("HandlerFor" + type.Name) : string.Empty;
+    }
+
+    public class UnityHubActivator : IHubActivator
+    {
+        private readonly IUnityContainer _container;
+
+        public UnityHubActivator(IUnityContainer container)
+        {
+            _container = container;
+        }
+
+        public IHub Create(HubDescriptor descriptor)
+        {
+            return (IHub)_container.Resolve(descriptor.HubType);
+        }
     }
 }

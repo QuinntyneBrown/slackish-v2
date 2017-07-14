@@ -9,32 +9,34 @@ namespace Slackish.Features.Profiles
 {
     public class GetCurrentProfileQuery
     {
-        public class GetCurrentProfileRequest : IRequest<GetCurrentProfileResponse>
+        public class Request : IRequest<Response>
         {
             public string Username { get; set; }
             public Guid TenantUniqueId { get; set; }
         }
 
-        public class GetCurrentProfileResponse
+        public class Response
         {
             public ProfileApiModel Profile { get; set; }
         }
 
-        public class GetCurrentProfileHandler : IAsyncRequestHandler<GetCurrentProfileRequest, GetCurrentProfileResponse>
+        public class Handler : IAsyncRequestHandler<Request, Response>
         {
-            public GetCurrentProfileHandler(SlackishContext context, ICache cache)
+            public Handler(SlackishContext context, ICache cache)
             {
                 _context = context;
                 _cache = cache;
             }
 
-            public async Task<GetCurrentProfileResponse> Handle(GetCurrentProfileRequest request)
+            public async Task<Response> Handle(Request request)
             {
                 var profile = await _cache.FromCacheOrServiceAsync(() => _context
                     .Profiles
-                    .SingleAsync(x => x.User.Username == request.Username),$"[Profile] CurrentProfile: {request.Username}");
+                    .Include(x => x.Tenant)
+                    .SingleAsync(x => x.User.Username == request.Username && x.User.Tenant.UniqueId == request.TenantUniqueId),
+                    $"[Profile] CurrentProfile: {request.TenantUniqueId}-{request.Username}");
 
-                return new GetCurrentProfileResponse()
+                return new Response()
                 {
                     Profile = ProfileApiModel.FromProfile(profile)
                 };                

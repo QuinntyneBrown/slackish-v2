@@ -1,4 +1,19 @@
 :host {
-    display:block;
-    content:contain;
+    display: grid;
+    grid-template-columns: 216px 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 20px;
+    height: 100vh;
+}
+
+ce-conversation-list {
+    grid-column: 1;
+    display: block;
+    background-color: rgb(77,57,75);
+}
+
+ce-conversation-detail {
+    grid-column: 2;
+    display: block;
+    background-color: #fff;
 }

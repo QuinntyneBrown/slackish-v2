@@ -8,6 +8,8 @@ import {LoginRedirectService} from "./login-redirect.service";
 import {SignalRMessageQueueFactory} from "./signalr-message-queue-factory";
 import {Storage} from "./storage.service";
 
+import {PopoverComponent} from "./popover.component";
+
 const providers = [
     HttpService,
     SecuredHttpService,
@@ -18,8 +20,14 @@ const providers = [
     Storage
 ];
 
+const declarables = [
+    PopoverComponent
+];
+
 @NgModule({
     imports: [CommonModule],
+    entryComponents: [PopoverComponent],
+    declarations: [declarables],
     providers: providers
 })
 export class SharedModule { }

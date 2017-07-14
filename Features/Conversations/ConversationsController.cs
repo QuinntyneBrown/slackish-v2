@@ -1,6 +1,5 @@
 ﻿using MediatR;
 using Slackish.Features.Core;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
@@ -17,13 +16,9 @@ namespace Slackish.Features.Conversations
         }
 
         [HttpGet]
-        [ResponseType(typeof(List<ConversationApiModel>))]
+        [ResponseType(typeof(GetByCurrentProfileQuery.Response))]
         public async Task<IHttpActionResult> GetByCurrentProfile()
-        {            
-            var request = new GetByCurrentProfileQuery.Request(User.Identity.Name);
-            request.TenantUniqueId = Request.GetTenantUniqueId();
-            return Ok(await _mediator.Send(request));
-        }
+            => Ok(await _mediator.Send(new GetByCurrentProfileQuery.Request() { TenantUniqueId = TenantUniqueId, Username = Username }));
         
         private readonly IMediator _mediator;
     }

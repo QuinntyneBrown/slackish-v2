@@ -1,6 +1,6 @@
 import {Component, OnInit} from "@angular/core";
 import {AuthenticationService, LoginRedirectService, constants, Storage} from "../shared";
-
+import {ProfilesService } from "./profile.service";
 @Component({
     templateUrl: "./login-page.component.html",
     styleUrls: ["./login-page.component.css"],
@@ -10,6 +10,7 @@ export class LoginPageComponent implements OnInit {
     constructor(
         private _authenticationService: AuthenticationService,
         private _loginRedirectService: LoginRedirectService,
+        private _profilesService: ProfilesService,
         private _storage: Storage
     ) { }
 
@@ -29,15 +30,16 @@ export class LoginPageComponent implements OnInit {
 
     public rememberMe: boolean = false;
 
-    public tryToLogin($event: { value: { username: string, password: string, rememberMe: boolean } }) {      
+    public async tryToLogin($event: { value: { username: string, password: string, rememberMe: boolean } }) {      
 
         this._storage.put({ name: constants.LOGIN_CREDENTIALS, value: $event.value.rememberMe ? $event.value : null });
 
-        this._authenticationService.tryToLogin({
-            username: $event.value.username,
-            password: $event.value.password
-        }).subscribe(result => {
-            this._loginRedirectService.redirectPreLogin();
-        });
+        await this._authenticationService.tryToLogin({ username: $event.value.username, password: $event.value.password }).toPromise();
+
+        const currentProfile = await this._profilesService.getCurrentProfile();
+
+        this._storage.put({ name: constants.CURRENT_PROFILE_KEY, value: currentProfile });
+
+        this._loginRedirectService.redirectPreLogin();
     }
 }

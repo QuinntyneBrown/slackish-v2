@@ -11,33 +11,34 @@ namespace Slackish.Features.Profiles
 {
     public class GetOtherProfilesQuery
     {
-        public class Request : IRequest<GetOtherProfilesResponse>
+        public class Request : IRequest<Response>
         {
             public string Username { get; set; }
-            public int OtherProfileId { get; set; }
             public Guid TenantUniqueId { get; set; }
         }
 
-        public class GetOtherProfilesResponse
+        public class Response
         {
             public ICollection<ProfileApiModel> Profiles { get; set; } = new HashSet<ProfileApiModel>();
         }
 
-        public class GetOtherProfilesHandler : IAsyncRequestHandler<Request, GetOtherProfilesResponse>
+        public class Handler : IAsyncRequestHandler<Request, Response>
         {
-            public GetOtherProfilesHandler(SlackishContext context)
+            public Handler(SlackishContext context, ICacheProvider cacheProvider)
             {
                 _context = context;
+                _cache = cacheProvider.GetCache();
             }
 
-            public async Task<GetOtherProfilesResponse> Handle(Request request)
+            public async Task<Response> Handle(Request request)
             {                
                 var profiles = await _cache.FromCacheOrServiceAsync(() => _context
                     .Profiles
-                    .Where(x => x.User.Username != request.Username)
+                    .Include(x => x.Tenant)
+                    .Where(x => x.User.Username != request.Username && x.Tenant.UniqueId == request.TenantUniqueId)
                     .ToListAsync(), $"[Profiles] GetOtherProfilesQuery: {request.Username}");
 
-                return new GetOtherProfilesResponse()
+                return new Response()
                 {
                     Profiles = profiles
                     .Select(x => ProfileApiModel.FromProfile(x))
