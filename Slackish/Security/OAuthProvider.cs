@@ -10,7 +10,7 @@ namespace Slackish.Security
     {
         public OAuthProvider(Lazy<IAuthConfiguration> lazyAuthConfiguration, IMediator mediator)
         {
-            _lazyAuthConfiguration = lazyAuthConfiguration;
+            _authConfiguration = lazyAuthConfiguration.Value;
             _mediator = mediator;
         }
 
