@@ -2,7 +2,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.15
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Slackish", "Slackish\Slackish.csproj", "{7C27EA54-CA98-4F25-990C-43A519C9C204}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Slackish", "Slackish.csproj", "{7C27EA54-CA98-4F25-990C-43A519C9C204}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

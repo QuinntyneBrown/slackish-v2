@@ -24,9 +24,9 @@ namespace Slackish.Security
             public bool IsAuthenticated { get; set; }
         }
 
-        public class IsAuthenticUserHandler : IAsyncRequestHandler<Request, Response>
+        public class Handler : IAsyncRequestHandler<Request, Response>
         {
-            public IsAuthenticUserHandler(SlackishContext context, IEncryptionService encryptionService)
+            public Handler(SlackishContext context, IEncryptionService encryptionService)
             {
                 _encryptionService = encryptionService;
                 _context = context;
@@ -52,7 +52,5 @@ namespace Slackish.Security
             private readonly IEncryptionService _encryptionService;
 
         }
-
     }
-
 }

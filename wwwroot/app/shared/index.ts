@@ -4,6 +4,5 @@ export * from "./constants";
 export * from "./http.service";
 export * from "./login-redirect.service";
 export * from "./shared.module";
-export * from "./signalr-hub-provider.service";
-export * from "./signalr";
+export * from "./signalr-message-queue-factory";
 export * from "./storage.service";

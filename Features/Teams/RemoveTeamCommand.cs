@@ -17,9 +17,9 @@ namespace Slackish.Features.Teams
 
         public class Response { }
 
-        public class RemoveTeamHandler : IAsyncRequestHandler<Request, Response>
+        public class Handler : IAsyncRequestHandler<Request, Response>
         {
-            public RemoveTeamHandler(SlackishContext context, ICache cache)
+            public Handler(SlackishContext context, ICache cache)
             {
                 _context = context;
                 _cache = cache;
