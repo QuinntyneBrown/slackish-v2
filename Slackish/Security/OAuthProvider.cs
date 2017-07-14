@@ -33,7 +33,7 @@ namespace Slackish.Security
             {
                 var username = context.Parameters["username"];
                 var password = context.Parameters["password"];
-                var response = await _mediator.Send(new IsValidUserQuery.Request() { Username = username, Password = password });
+                var response = await _mediator.Send(new IsAuthenticUserQuery.IsAuthenticUserRequest() { Username = username, Password = password });
                 if (response.IsAuthenticated)
                 {
                     context.OwinContext.Set($"{_authConfiguration.AuthType}:username", username);

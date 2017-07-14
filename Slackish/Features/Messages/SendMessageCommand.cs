@@ -9,8 +9,7 @@ namespace Slackish.Features.Messages
 {
     public class SendMessageCommand
     {
-
-        public class Request : IRequest<SendMessageResponse>
+        public class Request : IRequest<Response>
         {
             public string Content { get; set; }
             public int OtherProfileId { get; set; }
@@ -18,17 +17,17 @@ namespace Slackish.Features.Messages
             public Guid TenantUniqueId { get; set; }
         }
 
-        public class SendMessageResponse { }
+        public class Response { }
 
         public class SendMessageHandler
-            : IAsyncRequestHandler<Request, SendMessageResponse>
+            : IAsyncRequestHandler<Request, Response>
         {
             public SendMessageHandler(SlackishContext context)
             {
                 _context = context;
             }
 
-            public Task<SendMessageResponse> Handle(Request message)
+            public async Task<Response> Handle(Request message)
             {                
                 var currentProfile = _context.Profiles
                     .Where(x => x.User.Username == message.Username)
@@ -55,7 +54,7 @@ namespace Slackish.Features.Messages
 
                 _context.SaveChanges();
 
-                return Task.FromResult(new SendMessageResponse());
+                return new Response() { };
             }
 
             protected SlackishContext _context { get; set; }

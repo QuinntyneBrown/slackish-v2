@@ -15,6 +15,8 @@ namespace Slackish.Features.Messages
             public Guid TenantUniqueId { get; set; }
         }
 
+        public class Response { }
+
         public class Handler : IRequestHandler<Request>
         {
             public Handler(IMediator mediator)
