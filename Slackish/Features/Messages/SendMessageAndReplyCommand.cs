@@ -44,7 +44,6 @@ namespace Slackish.Features.Messages
                     context.Clients.Group($"{request.TenantUniqueId}").failedMessages(request);                    
                 }             
             }
-
             private readonly IMediator _meditator;
         }
     }

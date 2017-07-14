@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Slackish.Data.Models
+namespace Slackish.Data.Model
 {
     public interface ILoggable
     {

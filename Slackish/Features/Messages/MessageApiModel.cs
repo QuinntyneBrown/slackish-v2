@@ -1,4 +1,4 @@
-using Slackish.Data.Models;
+using Slackish.Data.Model;
 using Slackish.Features.Conversations;
 
 namespace Slackish.Features.Messages

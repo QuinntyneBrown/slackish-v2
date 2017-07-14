@@ -1,4 +1,4 @@
-using Slackish.Data.Models;
+using Slackish.Data.Model;
 using Slackish.Data.Helpers;
 using System;
 using System.Data.Entity;
@@ -8,7 +8,16 @@ using System.Threading.Tasks;
 
 namespace Slackish.Data
 {
-    public class SlackishContext: DbContext
+    public interface ISlackishContext {
+        DbSet<Conversation> Conversations { get; set; }
+        DbSet<Message> Messages { get; set; }
+        DbSet<Profile> Profiles { get; set; }
+        DbSet<Team> Teams { get; set; }
+        DbSet<Tenant> Tenants { get; set; }
+        DbSet<User> Users { get; set; }
+    }
+
+    public class SlackishContext: DbContext, ISlackishContext
     {
         public SlackishContext()
             : base(nameOrConnectionString: "SlackishContext")
@@ -18,9 +27,10 @@ namespace Slackish.Data
             Configuration.AutoDetectChangesEnabled = true;
         }
 
-        public DbSet<Message> Messages { get; set; }
         public DbSet<Conversation> Conversations { get; set; }
+        public DbSet<Message> Messages { get; set; }        
         public DbSet<Profile> Profiles { get; set; }
+        public DbSet<Team> Teams { get; set; }
         public DbSet<Tenant> Tenants { get; set; }
         public DbSet <User> Users { get; set; }
 

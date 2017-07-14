@@ -1,4 +1,4 @@
-using Slackish.Data.Models;
+using Slackish.Data.Model;
 using Slackish.Features.Messages;
 using Slackish.Features.Profiles;
 using System.Collections.Generic;

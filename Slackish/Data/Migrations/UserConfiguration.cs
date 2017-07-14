@@ -1,5 +1,5 @@
 ﻿using Slackish.Data;
-using Slackish.Data.Models;
+using Slackish.Data.Model;
 using Slackish.Security;
 using System.Data.Entity.Migrations;
 using System.Linq;

@@ -240,12 +240,13 @@
     <Compile Include="Data\Helpers\SoftDeleteAttribute.cs" />
     <Compile Include="Data\Helpers\SoftDeleteInterceptor.cs" />
     <Compile Include="Data\Helpers\SoftDeleteQueryVisitor.cs" />
-    <Compile Include="Data\Models\Conversation.cs" />
-    <Compile Include="Data\Models\ILoggable.cs" />
-    <Compile Include="Data\Models\Message.cs" />
-    <Compile Include="Data\Models\Profile.cs" />
-    <Compile Include="Data\Models\Tenant.cs" />
-    <Compile Include="Data\Models\User.cs" />
+    <Compile Include="Data\Model\Conversation.cs" />
+    <Compile Include="Data\Model\ILoggable.cs" />
+    <Compile Include="Data\Model\Message.cs" />
+    <Compile Include="Data\Model\Profile.cs" />
+    <Compile Include="Data\Model\TeamUser.cs" />
+    <Compile Include="Data\Model\Tenant.cs" />
+    <Compile Include="Data\Model\User.cs" />
     <Compile Include="Data\SlackishContext.cs" />
     <Compile Include="Features\Conversations\ConversationApiModel.cs" />
     <Compile Include="Features\Conversations\ConversationHub.cs" />
@@ -265,7 +266,6 @@
     <Compile Include="Features\Core\Logger.cs" />
     <Compile Include="Features\Core\LoggerFactory.cs" />
     <Compile Include="Features\Core\MemoryCache.cs" />
-    <Compile Include="Features\Core\OperationResponseApiModel.cs" />
     <Compile Include="Features\Core\RateLimit.cs" />
     <Compile Include="Features\Core\StringExtensions.cs" />
     <Compile Include="Features\Core\TenantMiddleware.cs" />
@@ -287,7 +287,6 @@
     <Compile Include="Data\Migrations\TenantConfiguration.cs" />
     <Compile Include="Data\Migrations\UserConfiguration.cs" />
     <Compile Include="Security\AuthConfiguration.cs" />
-    <Compile Include="Security\IsValidUserQuery.cs" />
     <Compile Include="Security\EncryptionService.cs" />
     <Compile Include="Security\GetClaimsForUserQuery.cs" />
     <Compile Include="Security\JwtOptions.cs" />
@@ -301,6 +300,13 @@
     <Compile Include="Features\Messages\SendMessageAndReplyCommand.cs" />
     <Compile Include="Features\Profiles\RegisterCommand.cs" />
     <Compile Include="Security\IsAuthenticUserQuery.cs" />
+    <Compile Include="Data\Model\Team.cs" />
+    <Compile Include="Features\Teams\AddOrUpdateTeamCommand.cs" />
+    <Compile Include="Features\Teams\GetTeamsQuery.cs" />
+    <Compile Include="Features\Teams\GetTeamByIdQuery.cs" />
+    <Compile Include="Features\Teams\RemoveTeamCommand.cs" />
+    <Compile Include="Features\Teams\TeamApiModel.cs" />
+    <Compile Include="Features\Teams\TeamsController.cs" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="wwwroot\app\app.component.ts">

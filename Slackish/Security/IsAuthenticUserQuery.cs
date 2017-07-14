@@ -1,6 +1,6 @@
 using MediatR;
 using Slackish.Data;
-using Slackish.Data.Models;
+using Slackish.Data.Model;
 using System.Data.Entity;
 using System.Threading.Tasks;
 
@@ -8,15 +8,15 @@ namespace Slackish.Security
 {
     public class IsAuthenticUserQuery
     {
-        public class IsAuthenticUserRequest : IRequest<IsAuthenticUserResponse>
+        public class Request : IRequest<Response>
         {
             public string Username { get; set; }
             public string Password { get; set; }
         }
 
-        public class IsAuthenticUserResponse
+        public class Response
         {
-            public IsAuthenticUserResponse()
+            public Response()
             {
 
             }
@@ -24,7 +24,7 @@ namespace Slackish.Security
             public bool IsAuthenticated { get; set; }
         }
 
-        public class IsAuthenticUserHandler : IAsyncRequestHandler<IsAuthenticUserRequest, IsAuthenticUserResponse>
+        public class IsAuthenticUserHandler : IAsyncRequestHandler<Request, Response>
         {
             public IsAuthenticUserHandler(SlackishContext context, IEncryptionService encryptionService)
             {
@@ -39,10 +39,10 @@ namespace Slackish.Security
                 return user.Password == transformedPassword;
             }
 
-            public async Task<IsAuthenticUserResponse> Handle(IsAuthenticUserRequest message)
+            public async Task<Response> Handle(Request message)
             {
                 var user = await _context.Users.SingleOrDefaultAsync(x => x.Username.ToLower() == message.Username.ToLower() && !x.IsDeleted);
-                return new IsAuthenticUserResponse()
+                return new Response()
                 {
                     IsAuthenticated = ValidateUser(user, _encryptionService.TransformPassword(message.Password))
                 };

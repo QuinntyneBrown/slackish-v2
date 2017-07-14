@@ -1,11 +1,11 @@
 ﻿using MediatR;
 using Slackish.Data;
+using Slackish.Features.Core;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Linq;
 using System.Data.Entity;
-using Slackish.Features.Core;
-using System;
 
 namespace Slackish.Features.Conversations
 {

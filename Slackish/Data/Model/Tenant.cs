@@ -1,22 +1,17 @@
 using Slackish.Data.Helpers;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Slackish.Data.Models
+namespace Slackish.Data.Model
 {
     [SoftDelete("IsDeleted")]
-    public class Profile:ILoggable
+    public class Tenant: ILoggable
     {
         public int Id { get; set; }
-        [ForeignKey("User")]
-        public int? UserId { get; set; }
-        [ForeignKey("Tenant")]
-        public int? TenantId { get; set; }
         public string Name { get; set; }
-        public User User { get; set; }
-        public Tenant Tenant { get; set; }
-        public ICollection<Conversation> Conversations { get; set; } = new HashSet<Conversation>();
+        [Index("UniqueIdIndex", IsUnique = false)]
+        [Column(TypeName = "UNIQUEIDENTIFIER")]
+        public Guid UniqueId { get; set; } = Guid.NewGuid();
         public DateTime CreatedOn { get; set; }
         public DateTime LastModifiedOn { get; set; }
         public string CreatedBy { get; set; }

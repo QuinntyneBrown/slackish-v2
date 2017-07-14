@@ -1,4 +1,4 @@
-﻿using Slackish.Data.Models;
+﻿using Slackish.Data.Model;
 
 namespace Slackish.Features.Profiles
 {

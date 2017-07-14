@@ -1,7 +1,7 @@
 using Slackish.Data.Helpers;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Slackish.Data.Models
+namespace Slackish.Data.Model
 {
     [SoftDelete("IsDeleted")]
     public class Message
