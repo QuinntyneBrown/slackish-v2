@@ -56,6 +56,7 @@ export class HttpService {
     }
 }
 
+@Injectable()
 export class SecuredHttpService {
     constructor(private _http: Http, private _storage: Storage) { }
 

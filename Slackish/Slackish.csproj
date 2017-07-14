@@ -7,7 +7,8 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion></ProductVersion>
+    <ProductVersion>
+    </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{7C27EA54-CA98-4F25-990C-43A519C9C204}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
@@ -22,7 +23,8 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
-    <NuGetPackageImportStamp></NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -194,10 +196,6 @@
       <DependentUpon>conversation-page.component.html</DependentUpon>
     </Content>
     <Content Include="wwwroot\app\conversations\conversation-page.component.html" />
-    <Content Include="wwwroot\app\landing\landing-page.component.css">
-      <DependentUpon>landing-page.component.html</DependentUpon>
-    </Content>
-    <Content Include="wwwroot\app\landing\landing-page.component.html" />
     <Content Include="wwwroot\app\messages\message-form.component.css">
       <DependentUpon>message-form.component.html</DependentUpon>
     </Content>
@@ -339,11 +337,6 @@
     <TypeScriptCompile Include="wwwroot\app\conversations\index.ts" />
     <TypeScriptCompile Include="wwwroot\app\environment.ts" />
     <TypeScriptCompile Include="wwwroot\app\index.ts" />
-    <TypeScriptCompile Include="wwwroot\app\landing\index.ts" />
-    <TypeScriptCompile Include="wwwroot\app\landing\landing-page.component.ts">
-      <DependentUpon>landing-page.component.html</DependentUpon>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="wwwroot\app\landing\landing.module.ts" />
     <TypeScriptCompile Include="wwwroot\app\messages\index.ts" />
     <TypeScriptCompile Include="wwwroot\app\messages\message-form.component.ts">
       <DependentUpon>message-form.component.html</DependentUpon>
@@ -413,7 +406,8 @@
           <IISUrl>http://localhost:3815/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl></CustomServerUrl>
+          <CustomServerUrl>
+          </CustomServerUrl>
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>

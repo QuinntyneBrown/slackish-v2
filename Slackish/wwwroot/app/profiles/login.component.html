@@ -1,13 +1,18 @@
 <div class="login">
-
     <h1>Login</h1>
-
     <form novalidate [formGroup]="form">
+        
+        <label>Username</label>
         <input type="text" placeholder="Username" id="username" formControlName="username" />
 
+        <label>Password</label>
         <input type="password" placeholder="Password" formControlName="password" />
 
         <button type="submit" (click)="tryToLogin.emit({ value: form.value })">Login</button>
-    </form>
-    
+
+        <span>            
+            <input  type="checkbox" formControlName="rememberMe"/>
+            <label>Remember Me</label>
+        </span>
+    </form>    
 </div>

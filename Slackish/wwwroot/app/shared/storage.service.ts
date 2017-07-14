@@ -38,7 +38,7 @@ export class Storage {
         return storageItem;
     }
 
-    public put = (options: { name: string, value: string }) => {
+    public put = (options: { name: string, value: any }) => {
         var itemExists = false;
 
         this.items.forEach((item: any) => {

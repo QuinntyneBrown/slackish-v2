@@ -4,9 +4,10 @@ import {FormsModule,ReactiveFormsModule} from "@angular/forms";
 import {SharedModule} from "../shared";
 import {ProfileListComponent} from './profile-list.component';
 import {LoginComponent} from "./login.component";
+import {ProfilesService} from "./profile.service";
 
 const declarables = [ProfileListComponent, LoginComponent];
-const providers = [];
+const providers = [ProfilesService];
 
 @NgModule({
     imports: [CommonModule, FormsModule, ReactiveFormsModule, SharedModule],

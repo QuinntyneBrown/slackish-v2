@@ -1,12 +1,23 @@
-﻿input {
-    display:block;
-}
-
-input[type=text],
+﻿input[type=text],
 input[type=password]{
+    display:block;
     width:calc(100% - 22px);
     line-height:2em;
     padding:0px 10px 0px 10px; 
     border: solid 1px #333;
     margin:10px 0px 10px 0px;
+}
+
+label,
+input[type=checkbox] {
+    display:inline-block;
+}
+
+button{
+    display:block;
+}
+
+span {
+    display:block;
+    margin: 10px 0px 0px 0px;
 }

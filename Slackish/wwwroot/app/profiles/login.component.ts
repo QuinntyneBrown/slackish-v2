@@ -9,7 +9,8 @@ import {
     AfterContentInit,
     Renderer,
     ElementRef,
-    ViewEncapsulation
+    ViewEncapsulation,
+    
 } from "@angular/core";
 
 import { FormGroup, FormControl, Validators } from "@angular/forms";
@@ -26,18 +27,36 @@ export class LoginComponent implements AfterViewInit {
 
     constructor(private _renderer: Renderer, private _elementRef: ElementRef) { }
 
-    public get username(): HTMLElement {
+    public get usernameNativeElement(): HTMLElement {
         return this._elementRef.nativeElement.querySelector("#username");
     }
 
     ngAfterViewInit() {
-        this._renderer.invokeElementMethod(this.username, 'focus', []);
+        this._renderer.invokeElementMethod(this.usernameNativeElement, 'focus', []);        
     }
+
+    ngAfterContentInit() {
+        this.form.patchValue({
+            username: this.username,
+            password: this.password,
+            rememberMe: this.rememberMe
+        });        
+    }
+
+    @Input()
+    public username: string;
+
+    @Input()
+    public password: string;
+
+    @Input()
+    public rememberMe: boolean;
 
     @Output() public tryToLogin: EventEmitter<any> = new EventEmitter();
 
     public form = new FormGroup({
-        username: new FormControl('', [Validators.required]),
-        password: new FormControl('', [Validators.required])
+        username: new FormControl(this.username, [Validators.required]),
+        password: new FormControl(this.password, [Validators.required]),
+        rememberMe: new FormControl(this.rememberMe,[])
     });
 }
