@@ -1,6 +1,6 @@
 ﻿import {Http, RequestOptionsArgs, Headers} from "@angular/http";
 import {Injectable} from "@angular/core";
-import {constants} from "./constants";
+import {constants} from "../constants";
 import {Storage} from "./storage.service";
 import {Observable} from "rxjs/Observable";
 

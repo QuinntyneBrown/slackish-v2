@@ -1,14 +1,14 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from "@angular/common";
 
-import {AuthGuardService} from "./auth-guard.service"
-import {AuthenticationService} from "./authentication.service";
-import {HttpService, SecuredHttpService} from "./http.service";
-import {LoginRedirectService} from "./login-redirect.service";
-import {SignalRMessageQueueFactory} from "./signalr-message-queue-factory";
-import {Storage} from "./storage.service";
+import {AuthGuardService} from "./services/auth-guard.service"
+import {AuthenticationService} from "./services/authentication.service";
+import {HttpService, SecuredHttpService} from "./services/http.service";
+import {LoginRedirectService} from "./services/login-redirect.service";
+import {SignalRMessageQueueFactory} from "./services/signalr-message-queue-factory";
+import {Storage} from "./services/storage.service";
 
-import {PopoverComponent} from "./popover.component";
+import {PopoverComponent} from "./components/popover.component";
 
 const providers = [
     HttpService,
@@ -30,4 +30,4 @@ const declarables = [
     declarations: [declarables],
     providers: providers
 })
-export class SharedModule { }
+export class SharedModule {}

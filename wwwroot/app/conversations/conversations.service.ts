@@ -1,5 +1,5 @@
 ﻿import {Injectable} from "@angular/core";
-import {SecuredHttpService} from "../shared/http.service";
+import {SecuredHttpService} from "../shared/services/http.service";
 
 @Injectable()
 export class ConversationsService {

@@ -1,5 +1,5 @@
 import {Component,Input,OnInit,ViewEncapsulation,ComponentFactoryResolver,ComponentFactory,ViewChild,ViewContainerRef} from "@angular/core";
-import {PopoverComponent} from "../shared/popover.component";
+import {PopoverComponent} from "../shared/components/popover.component";
 
 @Component({
     templateUrl: "./conversation-list-header.component.html",

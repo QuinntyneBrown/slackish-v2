@@ -1,4 +1,4 @@
-﻿import { constants } from "./constants";
+﻿import { constants } from "../constants";
 import { Injectable } from "@angular/core";
 
 @Injectable()
