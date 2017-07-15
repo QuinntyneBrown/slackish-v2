@@ -307,6 +307,7 @@
     <Compile Include="Features\Teams\TeamApiModel.cs" />
     <Compile Include="Features\Teams\TeamsController.cs" />
     <Compile Include="Features\Teams\GetCurrentTeamQuery.cs" />
+    <Compile Include="Data\Model\Channel.cs" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\app\app.component.ts">

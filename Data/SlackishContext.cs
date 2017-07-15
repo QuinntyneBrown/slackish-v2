@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 namespace Slackish.Data
 {
     public interface ISlackishContext {
+        DbSet<Channel> Channels { get; set; }
         DbSet<Conversation> Conversations { get; set; }
         DbSet<Message> Messages { get; set; }
         DbSet<Profile> Profiles { get; set; }
@@ -27,6 +28,7 @@ namespace Slackish.Data
             Configuration.AutoDetectChangesEnabled = true;
         }
 
+        public DbSet<Channel> Channels { get; set; }
         public DbSet<Conversation> Conversations { get; set; }
         public DbSet<Message> Messages { get; set; }        
         public DbSet<Profile> Profiles { get; set; }
