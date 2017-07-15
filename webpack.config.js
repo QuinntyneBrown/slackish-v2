@@ -4,8 +4,8 @@ const UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 
 module.exports = {
     entry: {
-        'vendor': ['./wwwroot/polyfills'],
-        'app': './wwwroot/main'
+        'vendor': ['./ClientApp/polyfills'],
+        'app': './ClientApp/main'
     },
     output: {
         path: __dirname + "/dist",

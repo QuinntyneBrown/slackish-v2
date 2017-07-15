@@ -26,6 +26,8 @@ bld/
 
 wwwroot/**/*.js
 wwwroot/**/*.js.map
+ClientApp/**/*.js
+ClientApp/**/*.js.map
 
 dist
 tests

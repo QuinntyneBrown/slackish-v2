@@ -7,7 +7,8 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion></ProductVersion>
+    <ProductVersion>
+    </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{7C27EA54-CA98-4F25-990C-43A519C9C204}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
@@ -22,7 +23,8 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
-    <NuGetPackageImportStamp></NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -160,70 +162,70 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="index.html" />
-    <Content Include="wwwroot\app\app.component.css">
+    <Content Include="ClientApp\app\app.component.css">
       <DependentUpon>app.component.html</DependentUpon>
     </Content>
-    <Content Include="wwwroot\app\app.component.html" />
-    <Content Include="wwwroot\app\conversations\conversation-about.component.css">
+    <Content Include="ClientApp\app\app.component.html" />
+    <Content Include="ClientApp\app\conversations\conversation-about.component.css">
       <DependentUpon>conversation-about.component.html</DependentUpon>
     </Content>
-    <Content Include="wwwroot\app\conversations\conversation-about.component.html" />
-    <Content Include="wwwroot\app\conversations\conversation-detail-header.component.css">
+    <Content Include="ClientApp\app\conversations\conversation-about.component.html" />
+    <Content Include="ClientApp\app\conversations\conversation-detail-header.component.css">
       <DependentUpon>conversation-detail-header.component.html</DependentUpon>
     </Content>
-    <Content Include="wwwroot\app\conversations\conversation-detail.component.css">
+    <Content Include="ClientApp\app\conversations\conversation-detail.component.css">
       <DependentUpon>conversation-detail.component.html</DependentUpon>
     </Content>
-    <Content Include="wwwroot\app\conversations\conversation-detail.component.html" />
-    <Content Include="wwwroot\app\conversations\conversation-header.component.css">
+    <Content Include="ClientApp\app\conversations\conversation-detail.component.html" />
+    <Content Include="ClientApp\app\conversations\conversation-header.component.css">
       <DependentUpon>conversation-header.component.html</DependentUpon>
     </Content>
-    <Content Include="wwwroot\app\conversations\conversation-header.component.html" />
-    <Content Include="wwwroot\app\conversations\conversation-list-header.component.css">
+    <Content Include="ClientApp\app\conversations\conversation-header.component.html" />
+    <Content Include="ClientApp\app\conversations\conversation-list-header.component.css">
       <DependentUpon>conversation-list-header.component.html</DependentUpon>
     </Content>
-    <Content Include="wwwroot\app\conversations\conversation-list.component.css">
+    <Content Include="ClientApp\app\conversations\conversation-list.component.css">
       <DependentUpon>conversation-list.component.html</DependentUpon>
     </Content>
-    <Content Include="wwwroot\app\conversations\conversation-list.component.html" />
-    <Content Include="wwwroot\app\conversations\conversation-messages.component.css">
+    <Content Include="ClientApp\app\conversations\conversation-list.component.html" />
+    <Content Include="ClientApp\app\conversations\conversation-messages.component.css">
       <DependentUpon>conversation-messages.component.html</DependentUpon>
     </Content>
-    <Content Include="wwwroot\app\conversations\conversation-messages.component.html" />
-    <Content Include="wwwroot\app\conversations\conversation-page.component.css">
+    <Content Include="ClientApp\app\conversations\conversation-messages.component.html" />
+    <Content Include="ClientApp\app\conversations\conversation-page.component.css">
       <DependentUpon>conversation-page.component.html</DependentUpon>
     </Content>
-    <Content Include="wwwroot\app\conversations\conversation-page.component.html" />
-    <Content Include="wwwroot\app\messages\message-form.component.css">
+    <Content Include="ClientApp\app\conversations\conversation-page.component.html" />
+    <Content Include="ClientApp\app\messages\message-form.component.css">
       <DependentUpon>message-form.component.html</DependentUpon>
     </Content>
-    <Content Include="wwwroot\app\messages\message-form.component.html" />
-    <Content Include="wwwroot\app\profiles\login-page.component.css">
+    <Content Include="ClientApp\app\messages\message-form.component.html" />
+    <Content Include="ClientApp\app\profiles\login-page.component.css">
       <DependentUpon>login-page.component.html</DependentUpon>
     </Content>
-    <Content Include="wwwroot\app\profiles\login-page.component.html" />
-    <Content Include="wwwroot\app\profiles\login.component.css">
+    <Content Include="ClientApp\app\profiles\login-page.component.html" />
+    <Content Include="ClientApp\app\profiles\login.component.css">
       <DependentUpon>login.component.html</DependentUpon>
     </Content>
-    <Content Include="wwwroot\app\profiles\login.component.html" />
-    <Content Include="wwwroot\app\profiles\profile-list.component.css">
+    <Content Include="ClientApp\app\profiles\login.component.html" />
+    <Content Include="ClientApp\app\profiles\profile-list.component.css">
       <DependentUpon>profile-list.component.html</DependentUpon>
     </Content>
-    <Content Include="wwwroot\app\profiles\profile-list.component.html" />
-    <Content Include="wwwroot\app\profiles\register-page.component.css">
+    <Content Include="ClientApp\app\profiles\profile-list.component.html" />
+    <Content Include="ClientApp\app\profiles\register-page.component.css">
       <DependentUpon>register-page.component.html</DependentUpon>
     </Content>
-    <Content Include="wwwroot\app\profiles\register-page.component.html" />
+    <Content Include="ClientApp\app\profiles\register-page.component.html" />
     <Content Include="Web.config" />
     <Content Include="webpack.config.js" />
-    <Content Include="wwwroot\app\conversations\conversation-detail-header.component.html" />
-    <Content Include="wwwroot\app\conversations\conversation-list-header.component.html" />
-    <Content Include="wwwroot\app\shared\components\popover.component.css">
+    <Content Include="ClientApp\app\conversations\conversation-detail-header.component.html" />
+    <Content Include="ClientApp\app\conversations\conversation-list-header.component.html" />
+    <Content Include="ClientApp\app\shared\components\popover.component.css">
       <DependentUpon>popover.component.html</DependentUpon>
     </Content>
-    <Content Include="wwwroot\app\shared\styles\forms.css" />
-    <Content Include="wwwroot\app\shared\styles\page.css" />
-    <Content Include="wwwroot\app\shared\components\popover.component.html" />
+    <Content Include="ClientApp\app\shared\styles\forms.css" />
+    <Content Include="ClientApp\app\shared\styles\page.css" />
+    <Content Include="ClientApp\app\shared\components\popover.component.html" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
@@ -307,77 +309,77 @@
     <Compile Include="Features\Teams\TeamsController.cs" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="wwwroot\app\app.component.ts">
+    <TypeScriptCompile Include="ClientApp\app\app.component.ts">
       <DependentUpon>app.component.html</DependentUpon>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="wwwroot\app\app.module.ts" />
-    <TypeScriptCompile Include="wwwroot\app\conversations\conversation-about.component.ts">
+    <TypeScriptCompile Include="ClientApp\app\app.module.ts" />
+    <TypeScriptCompile Include="ClientApp\app\conversations\conversation-about.component.ts">
       <DependentUpon>conversation-about.component.html</DependentUpon>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="wwwroot\app\conversations\conversation-detail-header.component.ts">
+    <TypeScriptCompile Include="ClientApp\app\conversations\conversation-detail-header.component.ts">
       <DependentUpon>conversation-detail-header.component.html</DependentUpon>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="wwwroot\app\conversations\conversation-detail.component.ts">
+    <TypeScriptCompile Include="ClientApp\app\conversations\conversation-detail.component.ts">
       <DependentUpon>conversation-detail.component.html</DependentUpon>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="wwwroot\app\conversations\conversation-header.component.ts">
+    <TypeScriptCompile Include="ClientApp\app\conversations\conversation-header.component.ts">
       <DependentUpon>conversation-header.component.html</DependentUpon>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="wwwroot\app\conversations\conversation-list-header.component.ts">
+    <TypeScriptCompile Include="ClientApp\app\conversations\conversation-list-header.component.ts">
       <DependentUpon>conversation-list-header.component.html</DependentUpon>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="wwwroot\app\conversations\conversation-list.component.ts">
+    <TypeScriptCompile Include="ClientApp\app\conversations\conversation-list.component.ts">
       <DependentUpon>conversation-list.component.html</DependentUpon>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="wwwroot\app\conversations\conversation-messages.component.ts">
+    <TypeScriptCompile Include="ClientApp\app\conversations\conversation-messages.component.ts">
       <DependentUpon>conversation-messages.component.html</DependentUpon>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="wwwroot\app\conversations\conversation-page.component.ts">
+    <TypeScriptCompile Include="ClientApp\app\conversations\conversation-page.component.ts">
       <DependentUpon>conversation-page.component.html</DependentUpon>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="wwwroot\app\conversations\conversation.model.ts" />
-    <TypeScriptCompile Include="wwwroot\app\conversations\conversations.module.ts" />
-    <TypeScriptCompile Include="wwwroot\app\conversations\conversations.service.ts" />
-    <TypeScriptCompile Include="wwwroot\app\conversations\index.ts" />
-    <TypeScriptCompile Include="wwwroot\app\environment.ts" />
-    <TypeScriptCompile Include="wwwroot\app\index.ts" />
-    <TypeScriptCompile Include="wwwroot\app\messages\index.ts" />
-    <TypeScriptCompile Include="wwwroot\app\messages\message-form.component.ts">
+    <TypeScriptCompile Include="ClientApp\app\conversations\conversation.model.ts" />
+    <TypeScriptCompile Include="ClientApp\app\conversations\conversations.module.ts" />
+    <TypeScriptCompile Include="ClientApp\app\conversations\conversations.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\conversations\index.ts" />
+    <TypeScriptCompile Include="ClientApp\app\environment.ts" />
+    <TypeScriptCompile Include="ClientApp\app\index.ts" />
+    <TypeScriptCompile Include="ClientApp\app\messages\index.ts" />
+    <TypeScriptCompile Include="ClientApp\app\messages\message-form.component.ts">
       <DependentUpon>message-form.component.html</DependentUpon>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="wwwroot\app\messages\messages.module.ts" />
-    <TypeScriptCompile Include="wwwroot\app\profiles\index.ts" />
-    <TypeScriptCompile Include="wwwroot\app\profiles\login-page.component.ts">
+    <TypeScriptCompile Include="ClientApp\app\messages\messages.module.ts" />
+    <TypeScriptCompile Include="ClientApp\app\profiles\index.ts" />
+    <TypeScriptCompile Include="ClientApp\app\profiles\login-page.component.ts">
       <DependentUpon>login-page.component.html</DependentUpon>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="wwwroot\app\profiles\login.component.ts">
+    <TypeScriptCompile Include="ClientApp\app\profiles\login.component.ts">
       <DependentUpon>login.component.html</DependentUpon>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="wwwroot\app\profiles\profile-list.component.ts">
+    <TypeScriptCompile Include="ClientApp\app\profiles\profile-list.component.ts">
       <DependentUpon>profile-list.component.html</DependentUpon>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="wwwroot\app\profiles\profile.model.ts" />
-    <TypeScriptCompile Include="wwwroot\app\profiles\profile.service.ts" />
-    <TypeScriptCompile Include="wwwroot\app\profiles\profiles.module.ts" />
-    <TypeScriptCompile Include="wwwroot\app\profiles\register-page.component.ts">
+    <TypeScriptCompile Include="ClientApp\app\profiles\profile.model.ts" />
+    <TypeScriptCompile Include="ClientApp\app\profiles\profile.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\profiles\profiles.module.ts" />
+    <TypeScriptCompile Include="ClientApp\app\profiles\register-page.component.ts">
       <DependentUpon>register-page.component.html</DependentUpon>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="wwwroot\app\app.routing.ts" />
-    <TypeScriptCompile Include="wwwroot\app\shared\events\popover.events.ts" />
-    <TypeScriptCompile Include="wwwroot\app\shared\services\auth-guard.service.ts" />
-    <TypeScriptCompile Include="wwwroot\app\shared\services\authentication.service.ts" />
-    <TypeScriptCompile Include="wwwroot\app\shared\constants.ts" />
-    <TypeScriptCompile Include="wwwroot\app\shared\services\http.service.ts" />
-    <TypeScriptCompile Include="wwwroot\app\shared\index.ts" />
-    <TypeScriptCompile Include="wwwroot\app\shared\services\login-redirect.service.ts" />
-    <TypeScriptCompile Include="wwwroot\app\shared\components\popover.component.ts">
+    <TypeScriptCompile Include="ClientApp\app\app.routing.ts" />
+    <TypeScriptCompile Include="ClientApp\app\shared\events\popover.events.ts" />
+    <TypeScriptCompile Include="ClientApp\app\shared\services\auth-guard.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\shared\services\authentication.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\shared\constants.ts" />
+    <TypeScriptCompile Include="ClientApp\app\shared\services\http.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\shared\index.ts" />
+    <TypeScriptCompile Include="ClientApp\app\shared\services\login-redirect.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\shared\components\popover.component.ts">
       <DependentUpon>popover.component.html</DependentUpon>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="wwwroot\app\shared\shared.module.ts" />
-    <TypeScriptCompile Include="wwwroot\app\shared\services\signalr-message-queue-factory.ts" />
-    <TypeScriptCompile Include="wwwroot\app\shared\services\storage.service.ts" />
-    <TypeScriptCompile Include="wwwroot\main.ts" />
-    <TypeScriptCompile Include="wwwroot\polyfills.ts" />
+    <TypeScriptCompile Include="ClientApp\app\shared\shared.module.ts" />
+    <TypeScriptCompile Include="ClientApp\app\shared\services\signalr-message-queue-factory.ts" />
+    <TypeScriptCompile Include="ClientApp\app\shared\services\storage.service.ts" />
+    <TypeScriptCompile Include="ClientApp\main.ts" />
+    <TypeScriptCompile Include="ClientApp\polyfills.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="package.json" />
@@ -410,7 +412,8 @@
           <IISUrl>http://localhost:3815/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl></CustomServerUrl>
+          <CustomServerUrl>
+          </CustomServerUrl>
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
