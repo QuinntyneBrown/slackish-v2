@@ -15,6 +15,13 @@ namespace Slackish.Features.Teams
             _mediator = mediator;
         }
 
+        [HttpGet]
+        [Route("getCurrentTeam")]
+        [ResponseType(typeof(GetCurrentTeamQuery.Response))]
+        public async Task<IHttpActionResult> GetCurrentTeam()
+            => Ok(await _mediator.Send(new GetCurrentTeamQuery.Request() { Username = Username, TenantUniqueId = TenantUniqueId }));
+
+
         [Route("add")]
         [HttpPost]
         [ResponseType(typeof(AddOrUpdateTeamCommand.Response))]

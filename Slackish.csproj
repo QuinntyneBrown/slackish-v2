@@ -7,8 +7,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>
-    </ProductVersion>
+    <ProductVersion></ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{7C27EA54-CA98-4F25-990C-43A519C9C204}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
@@ -23,8 +22,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
+    <NuGetPackageImportStamp></NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -253,6 +251,7 @@
     <Compile Include="Features\Conversations\ConversationsController.cs" />
     <Compile Include="Features\Conversations\GetByCurrentProfileQuery.cs" />
     <Compile Include="Features\Core\BaseApiController.cs" />
+    <Compile Include="Features\Core\BaseCommand.cs" />
     <Compile Include="Features\Core\BaseHub.cs" />
     <Compile Include="Features\Core\Cache.cs" />
     <Compile Include="Features\Core\CacheProvider.cs" />
@@ -307,6 +306,7 @@
     <Compile Include="Features\Teams\RemoveTeamCommand.cs" />
     <Compile Include="Features\Teams\TeamApiModel.cs" />
     <Compile Include="Features\Teams\TeamsController.cs" />
+    <Compile Include="Features\Teams\GetCurrentTeamQuery.cs" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\app\app.component.ts">
@@ -381,6 +381,9 @@
     <TypeScriptCompile Include="ClientApp\app\shared\services\storage.service.ts" />
     <TypeScriptCompile Include="ClientApp\main.ts" />
     <TypeScriptCompile Include="ClientApp\polyfills.ts" />
+    <TypeScriptCompile Include="ClientApp\app\teams\teams.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\teams\index.ts" />
+    <TypeScriptCompile Include="ClientApp\app\teams\teams.module.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="package.json" />
@@ -413,8 +416,7 @@
           <IISUrl>http://localhost:3815/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl>
-          </CustomServerUrl>
+          <CustomServerUrl></CustomServerUrl>
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>

@@ -9,8 +9,9 @@ import {ConversationsModule} from "../app/conversations";
 import {MessagesModule} from "../app/messages";
 import {ProfilesModule} from "../app/profiles";
 import {SharedModule} from "../app/shared";
+import {TeamsModule} from "../app/teams";
 
-import { AppComponent } from './app.component';
+import {AppComponent} from './app.component';
 
 import {
     RoutingModule,
@@ -38,7 +39,8 @@ const providers = [
         ConversationsModule,
         MessagesModule,
         ProfilesModule,
-        SharedModule
+        SharedModule,
+        TeamsModule
     ],
     providers: providers,
     declarations: [declarables],

@@ -15,21 +15,18 @@ input[type=checkbox] {
     font-size:1.5em;
 }
 
-button{
-    display:block;
-}
-
 span {
     display:block;
     margin: 10px 0px 0px 0px;
 }
 
-button {
-    border:1px solid #333;
+button {    
     background-color:#fff;
+    border:2px solid #333;
+    border-radius:0.35em;
+    cursor:pointer;
+    display:block;    
     font-size:1.5em;
     line-height:2em;
-    padding: 0px 10px;
-    border-radius:0.25em;
-    cursor:pointer;
+    padding: 0px 10px;    
 }

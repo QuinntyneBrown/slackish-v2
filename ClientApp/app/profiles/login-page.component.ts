@@ -1,6 +1,8 @@
 import {Component, OnInit} from "@angular/core";
-import {AuthenticationService, LoginRedirectService, constants, Storage} from "../shared";
-import {ProfilesService } from "./profile.service";
+import {AuthenticationService,LoginRedirectService,constants,Storage} from "../shared";
+import {ProfilesService} from "./profile.service";
+import {TeamsService} from "../teams/teams.service";
+
 @Component({
     templateUrl: "./login-page.component.html",
     styleUrls: ["./login-page.component.css"],
@@ -11,7 +13,8 @@ export class LoginPageComponent implements OnInit {
         private _authenticationService: AuthenticationService,
         private _loginRedirectService: LoginRedirectService,
         private _profilesService: ProfilesService,
-        private _storage: Storage
+        private _storage: Storage,
+        private _teamsService: TeamsService
     ) { }
 
     public ngOnInit() {
@@ -36,9 +39,14 @@ export class LoginPageComponent implements OnInit {
 
         await this._authenticationService.tryToLogin({ username: $event.value.username, password: $event.value.password }).toPromise();
 
-        const currentProfile = await this._profilesService.getCurrentProfile();
+        const results = await Promise.all([
+            this._profilesService.getCurrentProfile(),
+            this._teamsService.getCurrentTeam()
+        ]);
 
-        this._storage.put({ name: constants.CURRENT_PROFILE_KEY, value: currentProfile });
+        this._storage.put({ name: constants.CURRENT_PROFILE_KEY, value: results[0] });
+
+        this._storage.put({ name: constants.CURRENT_TEAM_KEY, value: results[1] });
 
         this._loginRedirectService.redirectPreLogin();
     }

@@ -36,6 +36,10 @@ export class ConversationPageComponent implements OnInit {
         return this._storage.get({ name: constants.CURRENT_PROFILE_KEY }).profile.user.username;
     }
 
+    public get teamName() {
+        return this._storage.get({ name: constants.CURRENT_TEAM_KEY }).team.name;
+    }
+
     public otherProfiles: Array<Profile> = [];
-    public conversations: Array<Conversation> = [];
+    public conversations: Array<Conversation> = [];    
 }

@@ -16,6 +16,8 @@ namespace Slackish.Data.Model
         public string Name { get; set; }
         public string Password { get; set; }
         public string Email { get; set; }
+        [ForeignKey("CurrentTeam")]
+        public int? CurrentTeamId { get; set; }
         [Index("UserNameIndex", IsUnique = false)]
         [Column(TypeName = "VARCHAR")]
         [StringLength(255)]
@@ -23,6 +25,7 @@ namespace Slackish.Data.Model
         public string Firstname { get; set; }
         public string Lastname { get; set; }
         public string Fullname { get { return $"{Firstname} {Lastname}"; } }
+        public Team CurrentTeam { get; set; }
         public ICollection<Profile> Profiles { get; set; } = new HashSet<Profile>();
         public ICollection<TeamUser> TeamUsers { get; set; } = new HashSet<TeamUser>();
         public DateTime CreatedOn { get; set; }
