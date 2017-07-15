@@ -159,6 +159,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ClientApp\app\teams\set-current-team-form.component.css">
+      <DependentUpon>set-current-team-form.component.html</DependentUpon>
+    </Content>
+    <Content Include="ClientApp\app\teams\set-current-team-page.component.css">
+      <DependentUpon>set-current-team-page.component.html</DependentUpon>
+    </Content>
     <Content Include="index.html" />
     <Content Include="ClientApp\app\app.component.css">
       <DependentUpon>app.component.html</DependentUpon>
@@ -224,6 +230,8 @@
     <Content Include="ClientApp\app\shared\styles\forms.css" />
     <Content Include="ClientApp\app\shared\styles\page.css" />
     <Content Include="ClientApp\app\shared\components\popover.component.html" />
+    <Content Include="ClientApp\app\teams\set-current-team-page.component.html" />
+    <Content Include="ClientApp\app\teams\set-current-team-form.component.html" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
@@ -310,6 +318,7 @@
     <Compile Include="Data\Model\Channel.cs" />
     <Compile Include="Data\Migrations\ChannelConfiguration.cs" />
     <Compile Include="Data\Migrations\TeamConfiguration.cs" />
+    <Compile Include="Features\Teams\SetCurrentTeamCommand.cs" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\app\app.component.ts">
@@ -382,6 +391,12 @@
     <TypeScriptCompile Include="ClientApp\app\shared\shared.module.ts" />
     <TypeScriptCompile Include="ClientApp\app\shared\services\signalr-message-queue-factory.ts" />
     <TypeScriptCompile Include="ClientApp\app\shared\services\storage.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\teams\set-current-team-form.component.ts">
+      <DependentUpon>set-current-team-form.component.html</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\app\teams\set-current-team-page.component.ts">
+      <DependentUpon>set-current-team-page.component.html</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="ClientApp\main.ts" />
     <TypeScriptCompile Include="ClientApp\polyfills.ts" />
     <TypeScriptCompile Include="ClientApp\app\teams\teams.service.ts" />

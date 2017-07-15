@@ -9,4 +9,12 @@ export class TeamsService {
     public getCurrentTeam() {
         return this._http.get("/api/teams/getCurrentTeam");
     }
+
+    public setCurrentTeam(options: {teamName:string}) {
+        return this._http.post("/api/teams/getCurrentTeam", options);
+    }
+
+    public get() {
+        return this._http.get("/api/teams/get");
+    }
 }
