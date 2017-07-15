@@ -47,7 +47,7 @@ export class LoginPageComponent implements OnInit {
         this._storage.put({ name: constants.CURRENT_PROFILE_KEY, value: results[0] });
 
         this._storage.put({ name: constants.CURRENT_TEAM_KEY, value: results[1] });
-
+        
         this._loginRedirectService.redirectPreLogin();
     }
 }

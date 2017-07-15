@@ -17,16 +17,17 @@ export class ConversationListHeaderComponent {
     @Input()
     public username: string;
 
+    @Input()
+    public teamName: string;
+
     private _componentFactory: ComponentFactory<PopoverComponent>;
 
     public showPopover() {
         if (this.isPopoverVisible) {            
             this.target.clear();
             this.isPopoverVisible = false;
-        } else {
-            
-            this.target.createComponent(this._componentFactory);
-            
+        } else {            
+            this.target.createComponent(this._componentFactory);            
             this.isPopoverVisible = true;
         }
     }

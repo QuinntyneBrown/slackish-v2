@@ -24,8 +24,14 @@ export class ConversationPageComponent implements OnInit {
 
     async ngOnInit() {
         (this._elementRef.nativeElement as HTMLElement).addEventListener(popoverEvents.USERNAME_CLICK, this.navigateToLoginPage);
-        this.otherProfiles = await this._profilesService.getOtherProfiles();
-        this.conversations = await this._conversationsService.getByCurrentProfile();        
+
+        const results = await Promise.all([
+            this._profilesService.getOtherProfiles(),
+            this._conversationsService.getByCurrentProfile()
+        ]);
+
+        this.otherProfiles = results[0];
+        this.conversations = results[1];        
     }
 
     public navigateToLoginPage() {

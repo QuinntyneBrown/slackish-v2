@@ -8,4 +8,7 @@ import { Component, Input, Output, EventEmitter, ViewEncapsulation } from "@angu
 export class ConversationListComponent {
     @Input()
     public username: string;
+
+    @Input()
+    public teamName: string;
 }
