@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, ViewEncapsulation, ElementRef } from "@angular/core";
-import { LogOutClicked } from "../events";
+import { LogOutClicked, popoverEvents } from "../events";
 
 @Component({
     templateUrl: "./popover.component.html",
@@ -12,7 +12,10 @@ export class PopoverComponent {
     constructor(private _elementRef: ElementRef) {}
 
     public logoutClicked() {
-        alert("?");
-        this._elementRef.nativeElement.dispatch(new LogOutClicked());        
+        this._elementRef.nativeElement.dispatchEvent(new CustomEvent(popoverEvents.USERNAME_CLICK, {
+            bubbles: true,
+            cancelable: true,
+            composed: true
+        } as CustomEventInit));        
     }
 }

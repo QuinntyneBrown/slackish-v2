@@ -13,10 +13,8 @@ export class PopoverEvent extends CustomEvent {
     }
 }
 
-export class LogOutClicked extends PopoverEvent {
+export class LogOutClicked extends CustomEvent {
     constructor() {
-        super(popoverEvents.USERNAME_CLICK);
-
-        alert("?");
+        super(popoverEvents.USERNAME_CLICK);        
     }
 }
