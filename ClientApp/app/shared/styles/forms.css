@@ -2,6 +2,7 @@
 input[type=password]{
     display:block;
     width:calc(100% - 22px);
+    font-size:1.5em;
     line-height:2em;
     padding:0px 10px 0px 10px; 
     border: solid 1px #333;
@@ -11,6 +12,7 @@ input[type=password]{
 label,
 input[type=checkbox] {
     display:inline-block;
+    font-size:1.5em;
 }
 
 button{
@@ -20,4 +22,14 @@ button{
 span {
     display:block;
     margin: 10px 0px 0px 0px;
+}
+
+button {
+    border:1px solid #333;
+    background-color:#fff;
+    font-size:1.5em;
+    line-height:2em;
+    padding: 0px 10px;
+    border-radius:0.25em;
+    cursor:pointer;
 }

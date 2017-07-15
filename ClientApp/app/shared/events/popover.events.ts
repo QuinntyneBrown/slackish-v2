@@ -16,5 +16,7 @@ export class PopoverEvent extends CustomEvent {
 export class LogOutClicked extends PopoverEvent {
     constructor() {
         super(popoverEvents.USERNAME_CLICK);
+
+        alert("?");
     }
 }

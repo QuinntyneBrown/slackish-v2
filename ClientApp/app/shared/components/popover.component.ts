@@ -11,5 +11,8 @@ export class PopoverComponent {
 
     constructor(private _elementRef: ElementRef) {}
 
-    public logoutClicked() { this._elementRef.nativeElement.dispatch(new LogOutClicked()); }
+    public logoutClicked() {
+        alert("?");
+        this._elementRef.nativeElement.dispatch(new LogOutClicked());        
+    }
 }

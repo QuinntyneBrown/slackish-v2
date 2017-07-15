@@ -365,6 +365,7 @@
       <DependentUpon>register-page.component.html</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="ClientApp\app\app.routing.ts" />
+    <TypeScriptCompile Include="ClientApp\app\shared\events\index.ts" />
     <TypeScriptCompile Include="ClientApp\app\shared\events\popover.events.ts" />
     <TypeScriptCompile Include="ClientApp\app\shared\services\auth-guard.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\shared\services\authentication.service.ts" />
