@@ -2,6 +2,7 @@
 import {ConversationPageComponent} from "./conversations";
 import {AuthGuardService} from "./shared";
 import {LoginPageComponent} from "./profiles";
+import {DiscoverTeamPageComponent} from "./teams";
 
 export const routes: Routes = [
     {
@@ -12,6 +13,10 @@ export const routes: Routes = [
     {
         path: 'login',
         component: LoginPageComponent
+    },
+    {
+        path: 'teams/discover',
+        component: DiscoverTeamPageComponent
     }
 ];
 

@@ -159,11 +159,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ClientApp\app\teams\discover-team-page.component.css">
+      <DependentUpon>discover-team-page.component.html</DependentUpon>
+    </Content>
     <Content Include="ClientApp\app\teams\set-current-team-form.component.css">
       <DependentUpon>set-current-team-form.component.html</DependentUpon>
     </Content>
-    <Content Include="ClientApp\app\teams\set-current-team-page.component.css">
-      <DependentUpon>set-current-team-page.component.html</DependentUpon>
+    <Content Include="ClientApp\app\teams\team-selector.component.css">
+      <DependentUpon>team-selector.component.html</DependentUpon>
     </Content>
     <Content Include="index.html" />
     <Content Include="ClientApp\app\app.component.css">
@@ -230,8 +233,9 @@
     <Content Include="ClientApp\app\shared\styles\forms.css" />
     <Content Include="ClientApp\app\shared\styles\page.css" />
     <Content Include="ClientApp\app\shared\components\popover.component.html" />
-    <Content Include="ClientApp\app\teams\set-current-team-page.component.html" />
     <Content Include="ClientApp\app\teams\set-current-team-form.component.html" />
+    <Content Include="ClientApp\app\teams\discover-team-page.component.html" />
+    <Content Include="ClientApp\app\teams\team-selector.component.html" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
@@ -391,11 +395,14 @@
     <TypeScriptCompile Include="ClientApp\app\shared\shared.module.ts" />
     <TypeScriptCompile Include="ClientApp\app\shared\services\signalr-message-queue-factory.ts" />
     <TypeScriptCompile Include="ClientApp\app\shared\services\storage.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\teams\discover-team-page.component.ts">
+      <DependentUpon>discover-team-page.component.html</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="ClientApp\app\teams\set-current-team-form.component.ts">
       <DependentUpon>set-current-team-form.component.html</DependentUpon>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="ClientApp\app\teams\set-current-team-page.component.ts">
-      <DependentUpon>set-current-team-page.component.html</DependentUpon>
+    <TypeScriptCompile Include="ClientApp\app\teams\team-selector.component.ts">
+      <DependentUpon>team-selector.component.html</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="ClientApp\main.ts" />
     <TypeScriptCompile Include="ClientApp\polyfills.ts" />
