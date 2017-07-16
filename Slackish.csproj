@@ -7,8 +7,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>
-    </ProductVersion>
+    <ProductVersion></ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{7C27EA54-CA98-4F25-990C-43A519C9C204}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
@@ -23,8 +22,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
+    <NuGetPackageImportStamp></NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -172,6 +170,10 @@
       <DependentUpon>header.component.html</DependentUpon>
     </Content>
     <Content Include="ClientApp\app\shared\components\header.component.html" />
+    <Content Include="ClientApp\app\shared\layout\master-page-layout.component.css">
+      <DependentUpon>master-page-layout.component.html</DependentUpon>
+    </Content>
+    <Content Include="ClientApp\app\shared\layout\master-page-layout.component.html" />
     <Content Include="ClientApp\app\teams\discover-team-page.component.css">
       <DependentUpon>discover-team-page.component.html</DependentUpon>
     </Content>
@@ -180,6 +182,9 @@
     </Content>
     <Content Include="ClientApp\app\teams\team-selector.component.css">
       <DependentUpon>team-selector.component.html</DependentUpon>
+    </Content>
+    <Content Include="ClientApp\app\teams\team-sign-in-page.component.css">
+      <DependentUpon>team-sign-in-page.component.html</DependentUpon>
     </Content>
     <Content Include="index.html" />
     <Content Include="ClientApp\app\app.component.css">
@@ -250,6 +255,7 @@
     <Content Include="ClientApp\app\teams\discover-team-page.component.html" />
     <Content Include="ClientApp\app\teams\team-selector.component.html" />
     <Content Include="ClientApp\app\landing-page.component.html" />
+    <Content Include="ClientApp\app\teams\team-sign-in-page.component.html" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
@@ -407,6 +413,10 @@
     <TypeScriptCompile Include="ClientApp\app\shared\components\index.ts" />
     <TypeScriptCompile Include="ClientApp\app\shared\events\index.ts" />
     <TypeScriptCompile Include="ClientApp\app\shared\events\popover.events.ts" />
+    <TypeScriptCompile Include="ClientApp\app\shared\layout\index.ts" />
+    <TypeScriptCompile Include="ClientApp\app\shared\layout\master-page-layout.component.ts">
+      <DependentUpon>master-page-layout.component.html</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="ClientApp\app\shared\services\auth-guard.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\shared\services\authentication.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\shared\constants.ts" />
@@ -427,6 +437,9 @@
     </TypeScriptCompile>
     <TypeScriptCompile Include="ClientApp\app\teams\team-selector.component.ts">
       <DependentUpon>team-selector.component.html</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\app\teams\team-sign-in-page.component.ts">
+      <DependentUpon>team-sign-in-page.component.html</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="ClientApp\main.ts" />
     <TypeScriptCompile Include="ClientApp\polyfills.ts" />
@@ -465,8 +478,7 @@
           <IISUrl>http://localhost:3815/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl>
-          </CustomServerUrl>
+          <CustomServerUrl></CustomServerUrl>
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>

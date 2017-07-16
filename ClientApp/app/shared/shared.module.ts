@@ -12,6 +12,7 @@ import {DotsMenuComponent} from "./components/dots-menu.component";
 import {HeaderComponent} from "./components/header.component";
 import {PopoverComponent} from "./components/popover.component";
 
+import {MasterPageLayoutComponent} from "./layout/master-page-layout.component";
 
 const providers = [
     HttpService,
@@ -26,7 +27,9 @@ const providers = [
 const declarables = [
     DotsMenuComponent,
     HeaderComponent,
-    PopoverComponent
+    PopoverComponent,
+
+    MasterPageLayoutComponent
 ];
 
 @NgModule({

@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, Input, OnInit, ViewEncapsulation } from "@angular/core";
+import {Component,ChangeDetectionStrategy,Input,OnInit,ViewEncapsulation} from "@angular/core";
 
 @Component({
     templateUrl: "./app.component.html",
