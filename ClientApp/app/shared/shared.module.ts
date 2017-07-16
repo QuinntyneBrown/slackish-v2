@@ -8,7 +8,10 @@ import {LoginRedirectService} from "./services/login-redirect.service";
 import {SignalRMessageQueueFactory} from "./services/signalr-message-queue-factory";
 import {Storage} from "./services/storage.service";
 
+import {DotsMenuComponent} from "./components/dots-menu.component";
+import {HeaderComponent} from "./components/header.component";
 import {PopoverComponent} from "./components/popover.component";
+
 
 const providers = [
     HttpService,
@@ -21,6 +24,8 @@ const providers = [
 ];
 
 const declarables = [
+    DotsMenuComponent,
+    HeaderComponent,
     PopoverComponent
 ];
 
@@ -28,6 +33,7 @@ const declarables = [
     imports: [CommonModule],
     entryComponents: [PopoverComponent],
     declarations: [declarables],
+    exports:[declarables],
     providers: providers
 })
 export class SharedModule {}

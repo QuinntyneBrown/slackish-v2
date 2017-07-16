@@ -7,7 +7,8 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion></ProductVersion>
+    <ProductVersion>
+    </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{7C27EA54-CA98-4F25-990C-43A519C9C204}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
@@ -22,7 +23,8 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
-    <NuGetPackageImportStamp></NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -159,6 +161,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ClientApp\app\landing-page.component.css">
+      <DependentUpon>landing-page.component.html</DependentUpon>
+    </Content>
+    <Content Include="ClientApp\app\shared\components\dots-menu.component.css">
+      <DependentUpon>dots-menu.component.html</DependentUpon>
+    </Content>
+    <Content Include="ClientApp\app\shared\components\dots-menu.component.html" />
+    <Content Include="ClientApp\app\shared\components\header.component.css">
+      <DependentUpon>header.component.html</DependentUpon>
+    </Content>
+    <Content Include="ClientApp\app\shared\components\header.component.html" />
     <Content Include="ClientApp\app\teams\discover-team-page.component.css">
       <DependentUpon>discover-team-page.component.html</DependentUpon>
     </Content>
@@ -236,6 +249,7 @@
     <Content Include="ClientApp\app\teams\set-current-team-form.component.html" />
     <Content Include="ClientApp\app\teams\discover-team-page.component.html" />
     <Content Include="ClientApp\app\teams\team-selector.component.html" />
+    <Content Include="ClientApp\app\landing-page.component.html" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
@@ -359,6 +373,9 @@
     <TypeScriptCompile Include="ClientApp\app\conversations\index.ts" />
     <TypeScriptCompile Include="ClientApp\app\environment.ts" />
     <TypeScriptCompile Include="ClientApp\app\index.ts" />
+    <TypeScriptCompile Include="ClientApp\app\landing-page.component.ts">
+      <DependentUpon>landing-page.component.html</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="ClientApp\app\messages\index.ts" />
     <TypeScriptCompile Include="ClientApp\app\messages\message-form.component.ts">
       <DependentUpon>message-form.component.html</DependentUpon>
@@ -381,6 +398,13 @@
       <DependentUpon>register-page.component.html</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="ClientApp\app\app.routing.ts" />
+    <TypeScriptCompile Include="ClientApp\app\shared\components\dots-menu.component.ts">
+      <DependentUpon>dots-menu.component.html</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\app\shared\components\header.component.ts">
+      <DependentUpon>header.component.html</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\app\shared\components\index.ts" />
     <TypeScriptCompile Include="ClientApp\app\shared\events\index.ts" />
     <TypeScriptCompile Include="ClientApp\app\shared\events\popover.events.ts" />
     <TypeScriptCompile Include="ClientApp\app\shared\services\auth-guard.service.ts" />
@@ -441,7 +465,8 @@
           <IISUrl>http://localhost:3815/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl></CustomServerUrl>
+          <CustomServerUrl>
+          </CustomServerUrl>
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>

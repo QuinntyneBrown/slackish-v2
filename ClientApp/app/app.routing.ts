@@ -3,10 +3,15 @@ import {ConversationPageComponent} from "./conversations";
 import {AuthGuardService} from "./shared";
 import {LoginPageComponent} from "./profiles";
 import {DiscoverTeamPageComponent} from "./teams";
+import {LandingPageComponent} from "./landing-page.component";
 
 export const routes: Routes = [
     {
         path: '',
+        component: LandingPageComponent
+    },
+    {
+        path: 'conversations',
         component: ConversationPageComponent,
         canActivate: [AuthGuardService]
     },
@@ -26,5 +31,7 @@ export const RoutingModule = RouterModule.forRoot([
 
 export const routedComponents = [
     ConversationPageComponent,
-    LoginPageComponent
+    DiscoverTeamPageComponent,
+    LandingPageComponent,
+    LoginPageComponent    
 ];
