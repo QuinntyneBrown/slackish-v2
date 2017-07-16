@@ -1,5 +1,6 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from "@angular/common";
+import {RouterModule} from "@angular/router";
 
 import {AuthGuardService} from "./services/auth-guard.service"
 import {AuthenticationService} from "./services/authentication.service";
@@ -33,7 +34,7 @@ const declarables = [
 ];
 
 @NgModule({
-    imports: [CommonModule],
+    imports: [CommonModule, RouterModule],
     entryComponents: [PopoverComponent],
     declarations: [declarables],
     exports:[declarables],

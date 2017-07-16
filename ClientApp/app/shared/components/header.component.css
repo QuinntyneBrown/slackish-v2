@@ -10,6 +10,7 @@ h1 {
     margin:0;
     padding:0;
     line-height:100px;
+    cursor:pointer;
 }
 
 ul {
@@ -26,4 +27,8 @@ li {
     margin:0 15px;
     padding:0;
     line-height:100px;
+}
+
+a {
+    text-decoration:none;
 }

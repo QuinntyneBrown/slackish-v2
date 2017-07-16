@@ -1,1 +1,4 @@
-﻿
+﻿ce-header, ce-discover-team-page {
+    margin:0px 30px;
+    width: calc(100% - 60px);
+}

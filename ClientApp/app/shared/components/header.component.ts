@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewEncapsulation } from "@angular/core";
+import {Component} from "@angular/core";
 
 @Component({
     templateUrl: "./header.component.html",
@@ -8,4 +8,4 @@ import { Component, Input, OnInit, ViewEncapsulation } from "@angular/core";
     ],
     selector: "ce-header"
 })
-export class HeaderComponent { }
+export class HeaderComponent {}

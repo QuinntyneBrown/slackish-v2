@@ -2,3 +2,8 @@
     display:block;
     content:contain;
 }
+
+.main-content {
+    margin:0px 30px;
+    width: calc(100% - 60px);
+}
