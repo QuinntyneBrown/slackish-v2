@@ -1,6 +1,5 @@
 :host {
     display:grid;
-    width:100%;
     height:100px;
     grid-template-columns: 1fr 2fr;
 }
@@ -21,9 +20,10 @@ ul {
 }
 
 li {
+    cursor:pointer;
     list-style:none;
     display:inline-block;
-    margin:0;
+    margin:0 15px;
     padding:0;
     line-height:100px;
 }
