@@ -7,7 +7,8 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion></ProductVersion>
+    <ProductVersion>
+    </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{7C27EA54-CA98-4F25-990C-43A519C9C204}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
@@ -22,7 +23,8 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
-    <NuGetPackageImportStamp></NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -183,9 +185,6 @@
     <Content Include="ClientApp\app\teams\team-selector.component.css">
       <DependentUpon>team-selector.component.html</DependentUpon>
     </Content>
-    <Content Include="ClientApp\app\teams\team-sign-in-page.component.css">
-      <DependentUpon>team-sign-in-page.component.html</DependentUpon>
-    </Content>
     <Content Include="index.html" />
     <Content Include="ClientApp\app\app.component.css">
       <DependentUpon>app.component.html</DependentUpon>
@@ -255,7 +254,6 @@
     <Content Include="ClientApp\app\teams\discover-team-page.component.html" />
     <Content Include="ClientApp\app\teams\team-selector.component.html" />
     <Content Include="ClientApp\app\landing-page.component.html" />
-    <Content Include="ClientApp\app\teams\team-sign-in-page.component.html" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
@@ -438,9 +436,6 @@
     <TypeScriptCompile Include="ClientApp\app\teams\team-selector.component.ts">
       <DependentUpon>team-selector.component.html</DependentUpon>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="ClientApp\app\teams\team-sign-in-page.component.ts">
-      <DependentUpon>team-sign-in-page.component.html</DependentUpon>
-    </TypeScriptCompile>
     <TypeScriptCompile Include="ClientApp\main.ts" />
     <TypeScriptCompile Include="ClientApp\polyfills.ts" />
     <TypeScriptCompile Include="ClientApp\app\teams\teams.service.ts" />
@@ -478,7 +473,8 @@
           <IISUrl>http://localhost:3815/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl></CustomServerUrl>
+          <CustomServerUrl>
+          </CustomServerUrl>
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>

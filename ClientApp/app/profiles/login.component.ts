@@ -1,6 +1,5 @@
 import {
     Component,
-    ChangeDetectionStrategy,
     Input,
     OnInit,
     EventEmitter,
@@ -8,9 +7,7 @@ import {
     AfterViewInit,
     AfterContentInit,
     Renderer,
-    ElementRef,
-    ViewEncapsulation,
-    
+    ElementRef,    
 } from "@angular/core";
 
 import { FormGroup, FormControl, Validators } from "@angular/forms";
