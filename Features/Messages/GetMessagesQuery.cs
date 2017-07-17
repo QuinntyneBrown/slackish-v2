@@ -9,39 +9,37 @@ using System;
 
 namespace Slackish.Features.Messages
 {
-    public class GetMessagesRequest: IRequest<GetMessagesResponse>
-    {
-        public GetMessagesRequest() { }
-        public Guid TenantUniqueId { get; set; }
-    }
-
-    public class GetMessagesResponse 
-    {
-        public List<MessageApiModel> Messages { get; set; }
-    }
-
-    public class GetMessagesHandler: IAsyncRequestHandler<GetMessagesRequest, GetMessagesResponse>
-    {
-        public GetMessagesHandler(SlackishContext dataContext, ICache cache)
+    public class GetMessagesQuery {
+        public class Request: IRequest<Response>
         {
-            _cache = cache;
-            _context = dataContext;
+            public Guid TenantUniqueId { get; set; }
+            public string Username { get; set; }
         }
 
-        public async Task<GetMessagesResponse> Handle(GetMessagesRequest query)
+        public class Response 
         {
-            var messages = await _context.Messages
-                .Include(x=>x.Conversation)
-                .Select(x => MessageApiModel.FromMessage(x))
-                .ToListAsync();
+            public List<MessageApiModel> Messages { get; set; }
+        }
 
-            return new GetMessagesResponse()
+        public class Handler: IAsyncRequestHandler<Request, Response>
+        {
+            public Handler(SlackishContext dataContext, ICache cache)
             {
-                Messages = messages
-            };
-        }
+                _cache = cache;
+                _context = dataContext;
+            }
 
-        private SlackishContext _context;
-        private ICache _cache;
+            public async Task<Response> Handle(Request request)
+                => new Response()
+                {
+                    Messages = await _cache.FromCacheOrServiceAsync(() => _context.Messages
+                    .Include(x => x.Conversation)
+                    .Select(x => MessageApiModel.FromMessage(x))
+                    .ToListAsync(), $"[Messages] Get {request.TenantUniqueId}-{request.Username}")
+                };
+            
+            private SlackishContext _context;
+            private ICache _cache;
+        }
     }
 }

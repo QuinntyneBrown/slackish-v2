@@ -2,6 +2,7 @@ using MediatR;
 using Slackish.Data;
 using Slackish.Data.Model;
 using System.Data.Entity;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Slackish.Security
@@ -12,6 +13,7 @@ namespace Slackish.Security
         {
             public string Username { get; set; }
             public string Password { get; set; }
+            public string TeamName { get; set; }
         }
 
         public class Response
@@ -39,12 +41,16 @@ namespace Slackish.Security
                 return user.Password == transformedPassword;
             }
 
-            public async Task<Response> Handle(Request message)
+            public async Task<Response> Handle(Request request)
             {
-                var user = await _context.Users.SingleOrDefaultAsync(x => x.Username.ToLower() == message.Username.ToLower() && !x.IsDeleted);
+                var user = await _context.Users
+                    .Include(x => x.TeamUsers) 
+                    .Include("TeamUsers.Team")
+                    .SingleOrDefaultAsync(x => x.Username.ToLower() == request.Username.ToLower() && !x.IsDeleted);
+
                 return new Response()
                 {
-                    IsAuthenticated = ValidateUser(user, _encryptionService.TransformPassword(message.Password))
+                    IsAuthenticated = ValidateUser(user, _encryptionService.TransformPassword(request.Password)) && user.TeamUsers.Any(x => x.Team.Name == request.TeamName)
                 };
             }
 

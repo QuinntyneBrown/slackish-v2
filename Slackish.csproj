@@ -176,6 +176,15 @@
       <DependentUpon>master-page-layout.component.html</DependentUpon>
     </Content>
     <Content Include="ClientApp\app\shared\layout\master-page-layout.component.html" />
+    <Content Include="ClientApp\app\teams\create-team-form.component.css">
+      <DependentUpon>create-team-form.component.html</DependentUpon>
+    </Content>
+    <Content Include="ClientApp\app\teams\create-team-page.component.css">
+      <DependentUpon>create-team-page.component.html</DependentUpon>
+    </Content>
+    <Content Include="ClientApp\app\teams\discover-team-form.component.css">
+      <DependentUpon>discover-team-form.component.html</DependentUpon>
+    </Content>
     <Content Include="ClientApp\app\teams\discover-team-page.component.css">
       <DependentUpon>discover-team-page.component.html</DependentUpon>
     </Content>
@@ -254,6 +263,9 @@
     <Content Include="ClientApp\app\teams\discover-team-page.component.html" />
     <Content Include="ClientApp\app\teams\team-selector.component.html" />
     <Content Include="ClientApp\app\landing-page.component.html" />
+    <Content Include="ClientApp\app\teams\discover-team-form.component.html" />
+    <Content Include="ClientApp\app\teams\create-team-page.component.html" />
+    <Content Include="ClientApp\app\teams\create-team-form.component.html" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
@@ -427,6 +439,15 @@
     <TypeScriptCompile Include="ClientApp\app\shared\shared.module.ts" />
     <TypeScriptCompile Include="ClientApp\app\shared\services\signalr-message-queue-factory.ts" />
     <TypeScriptCompile Include="ClientApp\app\shared\services\storage.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\teams\create-team-form.component.ts">
+      <DependentUpon>create-team-form.component.html</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\app\teams\create-team-page.component.ts">
+      <DependentUpon>create-team-page.component.html</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\app\teams\discover-team-form.component.ts">
+      <DependentUpon>discover-team-form.component.html</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="ClientApp\app\teams\discover-team-page.component.ts">
       <DependentUpon>discover-team-page.component.html</DependentUpon>
     </TypeScriptCompile>

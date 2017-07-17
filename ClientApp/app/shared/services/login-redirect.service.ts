@@ -10,7 +10,7 @@ export class LoginRedirectService {
 
     loginUrl: string = "/login";
     lastPath: string;
-    defaultPath: string = "/";
+    defaultPath: string = "/conversations";
     setLoginUrl(value) { this.loginUrl = value; }
     setDefaultUrl(value) { this.defaultPath = value; }
 

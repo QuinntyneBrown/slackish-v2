@@ -7,7 +7,7 @@ import { Component, Input, OnInit, ViewEncapsulation } from "@angular/core";
         "./shared/styles/page.css",
         "./landing-page.component.css"
     ],
-    selector: "cs-landing-page",
-    encapsulation: ViewEncapsulation.Native
+    selector: "ce-landing-page",
+    encapsulation: ViewEncapsulation.Emulated
 })
 export class LandingPageComponent { }

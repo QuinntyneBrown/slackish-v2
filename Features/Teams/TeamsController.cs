@@ -21,10 +21,10 @@ namespace Slackish.Features.Teams
         public async Task<IHttpActionResult> GetCurrentTeam()
             => Ok(await _mediator.Send(new GetCurrentTeamQuery.Request() { Username = Username, TenantUniqueId = TenantUniqueId }));
 
-        [HttpGet]
+        [HttpPost]
         [Route("setCurrentTeam")]
         [ResponseType(typeof(SetCurrentTeamCommand.Response))]
-        public async Task<IHttpActionResult> SetCurrentTeam([FromUri]SetCurrentTeamCommand.Request request)
+        public async Task<IHttpActionResult> SetCurrentTeam(SetCurrentTeamCommand.Request request)
         {
             request.Username = Username;
             request.TenantUniqueId = TenantUniqueId;

@@ -1,0 +1,5 @@
+<form novalidate [formGroup]="form">
+    <h1>Create your team</h1>
+    <input type="text" placeholder="your-team-name" id="teamName" formControlName="teamName" />
+    <button (click)="tryToDiscover.emit({ detail: form.value })">Continue</button>
+</form>

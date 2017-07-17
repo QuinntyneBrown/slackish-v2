@@ -14,11 +14,12 @@ function formEncode(data:any) {
 
 @Injectable()
 export class HttpService {
-    constructor(private _http: Http) { }
+    constructor(private _http: Http, private _storage: Storage) { }
 
     public postFormEncoded(url: string, body: any, options?: RequestOptionsArgs) {                
         let headers = new Headers();
         headers.append("Content-Type", "application/x-www-form-urlencoded");
+        headers.append("Team", this._storage.get({ name: constants.CURRENT_TEAM_KEY }).team.name);
         return this._http.post(url, formEncode(body), { headers: headers });
     }
 

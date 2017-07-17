@@ -1,8 +1,9 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNet.SignalR.Hubs;
+using Microsoft.Owin.Security;
 using Slackish.Security;
 using Slackish.Features.Core;
-using Microsoft.Owin.Security;
+
 
 namespace Slackish.Features.Conversations
 {

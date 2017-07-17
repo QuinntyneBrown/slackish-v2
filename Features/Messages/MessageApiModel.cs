@@ -5,7 +5,6 @@ namespace Slackish.Features.Messages
 {
     public class MessageApiModel
     {
-
         public int Id { get; set; }
         public int FromId { get; set; }
         public int ToId { get; set; }

@@ -11,10 +11,14 @@ export class TeamsService {
     }
 
     public setCurrentTeam(options: {teamName:string}) {
-        return this._http.post("/api/teams/getCurrentTeam", options);
+        return this._http.post("/api/teams/setCurrentTeam", options);
     }
 
     public get() {
         return this._http.get("/api/teams/get");
+    }
+
+    public create(options: { team:any }) {
+        return this._http.post("/api/teams/addOrUpdate", options);
     }
 }

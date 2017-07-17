@@ -33,20 +33,24 @@ export class LoginPageComponent implements OnInit {
 
     public rememberMe: boolean = false;
 
+    public get teamName() { return this._storage.get({ name: constants.CURRENT_TEAM_KEY  }).team.name; }
+
     public async tryToLogin($event: { value: { username: string, password: string, rememberMe: boolean } }) {      
 
         this._storage.put({ name: constants.LOGIN_CREDENTIALS, value: $event.value.rememberMe ? $event.value : null });
 
         await this._authenticationService.tryToLogin({ username: $event.value.username, password: $event.value.password }).toPromise();
-
+        
         const results = await Promise.all([
             this._profilesService.getCurrentProfile(),
-            this._teamsService.getCurrentTeam()
+            this._teamsService.setCurrentTeam({ teamName: this._storage.get({ name: constants.CURRENT_TEAM_KEY }).team.name })            
         ]);
 
+        var currentTeam = await this._teamsService.getCurrentTeam();
+        
         this._storage.put({ name: constants.CURRENT_PROFILE_KEY, value: results[0] });
 
-        this._storage.put({ name: constants.CURRENT_TEAM_KEY, value: results[1] });
+        this._storage.put({ name: constants.CURRENT_TEAM_KEY, value: currentTeam });
         
         this._loginRedirectService.redirectPreLogin();
     }

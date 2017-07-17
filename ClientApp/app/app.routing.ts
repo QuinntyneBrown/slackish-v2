@@ -4,6 +4,7 @@ import {AuthGuardService} from "./shared";
 import {LoginPageComponent} from "./profiles";
 import {DiscoverTeamPageComponent} from "./teams";
 import {LandingPageComponent} from "./landing-page.component";
+import {CreateTeamPageComponent} from "./teams/create-team-page.component";
 
 export const routes: Routes = [
     {
@@ -22,7 +23,16 @@ export const routes: Routes = [
     {
         path: 'teams/discover',
         component: DiscoverTeamPageComponent
+    },
+    {
+        path: 'teams/:teamName',
+        component: LoginPageComponent
+    },
+    {
+        path: 'teams/create',
+        component: CreateTeamPageComponent
     }
+
 ];
 
 export const RoutingModule = RouterModule.forRoot([

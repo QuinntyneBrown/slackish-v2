@@ -1,3 +1,8 @@
 ce-login {
     margin:40px auto;
 }
+
+h2 {
+    display:block;
+    text-align:center;
+}

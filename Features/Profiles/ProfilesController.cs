@@ -1,7 +1,5 @@
 ﻿using MediatR;
 using Slackish.Features.Core;
-using System.Linq;
-using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
