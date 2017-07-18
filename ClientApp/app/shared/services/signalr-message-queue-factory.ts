@@ -47,7 +47,8 @@ export class SignalRMessageQueueFactory {
     private _connectionStartPromise: Promise<any>;
 
     public messages$() {
-        return Observable.fromPromise(this._start())
+        return Observable
+            .fromPromise(this._start())
             .map(() => this._messages$);
     }
 
@@ -58,7 +59,8 @@ export class SignalRMessageQueueFactory {
     });
 
     public failedMessages$() {
-        return Observable.fromPromise(this._start())
+        return Observable
+            .fromPromise(this._start())
             .map(() => this._messages$);
     }
 

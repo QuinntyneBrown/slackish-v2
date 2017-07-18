@@ -6,7 +6,6 @@ import { Component, Input, OnInit, ViewEncapsulation, Output, EventEmitter } fro
     selector: "ce-message-form"
 })
 export class MessageFormComponent {
-
     @Output()
     public send: EventEmitter<any> = new EventEmitter();
 }

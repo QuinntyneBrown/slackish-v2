@@ -68,6 +68,15 @@ namespace Slackish.Features.Teams
             return Ok(await _mediator.Send(request));
         }
 
+        [Route("getByName")]
+        [HttpGet]
+        [ResponseType(typeof(GetTeamByNameQuery.Response))]
+        public async Task<IHttpActionResult> GetByName([FromUri] GetTeamByNameQuery.Request request)
+        {
+            request.TenantUniqueId = TenantUniqueId;
+            return Ok(await _mediator.Send(request));
+        }
+
         [Route("remove")]
         [HttpDelete]
         [ResponseType(typeof(RemoveTeamCommand.Response))]

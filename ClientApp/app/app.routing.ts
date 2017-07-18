@@ -9,7 +9,8 @@ import {CreateTeamPageComponent} from "./teams/create-team-page.component";
 export const routes: Routes = [
     {
         path: '',
-        component: LandingPageComponent
+        component: LandingPageComponent,
+        
     },
     {
         path: 'conversations',
@@ -22,16 +23,19 @@ export const routes: Routes = [
     },
     {
         path: 'teams/discover',
-        component: DiscoverTeamPageComponent
-    },
-    {
-        path: 'teams/:teamName',
-        component: LoginPageComponent
+        component: DiscoverTeamPageComponent,
+        pathMatch:'full'
     },
     {
         path: 'teams/create',
-        component: CreateTeamPageComponent
-    }
+        component: CreateTeamPageComponent,
+        pathMatch: 'full'
+    },
+    {
+        path: 'teams/:teamName/login',
+        component: LoginPageComponent
+    },
+
 
 ];
 
@@ -41,7 +45,8 @@ export const RoutingModule = RouterModule.forRoot([
 
 export const routedComponents = [
     ConversationPageComponent,
+    CreateTeamPageComponent,
     DiscoverTeamPageComponent,
     LandingPageComponent,
-    LoginPageComponent    
+    LoginPageComponent
 ];

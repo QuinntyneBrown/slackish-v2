@@ -1,6 +1,5 @@
 using MediatR;
 using Slackish.Data;
-using Slackish.Data.Model;
 using Slackish.Features.Core;
 using System;
 using System.Collections.Generic;
@@ -10,15 +9,18 @@ using System.Data.Entity;
 
 namespace Slackish.Features.Teams
 {
-    public class AddOrUpdateTeamCommand
+    public class GetTeamByNameQuery
     {
         public class Request : IRequest<Response>
         {
-            public TeamApiModel Team { get; set; }
             public Guid TenantUniqueId { get; set; }
+            public string TeamName { get; set; }
         }
 
-        public class Response { }
+        public class Response
+        {
+            public TeamApiModel Team { get; set; }
+        }
 
         public class Handler : IAsyncRequestHandler<Request, Response>
         {
@@ -30,20 +32,12 @@ namespace Slackish.Features.Teams
 
             public async Task<Response> Handle(Request request)
             {
-                var entity = await _context.Teams
+                return new Response()
+                {
+                    Team = TeamApiModel.FromTeam(await _context.Teams
                     .Include(x => x.Tenant)
-                    .SingleOrDefaultAsync(x => x.Id == request.Team.Id && x.Tenant.UniqueId == request.TenantUniqueId);
-                
-                if (entity == null) {
-                    var tenant = new Tenant() { UniqueId = Guid.NewGuid(), Name = request.Team.Name };
-                    _context.Teams.Add(entity = new Team() { Tenant = tenant });
-                }
-
-                entity.Name = request.Team.Name;
-                
-                await _context.SaveChangesAsync();
-
-                return new Response();
+                    .SingleAsync(x => x.Name == request.TeamName && x.Tenant.UniqueId == request.TenantUniqueId))
+                };
             }
 
             private readonly SlackishContext _context;

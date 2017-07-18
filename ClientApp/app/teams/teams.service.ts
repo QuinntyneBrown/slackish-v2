@@ -18,6 +18,10 @@ export class TeamsService {
         return this._http.get("/api/teams/get");
     }
 
+    public getByName(options: {teamName}) {
+        return this._http.get(`/api/teams/getByName?name=${options.teamName}`);
+    }
+    
     public create(options: { team:any }) {
         return this._http.post("/api/teams/addOrUpdate", options);
     }

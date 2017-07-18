@@ -5,6 +5,9 @@ import {TeamsService} from './teams.service';
 import {DiscoverTeamFormComponent} from "./discover-team-form.component";
 import {CreateTeamFormComponent} from "./create-team-form.component";
 
+import {Routes,RouterModule} from "@angular/router";
+
+
 const declarables = [
     CreateTeamFormComponent,
     DiscoverTeamFormComponent    
